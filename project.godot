@@ -21,7 +21,7 @@ Globals="*res://globals.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/third-person-camera/plugin.cfg", "res://addons/control_camera3d/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

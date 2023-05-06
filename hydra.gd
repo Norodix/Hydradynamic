@@ -13,6 +13,7 @@ const head_force_multiplier = 20
 const head_damping = 5
 
 const head_max_distance = 3
+const aa_basis = true # Axis alligned basis
 
 @onready var headscene = preload("res://hydra_head.tscn")
 @onready var neck_root = $NeckPoint
@@ -100,7 +101,7 @@ func _physics_process(delta):
 #		velocity.y = JUMP_VELOCITY
 
 	var input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
-	var direction = (cam.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (get_cam_basis() * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -117,7 +118,21 @@ func control_head(head : RigidBody3D):
 	var updw = Input.get_axis("Down", "Up")
 	var inputDir = Vector3(ltrt, updw, fwbw).limit_length(1.0)
 	
-	head.apply_central_force(cam.global_transform.basis * inputDir * head_force_multiplier)
+	head.apply_central_force(get_cam_basis() * inputDir * head_force_multiplier)
 	head.linear_damp = head_damping
 	return
 
+
+# Get the desired basis
+# if aa_basis is true then the basis will only use the cameras y rotation
+func get_cam_basis() -> Basis:
+	if aa_basis:
+		# X vector of cam is assumed to be horizontal
+		var x = cam.global_transform.basis.x.normalized()
+		var y = Vector3.UP
+		var cam_z = cam.global_transform.basis.z
+		cam_z.y = 0
+		var z = cam_z.normalized()
+		return Basis(x, y, z)
+	else:
+		return cam.global_transform.basis
