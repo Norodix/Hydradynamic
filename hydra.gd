@@ -25,6 +25,8 @@ func _ready():
 
 
 func add_head():
+	if controllable_list.size() >= 50:
+		return
 	var hs = headscene.instantiate()
 	self.add_child(hs)
 	hs.global_position = neck_root.global_position + Vector3(randf_range(-1, 1), randf_range(0.2, 1), randf_range(-1, 1))
