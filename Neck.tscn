@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1ky46aymg4s5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rahww"]
+radius = 0.15
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x702v"]
+radius = 0.15
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fl7cu"]
+radius = 0.15
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4610"]
+radius = 0.15
+height = 1.0
+
+[node name="Neck" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 0
+collision_mask = 6
+mass = 0.1
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("CapsuleShape3D_rahww")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("CapsuleMesh_x702v")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+node_a = NodePath("../RigidBody3D")
+node_b = NodePath("../RigidBody3D2")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+collision_layer = 0
+collision_mask = 6
+mass = 0.1
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+shape = SubResource("CapsuleShape3D_fl7cu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+mesh = SubResource("CapsuleMesh_g4610")

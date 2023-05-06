@@ -1,0 +1,123 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckwksmr4pnin8"]
+
+[ext_resource type="Texture2D" uid="uid://c70uemwomsj4" path="res://PNG/Orange/texture_01.png" id="1_umj0u"]
+
+[sub_resource type="GDScript" id="GDScript_it7xs"]
+resource_name = "PhysicalButton.gd"
+script/source = "extends StaticBody3D
+
+
+signal push
+signal pull
+
+@export var shots = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_area_3d_body_entered(body):
+	$AnimationPlayer.play(\"push\")
+	if shots != 0:
+		shots -= 1
+		emit_signal(\"push\")
+		
+
+
+func _on_area_3d_body_exited(body):
+	$AnimationPlayer.play_backwards(\"push\")
+	emit_signal(\"pull\")
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_qrs3t"]
+size = Vector3(1.2, 0.1, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kcsd6"]
+size = Vector3(1.2, 0.1, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8rxc"]
+albedo_texture = ExtResource("1_umj0u")
+
+[sub_resource type="BoxMesh" id="BoxMesh_euagh"]
+material = SubResource("StandardMaterial3D_h8rxc")
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3wgob"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="Animation" id="Animation_vgsh1"]
+resource_name = "push"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Push:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.1, 0), Vector3(0, 0.0240504, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dh0j0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Push:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2clgt"]
+_data = {
+"RESET": SubResource("Animation_dh0j0"),
+"push": SubResource("Animation_vgsh1")
+}
+
+[node name="Button" type="StaticBody3D"]
+script = SubResource("GDScript_it7xs")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qrs3t")
+
+[node name="BaseShape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_kcsd6")
+
+[node name="Push" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Push"]
+mesh = SubResource("BoxMesh_euagh")
+skeleton = NodePath("../..")
+
+[node name="Detector" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detector/Area3D"]
+shape = SubResource("BoxShape3D_3wgob")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2clgt")
+}
+
+[connection signal="body_entered" from="Detector/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Detector/Area3D" to="." method="_on_area_3d_body_exited"]
