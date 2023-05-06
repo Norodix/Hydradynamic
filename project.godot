@@ -15,6 +15,10 @@ run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://globals.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/third-person-camera/plugin.cfg", "res://addons/control_camera3d/plugin.cfg")

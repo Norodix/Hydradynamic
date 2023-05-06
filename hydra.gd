@@ -19,6 +19,8 @@ const head_max_distance = 3
 
 
 func _ready():
+	Globals.player = self
+	add_head()
 	add_head()
 
 
@@ -31,24 +33,28 @@ func add_head():
 
 
 func check_head_trigger():
-	print("Trigger head cut check")
 	# Copy controllable list to loop over only the existing heads
 	var headlist = [] + controllable_list
-	print(headlist)
 	for head in headlist:
 		if head != self:
 			check_head(head)
-			
 
 
 func check_head(head : RigidBody3D):
 	# intersect ray to check if cutter hits it
 	# only enable cutter collision for this moment
-	var is_cut = true
+	var ss = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(head.global_position,
+													neck_root.global_position,
+													1<<Globals.layers.cut,
+													[self, head])
+	query.collide_with_areas = true
+	query.hit_from_inside = true
+	var ray = ss.intersect_ray(query)
 	
-	if is_cut:
+	if not ray.is_empty():
 		remove_head(head)
-		await get_tree().process_frame
+		await get_tree().create_timer(1.5).timeout
 		add_head()
 		add_head()
 	pass
@@ -70,6 +76,7 @@ func _process(delta):
 
 
 func _physics_process(delta):
+	check_head_trigger()
 	# Pull back heads when too far
 	for head in controllable_list:
 		var d =  neck_root.global_position - head.global_position
@@ -111,3 +118,4 @@ func control_head(head : RigidBody3D):
 	head.apply_central_force(cam.global_transform.basis * inputDir * head_force_multiplier)
 	head.linear_damp = head_damping
 	return
+
