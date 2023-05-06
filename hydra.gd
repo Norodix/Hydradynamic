@@ -32,6 +32,7 @@ func add_head():
 	self.add_child(hs)
 	hs.global_position = neck_root.global_position + Vector3(randf_range(-1, 1), randf_range(0.2, 1), randf_range(-1, 1))
 	hs.top_level = true
+	hs.linear_damp = head_damping
 	controllable_list.append(hs)
 
 
@@ -84,24 +85,22 @@ func _physics_process(delta):
 	for head in controllable_list:
 		var d =  neck_root.global_position - head.global_position
 		if d.length() > head_max_distance:
-			head.apply_central_force(d.normalized()*30)
-	
-	
+			head.apply_central_force(d.normalized() * 30)
 	
 	# Move
+	var input_dir = Vector2.ZERO
+	var direction = Vector3.ZERO
 	if controllable_list[control_index] != self:
-		control_head(controllable_list[control_index])
-		return
+		# Currently controlling head
+		direction = control_head(controllable_list[control_index])
+	else:
+		# Currently controlling the body
+		input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
+		direction = (get_cam_basis() * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle Jump.
-#	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-#		velocity.y = JUMP_VELOCITY
-
-	var input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
-	var direction = (get_cam_basis() * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -112,6 +111,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+# Return input direction, where to drag body
 func control_head(head : RigidBody3D):
 	var fwbw = Input.get_axis("Forward", "Backward") # negative Z
 	var ltrt = Input.get_axis("Left", "Right")
@@ -119,8 +119,11 @@ func control_head(head : RigidBody3D):
 	var inputDir = Vector3(ltrt, updw, fwbw).limit_length(1.0)
 	
 	head.apply_central_force(get_cam_basis() * inputDir * head_force_multiplier)
-	head.linear_damp = head_damping
-	return
+	# Drag body along
+	var d = head.global_position - neck_root.global_position
+	if d.length() > head_max_distance:
+		return d.normalized()
+	return Vector2.ZERO
 
 
 # Get the desired basis
