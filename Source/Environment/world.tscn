@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbeut346ktej"]
+[gd_scene load_steps=13 format=3 uid="uid://bbeut346ktej"]
 
 [ext_resource type="Texture2D" uid="uid://bkyxeyiy7jsyp" path="res://Assets/PNG/Dark/texture_01.png" id="1_cgb1k"]
 [ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="2_8nqyj"]
 [ext_resource type="PackedScene" uid="uid://ckwksmr4pnin8" path="res://Source/Props/Button.tscn" id="3_rpdyj"]
 [ext_resource type="Texture2D" uid="uid://d2idl5s26hxap" path="res://Assets/PNG/Purple/texture_01.png" id="4_0jogx"]
+[ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="5_xjt62"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvvsb"]
 albedo_texture = ExtResource("1_cgb1k")
@@ -56,6 +57,18 @@ size = Vector3(100, 1, 100)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8564, 0, 1.48256)
 height = 5.40871
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.56916, 2.37588, 0)
+size = Vector3(10, 5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.56916, 2.37588, 10)
+size = Vector3(10, 5, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.0692, 2.37588, 5)
+size = Vector3(10, 5, 1)
+
 [node name="Hydra" parent="." instance=ExtResource("2_8nqyj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637836, 0)
 
@@ -88,4 +101,12 @@ disabled = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CutterBox"]
 mesh = SubResource("BoxMesh_v64ln")
 
+[node name="Guillotine" parent="." instance=ExtResource("5_xjt62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.72057, 0, 1.35638)
+
+[node name="Button2" parent="." instance=ExtResource("3_rpdyj")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5.0422, 0.930834, 0.501533)
+shots = -1
+
 [connection signal="push" from="Button" to="CutterBox" method="cut"]
+[connection signal="push" from="Button2" to="Guillotine" method="cut"]
