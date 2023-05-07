@@ -95,10 +95,20 @@ func _physics_process(delta):
 	check_head_trigger()
 	# Pull back heads when too far
 	for head in controllable_list:
+		if head == self:
+			continue
 		var d =  neck_root.global_position - head.global_position
 		if d.length() > head_max_distance:
 			push_head(head, d.normalized() * 2)
 			#head.apply_central_force(d.normalized() * 30)
+		# Add head rotation
+		var start = global_position + head.neck_root_offset
+		var end = head.global_position
+		var Z = (end - start).normalized()
+#		var Y = (Vector3.UP - (Vector3.UP.project(Z))).normalized()
+		var Y = Vector3.UP
+		var X = Y.cross(Z)
+		head.global_transform.basis = Basis(X, Y, Z).orthonormalized()
 	
 	# Move
 	var input_dir = Vector2.ZERO
@@ -115,7 +125,7 @@ func _physics_process(delta):
 				if head == self:
 					continue
 				# Head desired position
-				var pos_wanted = neck_root.global_position + direction + Vector3.UP * 0.5
+				var pos_wanted = neck_root.global_position + direction * 1.5 + Vector3.UP * 1.5
 				var push_dir = (pos_wanted - head.global_position)
 				push_head(head, push_dir * 2)
 	# Add the gravity.
