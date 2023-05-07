@@ -75,6 +75,7 @@ func remove_head(node : RigidBody3D):
 	node.gravity_scale = 1
 	node.linear_damp = 1
 	node.is_neck_visible = false
+	node.self_destruct()
 
 
 func _process(delta):

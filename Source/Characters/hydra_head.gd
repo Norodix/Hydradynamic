@@ -21,3 +21,8 @@ func _process(delta):
 		neck.global_transform.basis = Basis(X, Y, X.cross(Y)).orthonormalized()
 		neck.global_position = (start + end) / 2
 		pass
+
+
+func self_destruct(time = 5):
+	await get_tree().create_timer(time).timeout
+	self.queue_free()
