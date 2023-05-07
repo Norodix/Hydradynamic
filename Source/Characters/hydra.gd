@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,6 +14,7 @@ const head_damping = 5
 
 const head_max_distance = 3
 const aa_basis = true # Axis alligned basis
+const max_head_count = 16
 
 @onready var headscene = preload("hydra_head.tscn")
 @onready var neck_root = $NeckPoint
@@ -26,7 +27,7 @@ func _ready():
 
 
 func add_head():
-	if controllable_list.size() >= 50:
+	if controllable_list.size() >= max_head_count:
 		return
 	var hs = headscene.instantiate()
 	self.add_child(hs)
@@ -34,6 +35,7 @@ func add_head():
 						Vector3(randf_range(-1, 1), randf_range(0.2, 1), randf_range(-1, 1))
 	hs.top_level = true
 	hs.linear_damp = head_damping
+	hs.neck_root_offset = neck_root.position
 	controllable_list.append(hs)
 
 
@@ -87,7 +89,8 @@ func _physics_process(delta):
 	for head in controllable_list:
 		var d =  neck_root.global_position - head.global_position
 		if d.length() > head_max_distance:
-			head.apply_central_force(d.normalized() * 30)
+			push_head(head, d.normalized() * 2)
+			#head.apply_central_force(d.normalized() * 30)
 	
 	# Move
 	var input_dir = Vector2.ZERO
@@ -99,6 +102,14 @@ func _physics_process(delta):
 		# Currently controlling the body
 		input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
 		direction = (get_cam_basis() * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if not Input.is_action_pressed("Sneak") and direction.length() > 0.01:
+			for head in controllable_list:
+				if head == self:
+					continue
+				# Head desired position
+				var pos_wanted = neck_root.global_position + direction + Vector3.UP * 0.5
+				var push_dir = (pos_wanted - head.global_position)
+				push_head(head, push_dir * 2)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -120,13 +131,17 @@ func control_head(head : RigidBody3D):
 	var updw = Input.get_axis("Down", "Up")
 	var inputDir = Vector3(ltrt, updw, fwbw).limit_length(1.0)
 	
-	head.apply_central_force(get_cam_basis() * inputDir * head_force_multiplier)
+	push_head(head, get_cam_basis() * inputDir)
 	# Drag body along
 	var d = head.global_position - neck_root.global_position
 	if d.length() > head_max_distance:
 		return d.normalized() * 0.1
 		# TODO avoid jittering when not applying such small multiplier
 	return Vector2.ZERO
+
+
+func push_head(head : RigidBody3D, force : Vector3):
+	head.apply_central_force(force * head_force_multiplier)
 
 
 # Get the desired basis
