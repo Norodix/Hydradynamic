@@ -84,6 +84,13 @@ func _process(delta):
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.6, 0)
 
 
+func _unhandled_key_input(event):
+	if event.pressed:
+		var code = event.keycode
+		if code >= KEY_0 and code <= KEY_9:
+			control_index = (code - KEY_0 - 1) % controllable_list.size()
+
+
 func _physics_process(delta):
 	check_head_trigger()
 	# Pull back heads when too far
