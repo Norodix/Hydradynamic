@@ -71,6 +71,7 @@ func remove_head(node : RigidBody3D):
 #	get_parent().add_child(node)
 	node.gravity_scale = 1
 	node.linear_damp = 1
+	node.is_neck_visible = false
 
 
 func _process(delta):
@@ -122,7 +123,8 @@ func control_head(head : RigidBody3D):
 	# Drag body along
 	var d = head.global_position - neck_root.global_position
 	if d.length() > head_max_distance:
-		return d.normalized()
+		return d.normalized() * 0.1
+		# TODO avoid jittering when not applying such small multiplier
 	return Vector2.ZERO
 
 

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://deccsy13xjciy"]
+[gd_scene load_steps=8 format=3 uid="uid://deccsy13xjciy"]
 
+[ext_resource type="Script" path="res://hydra_head.gd" id="1_5rnsb"]
 [ext_resource type="Texture2D" uid="uid://c2fnxldgd862f" path="res://PNG/Green/texture_03.png" id="1_drcrc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kpix3"]
@@ -13,15 +14,29 @@ material = SubResource("StandardMaterial3D_6n2oq")
 radius = 0.2
 height = 0.4
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qn2ed"]
+albedo_texture = ExtResource("1_drcrc")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t5s0x"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_qn2ed")
+top_radius = 0.1
+bottom_radius = 0.1
+
 [node name="Head" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.331266, 1.64794, -0.541965)
 collision_layer = 4
 collision_mask = 7
 gravity_scale = 0.0
 linear_damp = 1.0
+script = ExtResource("1_5rnsb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_kpix3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_sadi4")
+
+[node name="Neck" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.05753, 0)
+mesh = SubResource("CylinderMesh_t5s0x")
