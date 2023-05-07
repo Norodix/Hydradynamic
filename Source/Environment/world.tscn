@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbeut346ktej"]
+
+[ext_resource type="Texture2D" uid="uid://bkyxeyiy7jsyp" path="res://Assets/PNG/Dark/texture_01.png" id="1_cgb1k"]
+[ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="2_8nqyj"]
+[ext_resource type="PackedScene" uid="uid://ckwksmr4pnin8" path="res://Source/Props/Button.tscn" id="3_rpdyj"]
+[ext_resource type="Texture2D" uid="uid://d2idl5s26hxap" path="res://Assets/PNG/Purple/texture_01.png" id="4_0jogx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvvsb"]
+albedo_texture = ExtResource("1_cgb1k")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3ulf"]
+albedo_texture = ExtResource("1_cgb1k")
+
+[sub_resource type="GDScript" id="GDScript_av55o"]
+script/source = "extends Label
+
+func _process(delta):
+	self.text = str(Engine.get_frames_per_second())
+"
+
+[sub_resource type="GDScript" id="GDScript_cs4la"]
+script/source = "extends StaticBody3D
+
+
+func cut():
+	#print(\"Activate cut\")
+	$CollisionShape3D.set_deferred(\"disabled\", false)
+	await get_tree().create_timer(0.1).timeout
+	$CollisionShape3D.set_deferred(\"disabled\", true)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vnrca"]
+size = Vector3(0.1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvqd6"]
+albedo_texture = ExtResource("4_0jogx")
+
+[sub_resource type="BoxMesh" id="BoxMesh_v64ln"]
+material = SubResource("StandardMaterial3D_jvqd6")
+size = Vector3(0.1, 1, 1)
+
+[node name="World" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+material_override = SubResource("StandardMaterial3D_vvvsb")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+material_override = SubResource("StandardMaterial3D_n3ulf")
+size = Vector3(100, 1, 100)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8564, 0, 1.48256)
+height = 5.40871
+
+[node name="Hydra" parent="." instance=ExtResource("2_8nqyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637836, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.33435, 0.942449, 0, -0.942449, 0.33435, 0, 1.25227, 0)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 28.0
+script = SubResource("GDScript_av55o")
+
+[node name="Button" parent="." instance=ExtResource("3_rpdyj")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.46953, 3.44296, -5.77422)
+shots = -1
+
+[node name="CutterBox" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32083, 2.18864, -5.05755)
+collision_layer = 16
+collision_mask = 0
+script = SubResource("GDScript_cs4la")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CutterBox"]
+shape = SubResource("BoxShape3D_vnrca")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CutterBox"]
+mesh = SubResource("BoxMesh_v64ln")
+
+[connection signal="push" from="Button" to="CutterBox" method="cut"]
