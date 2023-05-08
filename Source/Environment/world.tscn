@@ -102,7 +102,7 @@ disabled = true
 mesh = SubResource("BoxMesh_v64ln")
 
 [node name="Guillotine" parent="." instance=ExtResource("5_xjt62")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.72057, 0, 1.35638)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.72057, 0, 1.51762)
 
 [node name="Button2" parent="." instance=ExtResource("3_rpdyj")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5.0422, 0.930834, 0.501533)
