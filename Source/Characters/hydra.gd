@@ -36,6 +36,7 @@ func add_head():
 	hs.top_level = true
 	hs.linear_damp = head_damping
 	hs.neck_root_offset = neck_root.position
+	hs.randomize_rest_position(0.7)
 	controllable_list.append(hs)
 
 
@@ -82,6 +83,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("control_next"):
 		control_index = (control_index + 1) % controllable_list.size()
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.6, 0)
+	$CameraPivot.global_position = self.global_position
 
 
 func _unhandled_key_input(event):
@@ -125,7 +127,8 @@ func _physics_process(delta):
 				if head == self:
 					continue
 				# Head desired position
-				var pos_wanted = neck_root.global_position + direction * 1.5 + Vector3.UP * 1.5
+				var pos_wanted = neck_root.global_position + direction * 1.5 + Vector3.UP * 1.5 \
+								+ head.rest_position
 				var push_dir = (pos_wanted - head.global_position)
 				push_head(head, push_dir * 2)
 	# Add the gravity.
@@ -140,6 +143,22 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	# Rotate body
+	var v = velocity
+	v.y = 0
+	if v.length() > 0.1:
+		var Z = v.normalized()
+		var Y = Vector3.UP
+		var X = Y.cross(Z)
+		var dir_basis = Basis(X, Y, Z).orthonormalized()
+		var dir_transform = Transform3D(dir_basis, global_position)
+		global_transform.basis = global_transform.interpolate_with(dir_transform, 0.1).basis
+	
+	if v.length() > 0.1:
+		$AnimationTree["parameters/playback"].travel("Hydra_Move")
+	else:
+		$AnimationTree["parameters/playback"].travel("Hydra_Idle")
 
 
 # Return input direction, where to drag body
