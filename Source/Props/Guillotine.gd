@@ -2,7 +2,7 @@ extends Node3D
 
 var can_cut = true
 @onready var anim_player = $AnimationPlayer
-@onready var shape = $Area3D/CollisionShape3D
+@onready var shape = $MeshInstance3D/Area3D/CollisionShape3D
 
 
 func cut():
