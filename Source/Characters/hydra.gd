@@ -31,13 +31,24 @@ func add_head():
 		return
 	var hs = headscene.instantiate()
 	self.add_child(hs)
-	hs.global_position = neck_root.global_position + \
-						Vector3(randf_range(-1, 1), randf_range(0.2, 1), randf_range(-1, 1))
+#	hs.global_position = neck_root.global_position + \
+#						Vector3(randf_range(-1, 1), randf_range(0.2, 1), randf_range(-1, 1))
+	hs.global_position = global_position + Vector3(0, 1, 0)
 	hs.top_level = true
 	hs.linear_damp = head_damping
 	hs.neck_root_offset = neck_root.position
-	hs.randomize_rest_position(0.7)
+	#hs.randomize_rest_position(0.7)
 	controllable_list.append(hs)
+	for i in controllable_list.size():
+		var head = controllable_list[i]
+		if not head is HydraHead:
+			continue
+		var hydra_head : HydraHead = head
+		# fibonacci
+		var ang = 1.618 * i * 2 * PI
+		var r0 = 0.3
+		var r = r0 * sqrt(i)
+		hydra_head.rest_position = Vector3(r * cos(ang), r * sin(ang), 0.0)
 
 
 func check_head_trigger():
@@ -75,7 +86,7 @@ func remove_head(node : RigidBody3D):
 #	get_parent().add_child(node)
 	node.gravity_scale = 1
 	node.linear_damp = 1
-	node.is_neck_visible = false
+	node.is_cut = true
 	node.self_destruct()
 
 
@@ -97,7 +108,7 @@ func _physics_process(delta):
 	check_head_trigger()
 	# Pull back heads when too far
 	for head in controllable_list:
-		if head == self:
+		if not head is HydraHead:
 			continue
 		var d =  neck_root.global_position - head.global_position
 		if d.length() > head_max_distance:
@@ -124,11 +135,11 @@ func _physics_process(delta):
 		direction = (get_cam_basis() * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if not Input.is_action_pressed("Sneak") and direction.length() > 0.01:
 			for head in controllable_list:
-				if head == self:
+				if not head is HydraHead:
 					continue
 				# Head desired position
 				var pos_wanted = neck_root.global_position + direction * 1.5 + Vector3.UP * 1.5 \
-								+ head.rest_position
+								+ global_transform.basis * head.rest_position
 				var push_dir = (pos_wanted - head.global_position)
 				push_head(head, push_dir * 2)
 	# Add the gravity.
