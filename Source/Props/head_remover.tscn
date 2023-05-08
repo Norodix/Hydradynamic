@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgo6k7v4ntg6v"]
+
+[ext_resource type="Script" path="res://Source/Props/HeadRemover.gd" id="1_w02vr"]
+
+[node name="HeadRemover" type="Area3D"]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("1_w02vr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

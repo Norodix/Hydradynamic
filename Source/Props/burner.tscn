@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://hynam4nmusga"]
+
+[ext_resource type="PackedScene" uid="uid://dgo6k7v4ntg6v" path="res://Source/Props/head_remover.tscn" id="1_rmj86"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5luf5"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d85rr"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7403"]
+transparency = 1
+albedo_color = Color(0.780392, 0, 0.0784314, 0.419608)
+
+[node name="Burner" type="Node3D"]
+
+[node name="HeadRemover" parent="." instance=ExtResource("1_rmj86")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeadRemover"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_5luf5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_d85rr")
+surface_material_override/0 = SubResource("StandardMaterial3D_s7403")

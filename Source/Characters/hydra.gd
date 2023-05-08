@@ -23,7 +23,6 @@ const max_head_count = 16
 func _ready():
 	Globals.player = self
 	add_head()
-	add_head()
 
 
 func add_head():
@@ -33,10 +32,11 @@ func add_head():
 	self.add_child(hs)
 #	hs.global_position = neck_root.global_position + \
 #						Vector3(randf_range(-1, 1), randf_range(0.2, 1), randf_range(-1, 1))
-	hs.global_position = global_position + Vector3(0, 1, 0)
+	hs.global_position = global_position + Vector3(0, 3, 0)
 	hs.top_level = true
 	hs.linear_damp = head_damping
 	hs.neck_root_offset = neck_root.position
+	hs.connect("remove_head", remove_head)
 	#hs.randomize_rest_position(0.7)
 	controllable_list.append(hs)
 	for i in controllable_list.size():
@@ -48,7 +48,7 @@ func add_head():
 		var ang = 1.618 * i * 2 * PI
 		var r0 = 0.3
 		var r = r0 * sqrt(i)
-		hydra_head.rest_position = Vector3(r * cos(ang), r * sin(ang), 0.0)
+		hydra_head.rest_position = Vector3(r * cos(ang), r * sin(ang), 0.0).rotated(Vector3(1,0,0), deg_to_rad(-30))
 
 
 func check_head_trigger():
@@ -104,8 +104,19 @@ func _unhandled_key_input(event):
 			control_index = (code - KEY_0 - 1) % controllable_list.size()
 
 
+func get_head_count() -> int:
+	return controllable_list.size() - 1
+
+
+var zero_head_time = 0
 func _physics_process(delta):
 	check_head_trigger()
+	if get_head_count() <= 0:
+		zero_head_time += delta
+	else:
+		zero_head_time = 0
+	if zero_head_time > 8.0:
+		add_head()
 	# Pull back heads when too far
 	for head in controllable_list:
 		if not head is HydraHead:
@@ -132,6 +143,9 @@ func _physics_process(delta):
 	else:
 		# Currently controlling the body
 		input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
+		if get_head_count() == 0:
+			# Random chicken
+			input_dir = Vector2(1, 0).rotated(rand_from_seed(int(zero_head_time * 2))[0] * 10000)
 		direction = (get_cam_basis() * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if not Input.is_action_pressed("Sneak") and direction.length() > 0.01:
 			for head in controllable_list:

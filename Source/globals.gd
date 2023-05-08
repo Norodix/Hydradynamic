@@ -9,4 +9,5 @@ enum layers {
 	head = 2,
 	button = 3,
 	cut = 4,
+	remove = 5,
 }
