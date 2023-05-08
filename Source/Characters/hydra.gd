@@ -145,7 +145,7 @@ func _physics_process(delta):
 		input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
 		if get_head_count() == 0:
 			# Random chicken
-			input_dir = Vector2(1, 0).rotated(rand_from_seed(int(zero_head_time * 2))[0] * 10000)
+			input_dir = Vector2(1, 0).rotated(rand_from_seed(Engine.get_physics_frames() / 30)[0] * 10000)
 		direction = (get_cam_basis() * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if not Input.is_action_pressed("Sneak") and direction.length() > 0.01:
 			for head in controllable_list:
