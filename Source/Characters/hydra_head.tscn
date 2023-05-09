@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dug5rer0e3dai"]
+[gd_scene load_steps=16 format=3 uid="uid://dug5rer0e3dai"]
 
 [ext_resource type="Script" path="res://Source/Characters/hydra_head.gd" id="1_7mwv7"]
 [ext_resource type="Texture2D" uid="uid://swib77707gw8" path="res://Assets/Hydra/Eyes_Tex.png" id="3_bs31u"]
+[ext_resource type="Shader" uid="uid://mapabvsdd5a6" path="res://Source/Materials/Shock_Shader.tres" id="3_vlwb5"]
 [ext_resource type="Script" path="res://Source/Characters/IKFixerUpper.gd" id="4_04ek3"]
 [ext_resource type="Script" path="res://Source/Characters/start_IK.gd" id="4_8dbd0"]
 
@@ -39,25 +40,25 @@ bind/1/bone = -1
 bind/1/pose = Transform3D(1, 0, -1.69703e-30, -2.64698e-23, 0, -1, 1.88079e-37, 1, 7.10543e-15, 4.00511e-16, 13.7393, 1.22555e-07)
 bind/2/name = &"Neck_06"
 bind/2/bone = -1
-bind/2/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 1.4013e-44, 1, 0, 4.00511e-16, 12.0342, 1.22555e-07)
+bind/2/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 0, 1, 0, 4.00511e-16, 12.0342, 1.22555e-07)
 bind/3/name = &"Neck_05"
 bind/3/bone = -1
-bind/3/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 1.4013e-44, 1, 0, 4.00511e-16, 10.2703, 1.22555e-07)
+bind/3/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 0, 1, 0, 4.00511e-16, 10.2703, 1.22555e-07)
 bind/4/name = &"Neck_04"
 bind/4/bone = -1
-bind/4/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 1.4013e-44, 1, 0, 4.00511e-16, 8.48681, 1.22555e-07)
+bind/4/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 0, 1, 0, 4.00511e-16, 8.48681, 1.22555e-07)
 bind/5/name = &"Neck_03"
 bind/5/bone = -1
-bind/5/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 1.4013e-44, 1, 0, 4.00511e-16, 6.8405, 1.22555e-07)
+bind/5/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 0, 1, 0, 4.00511e-16, 6.8405, 1.22555e-07)
 bind/6/name = &"Neck_02"
 bind/6/bone = -1
-bind/6/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 1.4013e-44, 1, 0, 4.00511e-16, 5.05699, 1.22555e-07)
+bind/6/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 0, 1, 0, 4.00511e-16, 5.05699, 1.22555e-07)
 bind/7/name = &"Neck_01"
 bind/7/bone = -1
-bind/7/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 1.4013e-44, 1, 0, 4.00511e-16, 3.33228, 1.22555e-07)
+bind/7/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 0, 1, 0, 4.00511e-16, 3.33228, 1.22555e-07)
 bind/8/name = &"Neck_Start"
 bind/8/bone = -1
-bind/8/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 1.4013e-44, 1, 0, 4.00511e-16, 0.960804, 1.22555e-07)
+bind/8/pose = Transform3D(1, 0, 0, -2.64698e-23, -7.10543e-15, -1, 0, 1, 0, 4.00511e-16, 0.960804, 1.22555e-07)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4to8o"]
 diffuse_mode = 3
@@ -87,7 +88,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebu05"]
+render_priority = 0
+shader = ExtResource("3_vlwb5")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2olw7"]
+next_pass = SubResource("ShaderMaterial_ebu05")
 cull_mode = 1
 diffuse_mode = 3
 specular_mode = 2
@@ -142,10 +148,10 @@ bones/1/rotation = Quaternion(4.37113e-08, -1.41995e-29, -2.22044e-16, 1)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Neck_06"
 bones/2/parent = 1
-bones/2/rest = Transform3D(1, 8.48514e-31, 1.68156e-44, -8.48514e-31, 1, 7.10543e-15, -1.12104e-44, -7.10543e-15, 1, -2.04118e-29, 1.70511, 2.432e-16)
+bones/2/rest = Transform3D(1, 8.48514e-31, 0, -8.48514e-31, 1, 7.10543e-15, 0, -7.10543e-15, 1, -2.04118e-29, 1.70511, 2.432e-16)
 bones/2/enabled = true
 bones/2/position = Vector3(-2.04118e-29, 1.70511, 2.432e-16)
-bones/2/rotation = Quaternion(-3.55271e-15, 7.00649e-45, -4.24257e-31, 1)
+bones/2/rotation = Quaternion(-3.55271e-15, 0, -4.24257e-31, 1)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Neck_05"
 bones/3/parent = 2
