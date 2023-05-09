@@ -1,12 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsqj208st8iy7"]
+[gd_scene load_steps=8 format=3 uid="uid://dsqj208st8iy7"]
 
-[ext_resource type="Shader" uid="uid://mapabvsdd5a6" path="res://Source/Materials/Shock_Shader.tres" id="1_ipnj4"]
+[ext_resource type="Shader" uid="uid://be7m37jfglgou" path="res://Source/Materials/Shock_Shader.tres" id="1_ipnj4"]
+[ext_resource type="Script" path="res://Source/Props/Cable.gd" id="2_7i1bi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iy856"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_ipnj4")
+shader_parameter/Shock_Bool = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkqe4"]
+resource_local_to_scene = true
 next_pass = SubResource("ShaderMaterial_iy856")
 cull_mode = 1
 diffuse_mode = 3
@@ -16,6 +20,7 @@ grow = true
 grow_amount = 0.02
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wti2"]
+resource_local_to_scene = true
 next_pass = SubResource("StandardMaterial3D_tkqe4")
 diffuse_mode = 3
 specular_mode = 1
@@ -46,6 +51,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ojwun"]
+resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
 "aabb": AABB(-1.01717, -0.113181, -0.113181, 2.03431, 0.226372, 0.226362),
@@ -64,3 +70,4 @@ shadow_mesh = SubResource("ArrayMesh_v3glb")
 
 [node name="Cable_1m" type="MeshInstance3D"]
 mesh = SubResource("ArrayMesh_ojwun")
+script = ExtResource("2_7i1bi")
