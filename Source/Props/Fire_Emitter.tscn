@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkg3u60fkf7x7"]
+
+[ext_resource type="Shader" uid="uid://7oufwir7kewd" path="res://Source/Materials/Fire_Shader.tres" id="1_yp6a8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qo85e"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+spread = 10.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ofu6"]
+render_priority = 0
+shader = ExtResource("1_yp6a8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6o43v"]
+material = SubResource("ShaderMaterial_2ofu6")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8qy48"]
+material = SubResource("ShaderMaterial_2ofu6")
+size = Vector2(0.1, 0.1)
+orientation = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mqc1n"]
+material = SubResource("ShaderMaterial_2ofu6")
+size = Vector2(0.1, 0.1)
+
+[node name="Fire_Emitter" type="GPUParticles3D"]
+amount = 1000
+lifetime = 0.7
+trail_lifetime = 7.24
+process_material = SubResource("ParticleProcessMaterial_qo85e")
+draw_passes = 3
+draw_pass_1 = SubResource("PlaneMesh_6o43v")
+draw_pass_2 = SubResource("PlaneMesh_8qy48")
+draw_pass_3 = SubResource("PlaneMesh_mqc1n")
