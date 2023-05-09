@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dug5rer0e3dai"]
+[gd_scene load_steps=14 format=3 uid="uid://dug5rer0e3dai"]
 
 [ext_resource type="Script" path="res://Source/Characters/hydra_head.gd" id="1_7mwv7"]
 [ext_resource type="Texture2D" uid="uid://swib77707gw8" path="res://Assets/Hydra/Eyes_Tex.png" id="3_bs31u"]
+[ext_resource type="Script" path="res://Source/Characters/IKFixerUpper.gd" id="4_04ek3"]
 [ext_resource type="Script" path="res://Source/Characters/start_IK.gd" id="4_8dbd0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kpix3"]
@@ -130,15 +131,15 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(1, -4.44089e-16, 0, 0, 0, 1, -4.44089e-16, -1, 0, 8.44601e-16, 1.22556e-07, 16.5431)
 bones/0/enabled = true
 bones/0/position = Vector3(8.44601e-16, 1.22556e-07, 16.5431)
-bones/0/rotation = Quaternion(-0.706525, 0.000474975, 0.000474975, 0.707475)
-bones/0/scale = Vector3(1.00048, 1.00048, 1.00048)
+bones/0/rotation = Quaternion(-0.707107, 1.57009e-16, 1.57009e-16, 0.707107)
+bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "Neck_07"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 4.44089e-16, -1.94117e-23, -4.44089e-16, 1, -8.74227e-08, -1.94117e-23, 8.74227e-08, 1, 2.36658e-30, 2.80374, -1.13687e-13)
 bones/1/enabled = true
 bones/1/position = Vector3(2.36658e-30, 2.80374, -1.13687e-13)
-bones/1/rotation = Quaternion(4.37114e-08, -3.9443e-31, -2.22045e-16, 1)
-bones/1/scale = Vector3(1.00048, 1.00048, 1.00048)
+bones/1/rotation = Quaternion(4.37113e-08, -1.41995e-29, -2.22044e-16, 1)
+bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Neck_06"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 8.48514e-31, 1.68156e-44, -8.48514e-31, 1, 7.10543e-15, -1.12104e-44, -7.10543e-15, 1, -2.04118e-29, 1.70511, 2.432e-16)
@@ -166,7 +167,7 @@ bones/5/rest = Transform3D(1, -7.88861e-31, 0, 7.88861e-31, 1, 0, 0, 0, 1, 0, 1.
 bones/5/enabled = true
 bones/5/position = Vector3(0, 1.64631, 0)
 bones/5/rotation = Quaternion(0, 0, 3.9443e-31, 1)
-bones/5/scale = Vector3(1.00048, 1.00048, 1.00048)
+bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "Neck_02"
 bones/6/parent = 5
 bones/6/rest = Transform3D(1, -7.88861e-31, 0, 7.88861e-31, 1, 0, 0, 0, 1, 0, 1.78351, 0)
@@ -210,5 +211,8 @@ max_iterations = 128
 script = ExtResource("4_8dbd0")
 
 [node name="Neck_Target" type="Marker3D" parent="."]
-transform = Transform3D(8, 0, 0, 0, -8, 1.20797e-06, 0, -1.20797e-06, -8, 0.127348, 1.48457, -1.71332)
+transform = Transform3D(8, 0, 0, 0, -8, 1.20797e-06, 0, -1.20797e-06, -8, 0, 1.485, -1.713)
 top_level = true
+
+[node name="IKFixerUpper" type="Node3D" parent="."]
+script = ExtResource("4_04ek3")
