@@ -18,7 +18,6 @@ operator = 2
 
 [sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_u0254"]
 parameter_name = "Shock_Bool"
-qualifier = 2
 default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeSwitch" id="VisualShaderNodeSwitch_cg3li"]
@@ -91,7 +90,7 @@ code = "shader_type spatial;
 render_mode cull_disabled;
 
 uniform sampler2D tex_vtx_2;
-instance uniform bool Shock_Bool = false;
+uniform bool Shock_Bool = false;
 uniform sampler2D tex_frg_6;
 
 

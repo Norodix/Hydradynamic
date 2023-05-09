@@ -39,6 +39,10 @@ func _process(delta):
 ##			skeleton.set_bone_pose_scale(neckbone, Vector3(s, s, s))
 #		#$Neck_Target.scale
 #		pass
+	
+	var seed : int = round((Engine.get_physics_frames() / 50))
+	var testpower = bool(rand_from_seed(seed)[0] % 2)
+	power(testpower)
 
 
 func get_bone_children_recursive(skeleton : Skeleton3D, root_index : int):
@@ -63,3 +67,11 @@ func randomize_rest_position(dist = 0.5):
 	self.rest_position.x = randf_range(-dist, dist)
 	self.rest_position.y = randf_range(-dist, dist)
 	self.rest_position.z = randf_range(-dist, dist)
+
+func power(power : bool = true):
+	var mat : Material = $Head_Armature/Skeleton3D/Head.get_surface_override_material(0)
+	var electricity_pass = mat.next_pass.next_pass
+	print("Setting: ", power)
+	electricity_pass.set_shader_parameter("Shock_Bool", power)
+	print("Getting: ", electricity_pass.get_shader_parameter("Shock_Bool"))
+	
