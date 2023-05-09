@@ -4,7 +4,7 @@ extends StaticBody3D
 signal push
 signal pull
 
-@export var shots = 0
+@export var shots = -1
 
 var is_pushed = false
 @onready var detectorArea = $Detector/Area3D
@@ -19,7 +19,7 @@ func _physics_process(delta):
 	if bodies.is_empty():
 		if is_pushed:
 			button_release()
-	else:
+	else: # has bodies
 		if not is_pushed:
 			button_push()
 	is_pushed = not bodies.is_empty()

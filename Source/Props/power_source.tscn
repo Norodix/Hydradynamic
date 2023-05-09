@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://barqulglrp6ve"]
+[gd_scene load_steps=8 format=3 uid="uid://barqulglrp6ve"]
 
+[ext_resource type="Script" path="res://Source/Props/power_source.gd" id="1_idule"]
 [ext_resource type="Shader" uid="uid://be7m37jfglgou" path="res://Source/Materials/Shock_Shader.tres" id="2_f6fus"]
 [ext_resource type="PackedScene" uid="uid://cghka68co1hm0" path="res://Source/Props/Electric_Socket.tscn" id="2_u8j4t"]
 
@@ -44,6 +45,7 @@ radius = 0.557932
 [node name="PowerSource" type="Area3D"]
 collision_layer = 64
 collision_mask = 0
+script = ExtResource("1_idule")
 
 [node name="Electric_Socket" parent="." instance=ExtResource("2_u8j4t")]
 
