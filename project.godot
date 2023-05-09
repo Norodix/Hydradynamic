@@ -108,3 +108,5 @@ Restart={
 3d_physics/layer_4="Button"
 3d_physics/layer_5="Cut"
 3d_physics/layer_6="Remove"
+3d_physics/layer_7="Power_source"
+3d_physics/layer_8="Power_sink"

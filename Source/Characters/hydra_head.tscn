@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Source/Characters/hydra_head.gd" id="1_7mwv7"]
 [ext_resource type="Texture2D" uid="uid://swib77707gw8" path="res://Assets/Hydra/Eyes_Tex.png" id="3_bs31u"]
-[ext_resource type="Shader" uid="uid://mapabvsdd5a6" path="res://Source/Materials/Shock_Shader.tres" id="3_vlwb5"]
+[ext_resource type="Shader" uid="uid://be7m37jfglgou" path="res://Source/Materials/Shock_Shader.tres" id="3_vlwb5"]
 [ext_resource type="Script" path="res://Source/Characters/IKFixerUpper.gd" id="4_04ek3"]
 [ext_resource type="Script" path="res://Source/Characters/start_IK.gd" id="4_8dbd0"]
 
@@ -89,10 +89,13 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebu05"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_vlwb5")
+shader_parameter/Shock_Bool = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2olw7"]
+resource_local_to_scene = true
 next_pass = SubResource("ShaderMaterial_ebu05")
 cull_mode = 1
 diffuse_mode = 3
@@ -102,6 +105,7 @@ grow = true
 grow_amount = 0.02
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_318g4"]
+resource_local_to_scene = true
 next_pass = SubResource("StandardMaterial3D_2olw7")
 diffuse_mode = 3
 specular_mode = 1
@@ -222,3 +226,17 @@ top_level = true
 
 [node name="IKFixerUpper" type="Node3D" parent="."]
 script = ExtResource("4_04ek3")
+
+[node name="SourceDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SourceDetector"]
+shape = SubResource("SphereShape3D_kpix3")
+
+[node name="SinkDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SinkDetector"]
+shape = SubResource("SphereShape3D_kpix3")

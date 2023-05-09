@@ -184,6 +184,30 @@ func _physics_process(delta):
 		$AnimationTree["parameters/playback"].travel("Hydra_Move")
 	else:
 		$AnimationTree["parameters/playback"].travel("Hydra_Idle")
+	
+	# Electricity connections
+	# Assume body unpowered
+	var body_powered = false
+	# For each head detect if connects to power source -> power head and body
+	for head in controllable_list:
+		if head == self:
+			continue
+		var h : HydraHead = head
+		if h.has_power_source():
+			h.power(true)
+			body_powered = true
+		else:
+			h.power(false)
+	# If body powered:
+	#     For each head detect if connects to power sink -> power head and sink
+	if body_powered:
+		for head in controllable_list:
+			if head == self:
+				continue
+			var h : HydraHead = head
+			var conducting = h.power_sinks()
+			if conducting:
+				h.power()
 
 
 # Return input direction, where to drag body

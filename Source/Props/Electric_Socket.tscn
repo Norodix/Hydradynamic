@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://eeq783lu80dm"]
+[gd_scene load_steps=8 format=3 uid="uid://cghka68co1hm0"]
 
 [ext_resource type="PackedScene" uid="uid://cx27jka1w5q8x" path="res://Assets/Electric_Socket/Electric_Socket.gltf" id="1_l44sy"]
-[ext_resource type="Shader" uid="uid://mapabvsdd5a6" path="res://Source/Materials/Shock_Shader.tres" id="2_eexeh"]
+[ext_resource type="Shader" uid="uid://be7m37jfglgou" path="res://Source/Materials/Shock_Shader.tres" id="2_eexeh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw5kl"]
 cull_mode = 1
@@ -29,10 +29,13 @@ backlight = Color(0.490196, 0.490196, 0.490196, 1)
 grow_amount = 0.1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iy856"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_eexeh")
+shader_parameter/Shock_Bool = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng21w"]
+resource_local_to_scene = true
 next_pass = SubResource("ShaderMaterial_iy856")
 cull_mode = 1
 diffuse_mode = 3
@@ -42,6 +45,7 @@ grow = true
 grow_amount = 0.02
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrluq"]
+resource_local_to_scene = true
 next_pass = SubResource("StandardMaterial3D_ng21w")
 diffuse_mode = 3
 specular_mode = 1

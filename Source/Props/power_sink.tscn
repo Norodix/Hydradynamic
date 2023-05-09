@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dle3gysxs808w"]
+
+[ext_resource type="Script" path="res://PowerSink.gd" id="1_ircct"]
+[ext_resource type="PackedScene" uid="uid://cghka68co1hm0" path="res://Source/Props/Electric_Socket.tscn" id="2_sjxb1"]
+[ext_resource type="Shader" uid="uid://be7m37jfglgou" path="res://Source/Materials/Shock_Shader.tres" id="3_dfbw1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7l2ap"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_dfbw1")
+shader_parameter/Shock_Bool = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk2hn"]
+resource_local_to_scene = true
+next_pass = SubResource("ShaderMaterial_7l2ap")
+cull_mode = 1
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1jeb"]
+resource_local_to_scene = true
+next_pass = SubResource("StandardMaterial3D_qk2hn")
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.588235, 0.588235, 0.588235, 1)
+metallic = 0.1
+metallic_specular = 1.0
+roughness = 0.1
+rim_enabled = true
+rim = 0.3
+anisotropy = 0.02
+ao_light_affect = 0.11
+heightmap_scale = -6.956
+backlight_enabled = true
+backlight = Color(0.490196, 0.490196, 0.490196, 1)
+grow_amount = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d6u3s"]
+height = 0.773837
+radius = 0.557932
+
+[node name="PowerSink" type="Area3D"]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_ircct")
+
+[node name="Electric_Socket" parent="." instance=ExtResource("2_sjxb1")]
+
+[node name="Plug" parent="Electric_Socket" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g1jeb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.294999)
+shape = SubResource("CylinderShape3D_d6u3s")
+
+[editable path="Electric_Socket"]

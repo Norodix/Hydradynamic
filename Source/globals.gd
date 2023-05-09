@@ -10,4 +10,6 @@ enum layers {
 	button = 3,
 	cut = 4,
 	remove = 5,
+	power_source = 6,
+	power_sink = 7,
 }
