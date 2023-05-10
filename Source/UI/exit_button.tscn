@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqjuv33yg7wb5"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gdnx8"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_kn010"]
+events = [SubResource("InputEventAction_gdnx8")]
+
+[sub_resource type="GDScript" id="GDScript_68x5t"]
+script/source = "extends Button
+
+
+
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://Source/UI/MainMenu.tscn\")
+	pass # Replace with function body.
+"
+
+[node name="ExitButton" type="Button"]
+offset_right = 157.0
+offset_bottom = 31.0
+shortcut = SubResource("Shortcut_kn010")
+text = "Back to Main Menu"
+script = SubResource("GDScript_68x5t")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

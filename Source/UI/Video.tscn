@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2gbyq0br0e8c"]
+
+[ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/checkbox/checkbox.tscn" id="1_264a1"]
+[ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="3_eb0dy"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_fullscreen.gd" id="4_w15kf"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/components/option_list/option_list.gd" id="5_knvao"]
+[ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/option_list/option_list.tscn" id="5_odqpj"]
+[ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="7_07ieg"]
+[ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="7_aswfv"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_size.gd" id="8_vutft"]
+
+[sub_resource type="Resource" id="Resource_s88u4"]
+resource_name = "Fullscreen Mode"
+script = ExtResource("4_w15kf")
+size_setting = "[NONE]"
+current = false
+default = false
+name = "Fullscreen Mode"
+category = "Video"
+icon = ExtResource("3_eb0dy")
+desc = "Toggle Fullscreen mode."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_4va8s"]
+resource_name = "Window Size"
+script = ExtResource("8_vutft")
+sizes = Array[Vector2]([Vector2(1920, 1080), Vector2(1280, 720), Vector2(640, 480)])
+current = 1
+default = 1
+name = "Window Size"
+category = "Video"
+icon = ExtResource("7_07ieg")
+desc = "Change window size by setting its width and height to specific values."
+value_type = 2
+value_hint = 2
+value_hint_string = "1920 x 1080,1280 x 720,640 x 480"
+
+[node name="Video" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="FullScreen" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Full Screen"
+
+[node name="Checkbox" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_264a1")]
+layout_mode = 2
+setting = SubResource("Resource_s88u4")
+apply_on_change = true
+
+[node name="Size" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="OptionList" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_odqpj")]
+layout_mode = 2
+script = ExtResource("5_knvao")
+setting = SubResource("Resource_4va8s")
+apply_on_change = true
+
+[node name="Btn" parent="CenterContainer/VBoxContainer/OptionList" index="0"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1280 x 720"
+popup/item_1/id = 1
+popup/item_2/text = "640 x 480"
+popup/item_2/id = 2
+
+[node name="ExitButton" parent="." instance=ExtResource("7_aswfv")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431858
+anchor_top = 0.95216
+anchor_right = 0.568142
+anchor_bottom = 1.0
+offset_top = -30.0
+offset_right = 0.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[editable path="CenterContainer/VBoxContainer/Checkbox"]
+[editable path="CenterContainer/VBoxContainer/OptionList"]
