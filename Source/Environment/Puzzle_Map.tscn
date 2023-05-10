@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://b18ny50f7tguf"]
+
+[ext_resource type="Texture2D" uid="uid://bd4w6phlwictn" path="res://Assets/PNG/Wall_Plates_Tex.png" id="1_ardf1"]
+[ext_resource type="Texture2D" uid="uid://b4rbw3ai6dt3w" path="res://Assets/PNG/Wall_Plates_Nrm.png" id="2_0ijc2"]
+[ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="3_c3l41"]
+[ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="4_npebh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_po6ag"]
+albedo_texture = ExtResource("1_ardf1")
+normal_enabled = true
+normal_texture = ExtResource("2_0ijc2")
+uv1_triplanar = true
+
+[node name="Puzzle_Map" type="Node3D"]
+
+[node name="Lvl_01" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_po6ag")
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(20, 1, 20)
+
+[node name="Wall_E" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1.5, 0)
+size = Vector3(1, 5, 20)
+
+[node name="Wall_W" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1.5, 0)
+size = Vector3(1, 5, 20)
+
+[node name="Wall_N" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 9.5)
+size = Vector3(20, 5, 1)
+
+[node name="Wall_S" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -9.5)
+size = Vector3(20, 5, 1)
+
+[node name="Door_Entry_Cut" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+operation = 2
+size = Vector3(5, 6, 3)
+
+[node name="Door_Entry_Side_Cut" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 9.54113)
+operation = 2
+size = Vector3(9.01846, 6, 0.731119)
+
+[node name="Door_Exit_Cut" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -9.05532)
+operation = 2
+size = Vector3(5, 6, 3)
+
+[node name="Door_Exit_Side_Cut" type="CSGBox3D" parent="Lvl_01"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -9.51419)
+operation = 2
+size = Vector3(9.01846, 6, 0.731119)
+
+[node name="Hydra" parent="." instance=ExtResource("3_c3l41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12749, 0.762278, 1.48485)
+
+[node name="Door" parent="." instance=ExtResource("4_npebh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133276, 0, 9.53409)
+
+[node name="Door2" parent="." instance=ExtResource("4_npebh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133276, 0, -9.57657)
