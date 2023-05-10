@@ -1,0 +1,219 @@
+[gd_resource type="Resource" script_class="ggsPluginData" load_steps=29 format=3 uid="uid://dpk53al471l8m"]
+
+[ext_resource type="Script" path="res://addons/ggs/classes/resources/ggs_category.gd" id="1_e65b2"]
+[ext_resource type="Script" path="res://addons/ggs/classes/resources/ggs_plugin_data.gd" id="1_wabe0"]
+[ext_resource type="Texture2D" uid="uid://dbtn4d6130bdj" path="res://addons/ggs/assets/game_settings/audio_mute.svg" id="3_eqgoo"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/audio_mute.gd" id="4_njwii"]
+[ext_resource type="Texture2D" uid="uid://buotak2dk5n0x" path="res://addons/ggs/assets/game_settings/audio_volume.svg" id="5_iytbk"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/audio_volume.gd" id="6_el1uh"]
+[ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="7_xj0pp"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_fullscreen.gd" id="8_c2n3p"]
+[ext_resource type="Texture2D" uid="uid://dimhb46k7ud10" path="res://addons/ggs/assets/game_settings/display_scale.svg" id="9_ofduk"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_scale.gd" id="10_fj7gw"]
+[ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="11_8ev3b"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_size.gd" id="12_oi142"]
+[ext_resource type="Texture2D" uid="uid://c4vunn2rkqj83" path="res://addons/ggs/assets/game_settings/input_setting.svg" id="13_kk4xg"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/input.gd" id="14_c7v17"]
+
+[sub_resource type="Resource" id="Resource_3h2ga"]
+resource_name = "Audio Mute"
+script = ExtResource("4_njwii")
+bus_name = "Master"
+current = false
+default = false
+name = "Audio Mute"
+category = "Audio"
+icon = ExtResource("3_eqgoo")
+desc = "Toggle mute state of a specific audio bus."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_ql48i"]
+resource_name = "Master"
+script = ExtResource("6_el1uh")
+bus_name = "Master"
+current = 50.0
+default = 50.0
+name = "Master"
+category = "Audio"
+icon = ExtResource("5_iytbk")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_lr7dg"]
+resource_name = "Music"
+script = ExtResource("6_el1uh")
+bus_name = "Music"
+current = 80.0
+default = 80.0
+name = "Music"
+category = "Audio"
+icon = ExtResource("5_iytbk")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_i2cal"]
+resource_name = "SFX"
+script = ExtResource("6_el1uh")
+bus_name = "SFX"
+current = 80.0
+default = 80.0
+name = "SFX"
+category = "Audio"
+icon = ExtResource("5_iytbk")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_sna0p"]
+resource_name = "Audio"
+script = ExtResource("1_e65b2")
+name = "Audio"
+settings = {
+"Audio Mute": SubResource("Resource_3h2ga"),
+"Master": SubResource("Resource_ql48i"),
+"Music": SubResource("Resource_lr7dg"),
+"SFX": SubResource("Resource_i2cal")
+}
+item_order = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_3h2ga"), SubResource("Resource_ql48i"), SubResource("Resource_lr7dg"), SubResource("Resource_i2cal")])
+
+[sub_resource type="Resource" id="Resource_66mlt"]
+resource_name = "Fullscreen Mode"
+script = ExtResource("8_c2n3p")
+size_setting = "[NONE]"
+current = false
+default = false
+name = "Fullscreen Mode"
+category = "Video"
+icon = ExtResource("7_xj0pp")
+desc = "Toggle Fullscreen mode."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_4va8s"]
+resource_name = "Window Size"
+script = ExtResource("12_oi142")
+sizes = Array[Vector2]([Vector2(1920, 1080), Vector2(1280, 720), Vector2(640, 480)])
+current = 1
+default = 1
+name = "Window Size"
+category = "Video"
+icon = ExtResource("11_8ev3b")
+desc = "Change window size by setting its width and height to specific values."
+value_type = 2
+value_hint = 2
+value_hint_string = "1920 x 1080,1280 x 720,640 x 480"
+
+[sub_resource type="Resource" id="Resource_qtamw"]
+resource_name = "Video"
+script = ExtResource("1_e65b2")
+name = "Video"
+settings = {
+"Fullscreen Mode": SubResource("Resource_66mlt"),
+"Window Size": SubResource("Resource_4va8s")
+}
+item_order = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_66mlt"), SubResource("Resource_4va8s")])
+
+[sub_resource type="Resource" id="Resource_s0ehl"]
+resource_name = "Window Size"
+script = ExtResource("12_oi142")
+sizes = Array[Vector2]([])
+current = null
+default = null
+name = "Window Size"
+category = ""
+icon = ExtResource("11_8ev3b")
+desc = "Change window size by setting its width and height to specific values."
+value_type = 2
+value_hint = 2
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_1bvgx"]
+resource_name = "Fullscreen Mode"
+script = ExtResource("8_c2n3p")
+current = false
+default = false
+name = "Fullscreen Mode"
+category = ""
+icon = ExtResource("7_xj0pp")
+desc = "Toggle Fullscreen mode."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_1e0yu"]
+resource_name = "Audio Volume"
+script = ExtResource("6_el1uh")
+current = 80.0
+default = 80.0
+name = "Audio Volume"
+category = ""
+icon = ExtResource("5_iytbk")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_2y3nn"]
+resource_name = "Audio Mute"
+script = ExtResource("4_njwii")
+current = false
+default = false
+name = "Audio Mute"
+category = ""
+icon = ExtResource("3_eqgoo")
+desc = "Toggle mute state of a specific audio bus."
+value_type = 1
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_el6yh"]
+resource_name = "Window Scale"
+script = ExtResource("10_fj7gw")
+scales = Array[float]([])
+current = null
+default = null
+name = "Window Scale"
+category = ""
+icon = ExtResource("9_ofduk")
+desc = "Change window size by multiplying its width and height by a specific value."
+value_type = 2
+value_hint = 2
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_gh1xg"]
+resource_name = "Input Binding"
+script = ExtResource("14_c7v17")
+action = ""
+type = 0
+current = ""
+default = ""
+name = "Input Binding"
+category = ""
+icon = ExtResource("13_kk4xg")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[resource]
+script = ExtResource("1_wabe0")
+categories = {
+"Audio": SubResource("Resource_sna0p"),
+"Video": SubResource("Resource_qtamw")
+}
+category_order = Array[ExtResource("1_e65b2")]([SubResource("Resource_sna0p"), SubResource("Resource_qtamw")])
+recent_settings = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_s0ehl"), SubResource("Resource_1bvgx"), SubResource("Resource_1e0yu"), SubResource("Resource_2y3nn")])
+setting_list_cache = Array[Resource("res://addons/ggs/classes/resources/ggs_setting.gd")]([SubResource("Resource_2y3nn"), SubResource("Resource_1e0yu"), SubResource("Resource_1bvgx"), SubResource("Resource_el6yh"), SubResource("Resource_s0ehl"), SubResource("Resource_gh1xg")])
+dir_settings = "res://Source/UI/game_settings/settings"
+dir_components = "res://Source/UI/game_settings/components"
+dir_save_file = "user://settings.cfg"
+split_offset_0 = -225
+split_offset_1 = 420
