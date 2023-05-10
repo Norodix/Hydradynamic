@@ -25,6 +25,10 @@ func _physics_process(delta):
 	is_pushed = not bodies.is_empty()
 
 
+func is_powered() -> bool:
+	return is_pushed
+
+
 func button_push():
 	$AnimationPlayer.play("push")
 	if shots != 0:

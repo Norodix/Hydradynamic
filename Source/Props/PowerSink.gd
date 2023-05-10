@@ -1,6 +1,6 @@
 extends Area3D
 
-var timeout = 0.5
+@onready var timeout = 1.0 / float(Engine.physics_ticks_per_second) * 2
 var time_elapsed = 0
 @onready var plug : MeshInstance3D = $Electric_Socket/Plug
 
