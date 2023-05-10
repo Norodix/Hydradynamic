@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name HydraBody
 
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
@@ -89,6 +90,16 @@ func remove_head(node : RigidBody3D):
 	node.linear_damp = 1
 	node.is_cut = true
 	node.self_destruct()
+
+
+func purge_heads():
+	print("PURGEHEADS")
+	var index : Array = range(1, controllable_list.size())
+	index.reverse()
+	for i in index:
+		var head = controllable_list[i]
+		if head is HydraHead:
+			remove_head(head)
 
 
 func _process(delta):
