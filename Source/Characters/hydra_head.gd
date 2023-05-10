@@ -90,3 +90,10 @@ func power_sinks() -> bool:
 	for sink in sinks:
 		sink.power()
 	return true
+
+
+func _exit_tree(): # When someone calls queue_free() here
+	# Material error workaround....
+	# Related to https://github.com/godotengine/godot/issues/67144
+	$Head_Armature/Skeleton3D/Head.set("surface_material_override/0", null)
+	$Head_Armature/Skeleton3D/Eyes.set("surface_material_override/0", null)
