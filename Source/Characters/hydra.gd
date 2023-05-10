@@ -13,6 +13,7 @@ const head_force_multiplier = 20
 const head_damping = 5
 
 const head_max_distance = 3
+const head_reset_distance = 5
 const aa_basis = true # Axis alligned basis
 const max_head_count = 16
 
@@ -45,9 +46,9 @@ func add_head():
 			continue
 		var hydra_head : HydraHead = head
 		# fibonacci
-		var ang = 1.618 * i * 2 * PI
-		var r0 = 0.3
-		var r = r0 * sqrt(i)
+		var ang = 1.618 * (i-1) * 2 * PI
+		var r0 = 0.4
+		var r = r0 * sqrt(i-1)
 		hydra_head.rest_position = Vector3(r * cos(ang), r * sin(ang), 0.0).rotated(Vector3(1,0,0), deg_to_rad(-30))
 
 
@@ -121,9 +122,13 @@ func _physics_process(delta):
 	for head in controllable_list:
 		if not head is HydraHead:
 			continue
+		var h : HydraHead = head
 		var d =  neck_root.global_position - head.global_position
 		if d.length() > head_max_distance:
 			push_head(head, d.normalized() * 2)
+		if d.length() > head_reset_distance:
+			head.global_position = neck_root.global_position + Vector3.UP * 1.5 \
+								+ global_transform.basis * head.rest_position
 			#head.apply_central_force(d.normalized() * 30)
 		# Add head rotation
 		var start = global_position + head.neck_root_offset
