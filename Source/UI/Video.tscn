@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="7_aswfv"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_size.gd" id="8_vutft"]
 
-[sub_resource type="Resource" id="Resource_s88u4"]
+[sub_resource type="Resource" id="Resource_66mlt"]
 resource_name = "Fullscreen Mode"
 script = ExtResource("4_w15kf")
 size_setting = "[NONE]"
@@ -53,29 +53,37 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="FullScreen" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="FullScreen" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Full Screen"
 
-[node name="Checkbox" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_264a1")]
+[node name="Checkbox" parent="CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_264a1")]
 layout_mode = 2
-setting = SubResource("Resource_s88u4")
+setting = SubResource("Resource_66mlt")
 apply_on_change = true
 
-[node name="Size" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Size" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Resolution"
 
-[node name="OptionList" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_odqpj")]
+[node name="OptionList" parent="CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("5_odqpj")]
 layout_mode = 2
 setting = SubResource("Resource_4va8s")
 apply_on_change = true
 
-[node name="Btn" parent="CenterContainer/VBoxContainer/OptionList" index="0"]
+[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer2/OptionList" index="0"]
 item_count = 3
 popup/item_0/text = "1920 x 1080"
 popup/item_0/id = 0
@@ -98,5 +106,5 @@ grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[editable path="CenterContainer/VBoxContainer/Checkbox"]
-[editable path="CenterContainer/VBoxContainer/OptionList"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer/Checkbox"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer2/OptionList"]

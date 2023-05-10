@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkbf0mc6bl2e1"]
+[gd_scene load_steps=12 format=3 uid="uid://dkbf0mc6bl2e1"]
 
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/checkbox/checkbox.tscn" id="1_f6lit"]
 [ext_resource type="Texture2D" uid="uid://dbtn4d6130bdj" path="res://addons/ggs/assets/game_settings/audio_mute.svg" id="3_0jr3t"]
@@ -22,7 +22,21 @@ value_type = 1
 value_hint = 0
 value_hint_string = ""
 
-[sub_resource type="Resource" id="Resource_ibg3j"]
+[sub_resource type="Resource" id="Resource_ql48i"]
+resource_name = "Master"
+script = ExtResource("8_fy1lv")
+bus_name = "Master"
+current = 50.0
+default = 50.0
+name = "Master"
+category = "Audio"
+icon = ExtResource("7_bcmw2")
+desc = "Change volume of a specific audio bus."
+value_type = 3
+value_hint = 1
+value_hint_string = "0,100"
+
+[sub_resource type="Resource" id="Resource_lr7dg"]
 resource_name = "Music"
 script = ExtResource("8_fy1lv")
 bus_name = "Music"
@@ -67,45 +81,73 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Mute"
 
-[node name="Checkbox" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_f6lit")]
+[node name="Checkbox" parent="CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_f6lit")]
 layout_mode = 2
 setting = SubResource("Resource_bnkic")
 apply_on_change = true
 
-[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Master"
 
-[node name="Slider" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_fnldc")]
+[node name="Slider" parent="CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("5_fnldc")]
 layout_mode = 2
-setting = SubResource("Resource_ibg3j")
+setting = SubResource("Resource_ql48i")
 apply_on_change = true
 
-[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Slider" parent="CenterContainer/VBoxContainer/HBoxContainer2/Slider" index="0"]
+custom_minimum_size = Vector2(200, 0)
+size_flags_horizontal = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Music"
 
-[node name="Slider2" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_fnldc")]
+[node name="Slider2" parent="CenterContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("5_fnldc")]
 layout_mode = 2
-setting = SubResource("Resource_ibg3j")
+setting = SubResource("Resource_lr7dg")
 apply_on_change = true
 
-[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Slider" parent="CenterContainer/VBoxContainer/HBoxContainer3/Slider2" index="0"]
+custom_minimum_size = Vector2(200, 0)
+size_flags_horizontal = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Sound effects"
 
-[node name="Slider3" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_fnldc")]
+[node name="Slider3" parent="CenterContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("5_fnldc")]
 layout_mode = 2
 setting = SubResource("Resource_gieag")
 apply_on_change = true
+
+[node name="Slider" parent="CenterContainer/VBoxContainer/HBoxContainer4/Slider3" index="0"]
+custom_minimum_size = Vector2(200, 0)
+size_flags_horizontal = 1
 
 [node name="ExitButton" parent="." instance=ExtResource("9_xxxa4")]
 layout_mode = 1
@@ -121,7 +163,7 @@ grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[editable path="CenterContainer/VBoxContainer/Checkbox"]
-[editable path="CenterContainer/VBoxContainer/Slider"]
-[editable path="CenterContainer/VBoxContainer/Slider2"]
-[editable path="CenterContainer/VBoxContainer/Slider3"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer/Checkbox"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer2/Slider"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer3/Slider2"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer4/Slider3"]
