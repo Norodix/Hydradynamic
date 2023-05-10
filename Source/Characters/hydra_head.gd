@@ -23,6 +23,7 @@ func _process(delta):
 #				X = Vector3(-Y[1]-Y[2], Y[0], Y[0])
 #			$Neck_Target.global_transform.basis = Basis(X, Y, X.cross(Y)).orthonormalized()
 	else: # is_cut
+		$IKFixerUpper.process_mode = Node.PROCESS_MODE_DISABLED
 		pass
 		
 #		# Shorten and widen neck
