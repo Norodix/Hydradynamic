@@ -1,5 +1,5 @@
 extends StaticBody3D
-
+class_name PhysicalButton
 
 signal push
 signal pull

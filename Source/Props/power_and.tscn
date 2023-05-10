@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dha5h2njv88ri"]
+
+[ext_resource type="Script" path="res://Source/Props/power_and.gd" id="1_4ju2f"]
+
+[node name="PowerAND" type="Node3D"]
+script = ExtResource("1_4ju2f")
