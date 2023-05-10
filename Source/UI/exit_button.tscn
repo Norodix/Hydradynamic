@@ -12,6 +12,8 @@ script/source = "extends Button
 
 
 func _on_pressed():
+	get_tree().paused = false
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file(\"res://Source/UI/MainMenu.tscn\")
 	pass # Replace with function body.
 "

@@ -17,6 +17,7 @@ func _on_video_pressed():
 
 
 func _on_input_pressed():
+	get_tree().change_scene_to_file("res://Source/UI/Input.tscn")
 	pass # Replace with function body.
 
 

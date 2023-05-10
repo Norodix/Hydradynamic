@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://blalleqw2gwf3"]
+[gd_scene load_steps=14 format=3 uid="uid://blalleqw2gwf3"]
 
 [ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="1_5ydhy"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/input_btn/input_btn.tscn" id="1_6feb4"]
-[ext_resource type="Script" path="res://Source/UI/game_settings/components/input_btn/input_btn.gd" id="2_pg0fw"]
 [ext_resource type="Texture2D" uid="uid://c4vunn2rkqj83" path="res://addons/ggs/assets/game_settings/input_setting.svg" id="3_pp7j4"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/input.gd" id="4_2dri1"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/_misc_components/input_confirm_window/input_confirm_window.tscn" id="6_dj5r1"]
@@ -159,14 +158,9 @@ text = "Forward"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_7y6pa")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer/InputBtn" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -179,14 +173,9 @@ text = "Backward"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_jvtvv")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer2/InputBtn2" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -199,14 +188,9 @@ text = "Left"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_sn8kv")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer3/InputBtn3" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -219,14 +203,9 @@ text = "Right"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_lnsic")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer4/InputBtn4" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -239,14 +218,9 @@ text = "Up"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_wblhb")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer5/InputBtn5" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -259,14 +233,9 @@ text = "Down"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_3tr7p")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer6/InputBtn6" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -279,14 +248,9 @@ text = "Control Next"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_y0hug")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer7/InputBtn7" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -299,14 +263,9 @@ text = "Move body only"
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("2_pg0fw")
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_gf4x3")
 apply_on_change = true
-
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer8/InputBtn8" index="0"]
-layout_mode = 2
-icon_alignment = 1
 
 [node name="ExitButton" parent="." instance=ExtResource("1_5ydhy")]
 layout_mode = 1

@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2gbyq0br0e8c"]
+[gd_scene load_steps=10 format=3 uid="uid://d2gbyq0br0e8c"]
 
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/checkbox/checkbox.tscn" id="1_264a1"]
 [ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="3_eb0dy"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_fullscreen.gd" id="4_w15kf"]
-[ext_resource type="Script" path="res://Source/UI/game_settings/components/option_list/option_list.gd" id="5_knvao"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/option_list/option_list.tscn" id="5_odqpj"]
 [ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="7_07ieg"]
 [ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="7_aswfv"]
@@ -73,12 +72,10 @@ text = "Resolution"
 
 [node name="OptionList" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_odqpj")]
 layout_mode = 2
-script = ExtResource("5_knvao")
 setting = SubResource("Resource_4va8s")
 apply_on_change = true
 
 [node name="Btn" parent="CenterContainer/VBoxContainer/OptionList" index="0"]
-layout_mode = 2
 item_count = 3
 popup/item_0/text = "1920 x 1080"
 popup/item_0/id = 0
