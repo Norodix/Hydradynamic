@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2gbyq0br0e8c"]
+[gd_scene load_steps=17 format=3 uid="uid://d2gbyq0br0e8c"]
 
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/checkbox/checkbox.tscn" id="1_264a1"]
 [ext_resource type="Texture2D" uid="uid://7rnrnfes2clm" path="res://addons/ggs/assets/game_settings/display_fullscreen.svg" id="3_eb0dy"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_fullscreen.gd" id="4_w15kf"]
-[ext_resource type="Script" path="res://Source/UI/game_settings/components/_shared_scripts/binary_selection.gd" id="4_wphe6"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/option_list/option_list.tscn" id="5_odqpj"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_vsync.gd" id="5_uefa7"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_fxaa.gd" id="6_nku2d"]
 [ext_resource type="Texture2D" uid="uid://dlvhau28nu82n" path="res://addons/ggs/assets/game_settings/display_size.svg" id="7_07ieg"]
 [ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="7_aswfv"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/components/option_list/option_list.gd" id="7_fak1f"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_size.gd" id="8_vutft"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/settings/display_msaa.gd" id="9_q5tw7"]
 
 [sub_resource type="Resource" id="Resource_66mlt"]
 resource_name = "Fullscreen Mode"
@@ -51,6 +52,19 @@ value_type = 1
 value_hint = 0
 value_hint_string = ""
 
+[sub_resource type="Resource" id="Resource_s7fac"]
+resource_name = "MSAA"
+script = ExtResource("9_q5tw7")
+current = 1
+default = 1
+name = "MSAA"
+category = "Video"
+icon = ExtResource("7_07ieg")
+desc = "Apply different levels of Multisample Anti-aliasing"
+value_type = 2
+value_hint = 2
+value_hint_string = "0,1,2,3"
+
 [sub_resource type="Resource" id="Resource_4va8s"]
 resource_name = "Window Size"
 script = ExtResource("8_vutft")
@@ -81,72 +95,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="GridContainer" parent="CenterContainer"]
 custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
-alignment = 1
+columns = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="FullScreen" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="FullScreen" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Full Screen"
 
-[node name="Checkbox" parent="CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_264a1")]
+[node name="Checkbox" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_264a1")]
 layout_mode = 2
+size_flags_horizontal = 8
 setting = SubResource("Resource_66mlt")
 apply_on_change = true
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Vsync" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+[node name="Vsync" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Vsync"
 
-[node name="Checkbox" parent="CenterContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("1_264a1")]
+[node name="Checkbox2" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_264a1")]
 layout_mode = 2
-script = ExtResource("4_wphe6")
+size_flags_horizontal = 8
 setting = SubResource("Resource_gg67y")
 apply_on_change = true
 
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer3/Checkbox" index="0"]
-layout_mode = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="FXAA" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer4"]
+[node name="FXAA" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Screen Space AA"
 
-[node name="Checkbox" parent="CenterContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("1_264a1")]
+[node name="Checkbox3" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_264a1")]
 layout_mode = 2
-script = ExtResource("4_wphe6")
+size_flags_horizontal = 8
 setting = SubResource("Resource_75i2h")
 apply_on_change = true
 
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer4/Checkbox" index="0"]
+[node name="MSAA" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+text = "Multisample AA"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="OptionList" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_odqpj")]
 layout_mode = 2
+script = ExtResource("7_fak1f")
+setting = SubResource("Resource_s7fac")
+apply_on_change = true
 
-[node name="Size" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Btn" parent="CenterContainer/VBoxContainer/OptionList" index="0"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "X2"
+popup/item_1/id = 1
+popup/item_2/text = "X4"
+popup/item_2/id = 2
+popup/item_3/text = "X8"
+popup/item_3/id = 3
+
+[node name="Size" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Resolution"
 
-[node name="OptionList" parent="CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("5_odqpj")]
+[node name="OptionList2" parent="CenterContainer/VBoxContainer" instance=ExtResource("5_odqpj")]
 layout_mode = 2
 setting = SubResource("Resource_4va8s")
 apply_on_change = true
 
-[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer2/OptionList" index="0"]
+[node name="Btn" parent="CenterContainer/VBoxContainer/OptionList2" index="0"]
 item_count = 3
 popup/item_0/text = "1920 x 1080"
 popup/item_0/id = 0
@@ -169,7 +189,8 @@ grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[editable path="CenterContainer/VBoxContainer/HBoxContainer/Checkbox"]
-[editable path="CenterContainer/VBoxContainer/HBoxContainer3/Checkbox"]
-[editable path="CenterContainer/VBoxContainer/HBoxContainer4/Checkbox"]
-[editable path="CenterContainer/VBoxContainer/HBoxContainer2/OptionList"]
+[editable path="CenterContainer/VBoxContainer/Checkbox"]
+[editable path="CenterContainer/VBoxContainer/Checkbox2"]
+[editable path="CenterContainer/VBoxContainer/Checkbox3"]
+[editable path="CenterContainer/VBoxContainer/OptionList"]
+[editable path="CenterContainer/VBoxContainer/OptionList2"]

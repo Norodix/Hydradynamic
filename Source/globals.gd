@@ -13,3 +13,7 @@ enum layers {
 	power_source = 6,
 	power_sink = 7,
 }
+
+## Settings
+var fxaa_enabled : bool = false
+var msaa_level : int = 0
