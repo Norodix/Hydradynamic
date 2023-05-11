@@ -75,6 +75,8 @@ func check_head(head : RigidBody3D):
 	var ray = ss.intersect_ray(query)
 	
 	if not ray.is_empty():
+		if ray.collider.has_method("hit"):
+			ray.collider.hit()
 		remove_head(head)
 		await get_tree().create_timer(1.5).timeout
 		add_head()

@@ -1,4 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://pvldvobhpqbo"]
+[gd_scene load_steps=17 format=3 uid="uid://pvldvobhpqbo"]
+
+[ext_resource type="Script" path="res://Source/Props/Saw.gd" id="1_sfhw1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hupt"]
 
@@ -106,6 +108,58 @@ backlight_enabled = true
 backlight = Color(0.490196, 0.490196, 0.490196, 1)
 grow_amount = 0.1
 
+[sub_resource type="GDScript" id="GDScript_f8t3l"]
+script/source = "extends Area3D
+
+func hit():
+	$\"../..\".hit()
+"
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s51jm"]
+height = 0.0916346
+radius = 0.729525
+
+[sub_resource type="Animation" id="Animation_aylsb"]
+resource_name = "Break"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Saw_Blade")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Saw_Blade:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.855846, 0), Vector3(0, 0.4, 0)]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Saw_Blade")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array()
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Saw_Blade:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 2.0944)]
+}
+
 [sub_resource type="Animation" id="Animation_lsojd"]
 length = 0.001
 tracks/0/type = "value"
@@ -150,47 +204,6 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 3.14159), Vector3(0, 0, 4.71239), Vector3(0, 0, 6.28319)]
 }
 
-[sub_resource type="Animation" id="Animation_aylsb"]
-resource_name = "Break"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Saw_Blade")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array()
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Saw_Blade:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0.855846, 0), Vector3(0, 0.4, 0)]
-}
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Saw_Blade")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array()
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Saw_Blade:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708), Vector3(0, 0, 2.0944)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pk4hu"]
 _data = {
 "Break": SubResource("Animation_aylsb"),
@@ -199,6 +212,7 @@ _data = {
 }
 
 [node name="Saw" type="Node3D"]
+script = ExtResource("1_sfhw1")
 
 [node name="Frame" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_hfjlg")
@@ -210,6 +224,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855846, 0)
 mesh = SubResource("ArrayMesh_nhejg")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7ge44")
+
+[node name="Area3D" type="Area3D" parent="Saw_Blade"]
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = SubResource("GDScript_f8t3l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Saw_Blade/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_s51jm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
