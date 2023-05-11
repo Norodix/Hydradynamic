@@ -15,7 +15,7 @@ func cut():
 		await get_tree().create_timer(1).timeout
 
 
-func reset():
+func reset_level():
 	anim_player.play_backwards("Cut")
 	await anim_player.animation_finished
 	can_cut = true

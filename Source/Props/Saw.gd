@@ -17,7 +17,7 @@ func deactivate():
 	anim.pause()
 
 
-func reset():
+func reset_level():
 	cutter.disabled = true
 	broken = false
 
