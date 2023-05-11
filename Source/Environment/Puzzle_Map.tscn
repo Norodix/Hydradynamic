@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b18ny50f7tguf"]
+[gd_scene load_steps=23 format=3 uid="uid://b18ny50f7tguf"]
 
 [ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="3_c3l41"]
 [ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="3_tgav5"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cghka68co1hm0" path="res://Source/Props/Electric_Socket.tscn" id="10_nmmy4"]
 [ext_resource type="PackedScene" uid="uid://dse13y1xpwiup" path="res://Source/Props/Module_Turn.tscn" id="12_7v8ei"]
 [ext_resource type="PackedScene" uid="uid://6kfe8edwhdku" path="res://Source/Props/power_sink.tscn" id="12_8ndoq"]
+[ext_resource type="PackedScene" uid="uid://dgo6k7v4ntg6v" path="res://Source/Props/head_remover.tscn" id="14_ec260"]
 [ext_resource type="PackedScene" uid="uid://pvldvobhpqbo" path="res://Source/Props/Saw.tscn" id="17_iu0e7"]
 [ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="18_n0e8l"]
 
@@ -32,6 +33,9 @@ script/source = "extends Label
 func _process(delta):
 	self.text = str(Engine.get_frames_per_second())
 "
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m3ye1"]
+size = Vector3(3.25812, 0.935074, 1.0404)
 
 [node name="Puzzle_Map" type="Node3D"]
 
@@ -84,26 +88,26 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.328
 [node name="Guillotine2" parent="LVL_01" instance=ExtResource("5_ouigo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.84638, 0, 8.9911)
 
-[node name="PowerSource" parent="LVL_01/Guillotine2" instance=ExtResource("10_loues")]
+[node name="PowerSink" parent="LVL_01/Guillotine2" instance=ExtResource("12_8ndoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112957, 1.82207, -1.91489)
 
-[node name="Cable_1m4" parent="LVL_01/Guillotine2/PowerSource" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.920593, 2.82661, 0.75247)
+[node name="Cable_1m4" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.920593, 2.82661, 0.75247)
 
-[node name="Cable_1m5" parent="LVL_01/Guillotine2/PowerSource" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.814816, 2.82661, -0.28392)
+[node name="Cable_1m5" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.814816, 2.82661, -0.28392)
 
-[node name="Cable_1m6" parent="LVL_01/Guillotine2/PowerSource" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.0916271, 1.90376, -0.31833)
+[node name="Cable_1m6" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0916271, 1.90376, -0.31833)
 
-[node name="Cable_1m7" parent="LVL_01/Guillotine2/PowerSource" instance=ExtResource("8_4kjhi")]
+[node name="Cable_1m7" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0.919603, 1.92635, 1.65694)
 
-[node name="PowerSink" parent="LVL_01/Guillotine2" instance=ExtResource("12_8ndoq")]
+[node name="PowerSource2" parent="LVL_01/Guillotine2" instance=ExtResource("10_loues")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.99335, 1.82207, 2.14637)
 
-[node name="Cable_1m" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37113e-08, -1, 0, 1, -4.37114e-08, 0, -3.55271e-15, 0, 1, 0.0639362, -0.913728, -0.227066)
+[node name="Cable_1m" parent="LVL_01/Guillotine2/PowerSource2" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(-4.37113e-08, -1, 0, 1, -4.37114e-08, 0, -3.55271e-15, 0, 1, 0.0639362, -0.913728, -0.227068)
 
 [node name="Pipe" parent="LVL_01" instance=ExtResource("8_1801s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75665, 2.02001, 2.03279)
@@ -122,6 +126,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75613, 2.02011, 8.02201)
 
 [node name="Fire_Emitter" parent="LVL_01/Pipe4" instance=ExtResource("10_eu0wm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00492573, 0.228462, -1.07581)
+
+[node name="HeadRemover" parent="LVL_01/Pipe4" instance=ExtResource("14_ec260")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.951925)
+monitoring = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LVL_01/Pipe4/HeadRemover"]
+transform = Transform3D(0.980656, 0.195741, 0, -0.195741, 0.980656, 0, 0, 0, 1, -1.87599, 0.651174, -0.10881)
+shape = SubResource("BoxShape3D_m3ye1")
 
 [node name="Module_Airlock_01" parent="LVL_01" instance=ExtResource("3_tgav5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -14.5)
