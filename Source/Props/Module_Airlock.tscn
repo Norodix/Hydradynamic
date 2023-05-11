@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bet3ci57ywk3k"]
+[gd_scene load_steps=14 format=3 uid="uid://bet3ci57ywk3k"]
 
 [ext_resource type="Texture2D" uid="uid://bd4w6phlwictn" path="res://Assets/PNG/Wall_Plates_Tex.png" id="1_o3p8j"]
 [ext_resource type="Texture2D" uid="uid://b4rbw3ai6dt3w" path="res://Assets/PNG/Wall_Plates_Nrm.png" id="2_wudx6"]
 [ext_resource type="Texture2D" uid="uid://dg7aqugjfrico" path="res://Assets/PNG/Floor_Tex.png" id="3_rfd4p"]
 [ext_resource type="Texture2D" uid="uid://jfx6w5weyo4m" path="res://Assets/PNG/Floor_Nrm.png" id="4_c13lk"]
+[ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="5_hr1tm"]
+[ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="6_4yu5s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwvwl"]
 
@@ -83,10 +85,21 @@ data = PackedVector3Array(-2.5, 4, -1.7, -4.5, 0, -1.7, -4.5, 4, -1.7, -2.5, 4, 
 [node name="Module_Airlock" type="StaticBody3D"]
 
 [node name="Module_Airlock2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 mesh = SubResource("ArrayMesh_rjt3o")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_27h73")
 surface_material_override/1 = SubResource("StandardMaterial3D_ed7o8")
 
 [node name="Module_Airlock_Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 shape = SubResource("ConcavePolygonShape3D_2krjh")
+
+[node name="Door_Entry" parent="." instance=ExtResource("5_hr1tm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.15)
+
+[node name="Door_Exit" parent="." instance=ExtResource("5_hr1tm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.15)
+
+[node name="Wall_Light" parent="." instance=ExtResource("6_4yu5s")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.8, 0)

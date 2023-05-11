@@ -1,8 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://b18ny50f7tguf"]
+[gd_scene load_steps=31 format=3 uid="uid://b18ny50f7tguf"]
 
 [ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="3_c3l41"]
 [ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="3_tgav5"]
-[ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="4_npebh"]
 [ext_resource type="PackedScene" uid="uid://dqr6tg8ksngk3" path="res://Source/Props/Module_Straight.tscn" id="4_wpv71"]
 [ext_resource type="PackedScene" uid="uid://bni7pue2tng41" path="res://Source/Props/Module_LVL_01.tscn" id="5_5kx62"]
 [ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="5_ouigo"]
@@ -46,7 +45,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pbg1e"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_seiv5"]
 resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
@@ -64,7 +63,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v3glb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_numb0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_cabf8"]
 resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
@@ -116,7 +115,7 @@ backlight_enabled = true
 backlight = Color(0.490196, 0.490196, 0.490196, 1)
 grow_amount = 0.1
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4kc5k"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_s3rsu"]
 resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
@@ -134,7 +133,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v3glb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dv1qs"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1tt4g"]
 resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
@@ -152,7 +151,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v3glb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2dw35"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e16bn"]
 resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
@@ -170,7 +169,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v3glb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j28qn"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_aq58y"]
 resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
@@ -188,7 +187,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v3glb")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_xjmy8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fucgl"]
 resource_local_to_scene = true
 resource_name = "Cable_1m_Cube"
 _surfaces = [{
@@ -250,11 +249,11 @@ transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114
 
 [node name="Cable_1m3" parent="LVL_01/Guillotine/Button" instance=ExtResource("8_4kjhi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70263, -0.347127, 0)
-mesh = SubResource("ArrayMesh_pbg1e")
+mesh = SubResource("ArrayMesh_seiv5")
 
 [node name="Cable_1m" parent="LVL_01/Guillotine/Button" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.32898, 0.580736, 0)
-mesh = SubResource("ArrayMesh_numb0")
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.32898, 0.580736, 0)
+mesh = SubResource("ArrayMesh_cabf8")
 
 [node name="Guillotine2" parent="LVL_01" instance=ExtResource("5_ouigo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.84638, 0, 8.9911)
@@ -262,33 +261,33 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.846
 [node name="Electric_Socket" parent="LVL_01/Guillotine2" instance=ExtResource("10_nmmy4")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.112957, 1.82207, -1.91489)
 
+[node name="Cable_1m4" parent="LVL_01/Guillotine2/Electric_Socket" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.920593, 2.82661, 0.75247)
+mesh = SubResource("ArrayMesh_s3rsu")
+skeleton = NodePath("../../../..")
+
+[node name="Cable_1m5" parent="LVL_01/Guillotine2/Electric_Socket" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.814816, 2.82661, -0.28392)
+mesh = SubResource("ArrayMesh_1tt4g")
+skeleton = NodePath("../../../..")
+
+[node name="Cable_1m6" parent="LVL_01/Guillotine2/Electric_Socket" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.0916271, 1.90376, -0.31833)
+mesh = SubResource("ArrayMesh_e16bn")
+skeleton = NodePath("../../../..")
+
+[node name="Cable_1m7" parent="LVL_01/Guillotine2/Electric_Socket" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0.919603, 1.92635, 1.65694)
+mesh = SubResource("ArrayMesh_aq58y")
+skeleton = NodePath("../../../..")
+
 [node name="Electric_Socket2" parent="LVL_01/Guillotine2" instance=ExtResource("10_nmmy4")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.99335, 1.82207, 2.14637)
 
-[node name="Cable_1m" parent="LVL_01/Guillotine2" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-3.09086e-08, -0.707107, -0.707107, 1, -4.37114e-08, 0, -3.09086e-08, -0.707107, 0.707107, 3.19912, 0.908342, 2.03102)
-mesh = SubResource("ArrayMesh_4kc5k")
-skeleton = NodePath("../../..")
-
-[node name="Cable_1m4" parent="LVL_01/Guillotine2" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.03355, 4.64868, -1.16242)
-mesh = SubResource("ArrayMesh_dv1qs")
-skeleton = NodePath("../../..")
-
-[node name="Cable_1m5" parent="LVL_01/Guillotine2" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.927773, 4.64868, -2.19881)
-mesh = SubResource("ArrayMesh_2dw35")
-skeleton = NodePath("../../..")
-
-[node name="Cable_1m6" parent="LVL_01/Guillotine2" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0.0213299, 3.72583, -2.23322)
-mesh = SubResource("ArrayMesh_j28qn")
-skeleton = NodePath("../../..")
-
-[node name="Cable_1m7" parent="LVL_01/Guillotine2" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 1.03256, 3.74842, -0.257954)
-mesh = SubResource("ArrayMesh_xjmy8")
-skeleton = NodePath("../../..")
+[node name="Cable_1m" parent="LVL_01/Guillotine2/Electric_Socket2" instance=ExtResource("8_4kjhi")]
+transform = Transform3D(-4.37113e-08, -1, 0, 1, -4.37114e-08, 0, -3.55271e-15, 0, 1, 0.0639362, -0.913728, -0.227065)
+mesh = SubResource("ArrayMesh_fucgl")
+skeleton = NodePath("../../../..")
 
 [node name="Pipe" parent="LVL_01" instance=ExtResource("8_1801s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75665, 2.02001, 2.03279)
@@ -309,31 +308,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75613, 2.02011, 8.02201)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00492573, 0.228462, -1.07581)
 
 [node name="Module_Airlock_01" parent="LVL_01" instance=ExtResource("3_tgav5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-
-[node name="Door" parent="LVL_01/Module_Airlock_01" instance=ExtResource("4_npebh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133276, 0, -1.35135)
-
-[node name="Door2" parent="LVL_01/Module_Airlock_01" instance=ExtResource("4_npebh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133276, 0, -7.65134)
-
-[node name="Wall_Light3" parent="LVL_01/Module_Airlock_01" instance=ExtResource("7_v8y0w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.32975, 3.94418, -4.47514)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -14.5)
 
 [node name="LVL_02" parent="." instance=ExtResource("12_7v8ei")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 43)
 
 [node name="Module_Airlock_02" parent="LVL_02" instance=ExtResource("3_tgav5")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -8.74228e-07, 0, 10)
-
-[node name="Door3" parent="LVL_02/Module_Airlock_02" instance=ExtResource("4_npebh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133276, 0, -1.35135)
-
-[node name="Door4" parent="LVL_02/Module_Airlock_02" instance=ExtResource("4_npebh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133276, 0, -7.65134)
-
-[node name="Wall_Light4" parent="LVL_02/Module_Airlock_02" instance=ExtResource("7_v8y0w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.32975, 3.94418, -4.38803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.5)
 
 [node name="Guillotine" parent="." instance=ExtResource("5_ouigo")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.17206, 0, 34.9841)
@@ -349,3 +330,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11336, 2.27891, 33)
 
 [node name="Electric_Socket2" parent="." instance=ExtResource("10_nmmy4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 2.00811, 36.6896)
+
+[connection signal="push" from="LVL_01/Guillotine/Button" to="LVL_01/Guillotine" method="cut"]
