@@ -36,9 +36,8 @@ func _process(delta):
 	cast_query.motion = to - from
 	
 	var safe_portion = ss.cast_motion(cast_query)
-	print(\"Safe portion: \", safe_portion)
 	var target_position : Vector3 = lerp(camera_target.global_position, body.global_position, safe_portion[0])
-	global_position = lerp(self.global_position, target_position, 0.1)
+	global_position = lerp(self.global_position, target_position, 1-pow(1-0.1, delta/0.016))
 	var lerp_d = target_position.distance_to(global_position)
 	if lerp_d > cam_near_clip:
 		near = lerp_d

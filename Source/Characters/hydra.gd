@@ -7,8 +7,9 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var cam = $CameraPivot/CameraRod/Camera3D
+@onready var cam_pivot = $CameraPivot
 
-@onready var controllable_list = [self]
+@onready var controllable_list : Array[Node3D] = [self]
 var control_index = 0
 const head_force_multiplier = 20
 const head_damping = 5
@@ -106,7 +107,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("control_next"):
 		control_index = (control_index + 1) % controllable_list.size()
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.6, 0)
-	$CameraPivot.global_position = self.global_position
+	#cam_pivot.global_position = self.global_position
+	cam_pivot.global_position = lerp(cam_pivot.global_position, \
+									controllable_list[control_index].global_position, \
+									1.0 - pow(1.0 - 0.05, delta/0.016))
 
 
 func _unhandled_key_input(event):
