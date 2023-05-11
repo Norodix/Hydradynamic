@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bet3ci57ywk3k"]
+[gd_scene load_steps=19 format=3 uid="uid://bet3ci57ywk3k"]
 
 [ext_resource type="Texture2D" uid="uid://bd4w6phlwictn" path="res://Assets/PNG/Wall_Plates_Tex.png" id="1_o3p8j"]
+[ext_resource type="Script" path="res://Source/Props/Module_Airlock.gd" id="1_qe8mo"]
 [ext_resource type="Texture2D" uid="uid://b4rbw3ai6dt3w" path="res://Assets/PNG/Wall_Plates_Nrm.png" id="2_wudx6"]
 [ext_resource type="Texture2D" uid="uid://dg7aqugjfrico" path="res://Assets/PNG/Floor_Tex.png" id="3_rfd4p"]
 [ext_resource type="Texture2D" uid="uid://jfx6w5weyo4m" path="res://Assets/PNG/Floor_Nrm.png" id="4_c13lk"]
 [ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="5_hr1tm"]
 [ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="6_4yu5s"]
+[ext_resource type="PackedScene" uid="uid://dgo6k7v4ntg6v" path="res://Source/Props/head_remover.tscn" id="8_ld3tp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwvwl"]
 
@@ -82,7 +84,17 @@ uv1_scale = Vector3(10, 10, 10)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2krjh"]
 data = PackedVector3Array(-2.5, 4, -1.7, -4.5, 0, -1.7, -4.5, 4, -1.7, -2.5, 4, -1.7, -2.5, 0, -1.7, -4.5, 0, -1.7, 2.5, 4, -1.7, -2.5, 5, -1.7, -2.5, 4, -1.7, 2.5, 4, -1.7, 2.5, 5, -1.7, -2.5, 5, -1.7, 2.5, 4, -7.3, 4.5, 0, -7.3, 4.5, 4, -7.3, 2.5, 4, -7.3, 2.5, 0, -7.3, 4.5, 0, -7.3, 4.5, 0, -1.7, 4.5, 4, -1, 4.5, 0, -1, 4.5, 0, -1.7, 4.5, 4, -1.7, 4.5, 4, -1, 4.5, 0, -8, 4.5, 4, -7.3, 4.5, 0, -7.3, 4.5, 0, -8, 4.5, 4, -8, 4.5, 4, -7.3, 2.5, 0, -1.7, 4.5, 4, -1.7, 4.5, 0, -1.7, 2.5, 0, -1.7, 2.5, 4, -1.7, 4.5, 4, -1.7, 2.5, 4, -1, 4.5, 0, -1, 4.5, 4, -1, 2.5, 4, -1, 2.5, 0, -1, 4.5, 0, -1, 2.5, 0, -8, 4.5, 4, -8, 4.5, 0, -8, 2.5, 0, -8, 2.5, 4, -8, 4.5, 4, -8, -4.5, 0, -1, -4.5, 4, -1.7, -4.5, 0, -1.7, -4.5, 0, -1, -4.5, 4, -1, -4.5, 4, -1.7, -4.5, 0, -7.3, -4.5, 4, -8, -4.5, 0, -8, -4.5, 0, -7.3, -4.5, 4, -7.3, -4.5, 4, -8, -2.5, 0, -1, -4.5, 4, -1, -4.5, 0, -1, -2.5, 0, -1, -2.5, 4, -1, -4.5, 4, -1, -2.5, 4, -8, -4.5, 0, -8, -4.5, 4, -8, -2.5, 4, -8, -2.5, 0, -8, -4.5, 0, -8, -2.5, 0, -7.3, -4.5, 4, -7.3, -4.5, 0, -7.3, -2.5, 0, -7.3, -2.5, 4, -7.3, -4.5, 4, -7.3, -2.5, 4, -1.7, -2.5, 0, -7.3, -2.5, 0, -1.7, -2.5, 4, -1.7, -2.5, 4, -7.3, -2.5, 0, -7.3, 2.5, 0, -1.7, 2.5, 4, -7.3, 2.5, 4, -1.7, 2.5, 0, -1.7, 2.5, 0, -7.3, 2.5, 4, -7.3, -2.5, 0, -8, -2.5, 4, -9, -2.5, 0, -9, -2.5, 0, -8, -2.5, 4, -8, -2.5, 4, -9, 2.5, 0, -1, 2.5, 4, 0, 2.5, 0, 0, 2.5, 0, -1, 2.5, 4, -1, 2.5, 4, 0, -2.5, 4, -1, -2.5, 0, 0, -2.5, 4, 0, -2.5, 4, -1, -2.5, 0, -1, -2.5, 0, 0, -2.5, 4, -7.3, -2.5, 5, -1.7, -2.5, 5, -7.3, -2.5, 4, -7.3, -2.5, 4, -1.7, -2.5, 5, -1.7, 2.5, 4, -1.7, 2.5, 5, -7.3, 2.5, 5, -1.7, 2.5, 4, -1.7, 2.5, 4, -7.3, 2.5, 5, -7.3, -2.5, 4, -7.3, 2.5, 5, -7.3, 2.5, 4, -7.3, -2.5, 4, -7.3, -2.5, 5, -7.3, 2.5, 5, -7.3, 2.5, 4, -8, 2.5, 0, -9, 2.5, 4, -9, 2.5, 4, -8, 2.5, 0, -8, 2.5, 0, -9, 2.5, 0, -7.3, 4.5, 0, -8, 4.5, 0, -7.3, 2.5, 0, -7.3, 2.5, 0, -8, 4.5, 0, -8, -2.5, 0, -1.7, 2.5, 0, -1, -2.5, 0, -1, -2.5, 0, -1.7, 2.5, 0, -1.7, 2.5, 0, -1, 2.5, 0, -1.7, -2.5, 0, -7.3, 2.5, 0, -7.3, 2.5, 0, -1.7, -2.5, 0, -1.7, -2.5, 0, -7.3, -2.5, 0, -8, 2.5, 0, -7.3, -2.5, 0, -7.3, -2.5, 0, -8, 2.5, 0, -8, 2.5, 0, -7.3, -2.5, 4, -8, 2.5, 4, -7.3, 2.5, 4, -8, -2.5, 4, -8, -2.5, 4, -7.3, 2.5, 4, -7.3, 2.5, 0, -1, 4.5, 0, -1.7, 4.5, 0, -1, 2.5, 0, -1, 2.5, 0, -1.7, 4.5, 0, -1.7, -2.5, 0, -8, -4.5, 0, -7.3, -4.5, 0, -8, -2.5, 0, -8, -2.5, 0, -7.3, -4.5, 0, -7.3, -2.5, 0, -1.7, -4.5, 0, -1, -4.5, 0, -1.7, -2.5, 0, -1.7, -2.5, 0, -1, -4.5, 0, -1, -2.5, 4, -8, 2.5, 4, -9, -2.5, 4, -9, -2.5, 4, -8, 2.5, 4, -8, 2.5, 4, -9, 2.5, 4, -1, -2.5, 4, 0, 2.5, 4, 0, 2.5, 4, -1, -2.5, 4, -1, -2.5, 4, 0, -2.5, 0, -1, 2.5, 0, 0, -2.5, 0, 0, -2.5, 0, -1, 2.5, 0, -1, 2.5, 0, 0, -4.5, 4, -7.3, -2.5, 4, -8, -4.5, 4, -8, -4.5, 4, -7.3, -2.5, 4, -7.3, -2.5, 4, -8, 4.5, 4, -8, 2.5, 4, -7.3, 4.5, 4, -7.3, 4.5, 4, -8, 2.5, 4, -8, 2.5, 4, -7.3, 2.5, 0, -8, -2.5, 0, -9, 2.5, 0, -9, 2.5, 0, -8, -2.5, 0, -8, -2.5, 0, -9, -2.5, 4, -1.7, 2.5, 4, -1, 2.5, 4, -1.7, -2.5, 4, -1.7, -2.5, 4, -1, 2.5, 4, -1, -2.5, 4, -1, -4.5, 4, -1.7, -4.5, 4, -1, -2.5, 4, -1, -2.5, 4, -1.7, -4.5, 4, -1.7, 2.5, 4, -1.7, 4.5, 4, -1, 4.5, 4, -1.7, 2.5, 4, -1.7, 2.5, 4, -1, 4.5, 4, -1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ju5sp"]
+resource_local_to_scene = true
+size = Vector3(5.00428, 8.45427, 6.48631)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bgart"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fe6tr"]
+size = Vector3(4.86035, 11.4785, 9.83427)
+
 [node name="Module_Airlock" type="StaticBody3D"]
+script = ExtResource("1_qe8mo")
 
 [node name="Module_Airlock2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
@@ -103,3 +115,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.15)
 
 [node name="Wall_Light" parent="." instance=ExtResource("6_4yu5s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.8, 0)
+
+[node name="HeadRemover" parent="." instance=ExtResource("8_ld3tp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeadRemover"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12511, 0)
+shape = SubResource("BoxShape3D_ju5sp")
+
+[node name="PlayerDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector"]
+shape = SubResource("SphereShape3D_bgart")
+
+[node name="PlayerExitDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerExitDetector"]
+shape = SubResource("BoxShape3D_fe6tr")
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerExitDetector" to="." method="_on_player_exit_detector_body_exited"]

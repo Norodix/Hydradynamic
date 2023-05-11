@@ -108,6 +108,7 @@ func _process(delta):
 		control_index = (control_index + 1) % controllable_list.size()
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.6, 0)
 	#cam_pivot.global_position = self.global_position
+	cam.camera_target = controllable_list[control_index]
 	cam_pivot.global_position = lerp(cam_pivot.global_position, \
 									controllable_list[control_index].global_position, \
 									1.0 - pow(1.0 - 0.05, delta/0.016))
@@ -133,6 +134,7 @@ func _physics_process(delta):
 		zero_head_time = 0
 	if zero_head_time > 8.0:
 		add_head()
+		zero_head_time = 0
 	# Pull back heads when too far
 	for head in controllable_list:
 		if not head is HydraHead:

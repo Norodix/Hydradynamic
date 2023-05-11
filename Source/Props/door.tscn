@@ -1,4 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://d1csq0ambeaom"]
+[gd_scene load_steps=22 format=3 uid="uid://d1csq0ambeaom"]
+
+[ext_resource type="Script" path="res://Source/Props/door.gd" id="1_se4ow"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7wxj"]
 
@@ -305,18 +307,10 @@ _data = {
 "RESET": SubResource("Animation_dxtlq")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kvxfn"]
-animation = &"Open"
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dl3dp"]
-graph_offset = Vector2(-405, 35)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_kvxfn")
-nodes/Animation/position = Vector2(37, 122)
-node_connections = [&"output", 0, &"Animation"]
-
 [node name="Door" type="Node3D"]
+script = ExtResource("1_se4ow")
 
-[node name="Door_Right_Wing" type="AnimatableBody3D" parent="."]
+[node name="Door_Right_Wing" type="CharacterBody3D" parent="."]
 
 [node name="Frame_Right_Wing" type="MeshInstance3D" parent="Door_Right_Wing"]
 mesh = SubResource("ArrayMesh_gm81e")
@@ -330,7 +324,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6fieh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Right_Wing"]
 shape = SubResource("ConvexPolygonShape3D_kalyh")
 
-[node name="Door_Left_Wing" type="AnimatableBody3D" parent="."]
+[node name="Door_Left_Wing" type="CharacterBody3D" parent="."]
 
 [node name="Frame_Left_Wing" type="MeshInstance3D" parent="Door_Left_Wing"]
 mesh = SubResource("ArrayMesh_0j6lq")
@@ -345,11 +339,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6fieh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_process_mode = 0
 libraries = {
 "": SubResource("AnimationLibrary_qwy0e")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeBlendTree_dl3dp")
-anim_player = NodePath("../AnimationPlayer")
-active = true
