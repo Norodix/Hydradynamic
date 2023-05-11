@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://xmwgx23fh3lb"]
+
+[ext_resource type="PackedScene" uid="uid://cg8ghmvveeo6k" path="res://Assets/Wall_Light/Wall_Light.gltf" id="1_s38hr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7an40"]
+cull_mode = 1
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3unf"]
+next_pass = SubResource("StandardMaterial3D_7an40")
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.45098, 0.458824, 0.54902, 1)
+metallic = 0.1
+metallic_specular = 1.0
+roughness = 0.1
+rim_enabled = true
+rim = 0.3
+anisotropy = 0.02
+ao_light_affect = 0.11
+heightmap_scale = -6.956
+backlight_enabled = true
+backlight = Color(0.490196, 0.490196, 0.490196, 1)
+grow_amount = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wmpf"]
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.580392, 1, 1, 0.282353)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d6ww"]
+emission_enabled = true
+emission = Color(0.823529, 0.635294, 0.207843, 1)
+emission_energy_multiplier = 10.0
+
+[node name="Wall_Light" instance=ExtResource("1_s38hr")]
+
+[node name="Wall_Light2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_x3unf")
+surface_material_override/1 = SubResource("StandardMaterial3D_7wmpf")
+surface_material_override/2 = SubResource("StandardMaterial3D_1d6ww")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.633503)
+light_color = Color(0.835294, 0.784314, 0.635294, 1)
+light_energy = 5.0
+omni_range = 30.0

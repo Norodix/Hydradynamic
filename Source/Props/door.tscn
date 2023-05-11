@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1csq0ambeaom"]
+[gd_scene load_steps=23 format=3 uid="uid://d1csq0ambeaom"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7wxj"]
 
@@ -305,6 +305,15 @@ _data = {
 "RESET": SubResource("Animation_dxtlq")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kvxfn"]
+animation = &"Open"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dl3dp"]
+graph_offset = Vector2(-405, 35)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_kvxfn")
+nodes/Animation/position = Vector2(37, 122)
+node_connections = [&"output", 0, &"Animation"]
+
 [node name="Door" type="Node3D"]
 
 [node name="Door_Right_Wing" type="AnimatableBody3D" parent="."]
@@ -339,3 +348,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6fieh")
 libraries = {
 "": SubResource("AnimationLibrary_qwy0e")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_dl3dp")
+anim_player = NodePath("../AnimationPlayer")
+active = true

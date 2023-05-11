@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj385xoma7k2h"]
+
+[ext_resource type="PackedScene" uid="uid://c07meoasixum8" path="res://Assets/Pipe/Pipe.gltf" id="1_qi8pe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7an40"]
+cull_mode = 1
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jqyg"]
+next_pass = SubResource("StandardMaterial3D_7an40")
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.843137, 0.784314, 0.270588, 1)
+metallic = 0.1
+metallic_specular = 1.0
+roughness = 0.1
+rim_enabled = true
+rim = 0.3
+anisotropy = 0.02
+ao_light_affect = 0.11
+heightmap_scale = -6.956
+backlight_enabled = true
+backlight = Color(0.490196, 0.490196, 0.490196, 1)
+grow_amount = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jsed"]
+next_pass = SubResource("StandardMaterial3D_7an40")
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.513726, 0.537255, 0.513726, 1)
+metallic = 0.1
+metallic_specular = 1.0
+roughness = 0.1
+rim_enabled = true
+rim = 0.3
+anisotropy = 0.02
+ao_light_affect = 0.11
+heightmap_scale = -6.956
+backlight_enabled = true
+backlight = Color(0.490196, 0.490196, 0.490196, 1)
+grow_amount = 0.1
+
+[node name="Pipe" instance=ExtResource("1_qi8pe")]
+
+[node name="Pipe_Line" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2jqyg")
+surface_material_override/1 = SubResource("StandardMaterial3D_2jsed")
+
+[node name="Pipe_Wheeel" parent="." index="1"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_2jsed")
