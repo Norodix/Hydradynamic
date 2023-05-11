@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 
 @export_node_path("Area3D") var connection
 
@@ -6,7 +6,7 @@ func _process(delta):
 	var conn = null
 	if connection:
 		conn = get_node_or_null(connection)
-	var mat = get_active_material(0)
+	var mat = get_child(0).get_active_material(0)
 	if not mat:
 		return
 	

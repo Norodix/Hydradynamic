@@ -13,7 +13,9 @@ func cut():
 		await anim_player.animation_finished
 		shape.set_deferred("disabled", true)
 		await get_tree().create_timer(1).timeout
-		anim_player.play_backwards("Cut")
-		await anim_player.animation_finished
-		can_cut = true
-		
+
+
+func reset():
+	anim_player.play_backwards("Cut")
+	await anim_player.animation_finished
+	can_cut = true

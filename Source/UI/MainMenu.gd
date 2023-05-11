@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Source/Environment/world.tscn")
+	get_tree().change_scene_to_file("res://Source/Environment/Puzzle_Map.tscn")
 	pass # Replace with function body.
 
 

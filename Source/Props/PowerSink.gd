@@ -1,7 +1,7 @@
 extends Area3D
 
-@onready var timeout = 1.0 / float(Engine.physics_ticks_per_second) * 2
-var time_elapsed = 0
+@onready var timeout = 0.1
+var time_elapsed = 100
 @onready var plug : MeshInstance3D = $Electric_Socket/Plug
 
 signal activate
@@ -22,9 +22,11 @@ var was_powered = false
 func _physics_process(delta):
 	time_elapsed += delta
 	if is_powered() and not was_powered:
+		print("Activate sink", self)
 		emit_signal("activate")
 	if was_powered and not is_powered():
 		emit_signal("deactivate")
+	was_powered = is_powered()
 
 
 func power():

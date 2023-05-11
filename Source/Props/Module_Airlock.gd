@@ -30,9 +30,13 @@ func close_exit():
 func purge():
 	trap_active = false
 	close_exit()
+	print("Close exit")
 	await exit.close_finished
+	print("Close exit done")
 	close_entry()
+	print("Close entry")
 	await entry.close_finished
+	print("Close entry done")
 	
 	killer.enable()
 	await get_tree().create_timer(5).timeout
