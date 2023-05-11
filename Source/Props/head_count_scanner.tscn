@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cccfxw6qystwr"]
+[gd_scene load_steps=5 format=3 uid="uid://cccfxw6qystwr"]
 
 [ext_resource type="Script" path="res://Source/Props/head_count_scanner.gd" id="1_dpd52"]
 [ext_resource type="Texture2D" uid="uid://psve2cux2u00" path="res://Assets/Hydra/snekhed.svg" id="2_uojm6"]
+[ext_resource type="PackedScene" uid="uid://ip13qhym4dek" path="res://Source/Props/Scanner.tscn" id="3_hravb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0jrx"]
 size = Vector3(4.59173, 4.45446, 2.21944)
@@ -11,7 +12,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 script = ExtResource("1_dpd52")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.845878, 4.475, -7.3949e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.610749, 4.475, -5.33934e-08)
 shaded = true
 text = "3x
 "
@@ -19,7 +20,7 @@ font_size = 200
 outline_size = 40
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.378, 0, 9.01222e-08, 0, 0.378, 0, -9.01222e-08, 0, 0.378, 1.32, 4.475, 0)
+transform = Transform3D(0.378, 0, 9.01222e-08, 0, 0.378, 0, -9.01222e-08, 0, 0.378, 0.721122, 4.475, -5.23556e-08)
 shaded = true
 texture = ExtResource("2_uojm6")
 
@@ -30,5 +31,8 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14131e-07, 1.74744, 1.30551)
 shape = SubResource("BoxShape3D_s0jrx")
+
+[node name="Scanner" parent="." instance=ExtResource("3_hravb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.81871, 0)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
