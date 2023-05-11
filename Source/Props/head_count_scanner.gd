@@ -4,11 +4,17 @@ extends Node3D
 
 signal activate
 
+@onready var img : Sprite3D = $Sprite3D
+@onready var txt : Label3D = $Label3D
 func _ready():
-	$Label3D.text = str(head_count)
-
-func _enter_tree():
-	$Label3D.text = str(head_count)
+	$Label3D.text = str(head_count) + "x"
+	var aabb_img = img.get_aabb()
+	var aabb_txt = txt.get_aabb()
+	var lp = aabb_img.size.x * img.transform.basis.get_scale().x
+	var lt = aabb_txt.size.x * txt.transform.basis.get_scale().x
+	var L = lp + lt
+	txt.transform.origin.x = - L/2 + lt/2
+	img.transform.origin.x = - L/2 + lt + lp/2
 
 
 func _on_area_3d_body_entered(body):
