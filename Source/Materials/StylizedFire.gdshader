@@ -24,7 +24,8 @@ void vertex() {
 	vec2 pan = vec2(-1.2, 0.5) * (-TIME * time_scale);
 	//pan = vec2(VERTEX.z, VERTEX.y) * pan;
 	time_based_pan = pan;
-	time_based_pan = (INV_VIEW_MATRIX * vec4(0.0, pan.y, pan.x, 1.0)).xy;
+	time_based_pan.x *= sign(dot(VIEW_MATRIX[2].xyz, vec3(-1.0, 0.0, 0.0)));
+	//time_based_pan = (INV_VIEW_MATRIX * vec4(0.0, pan.y, pan.x, 1.0)).xy;
 }
 
 
