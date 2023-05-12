@@ -1,17 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkotd6fqtog0x"]
+[gd_scene load_steps=13 format=3 uid="uid://dkotd6fqtog0x"]
 
 [ext_resource type="PackedScene" uid="uid://dse13y1xpwiup" path="res://Source/Props/Module_Turn.tscn" id="1_cv1v8"]
+[ext_resource type="Script" path="res://Source/Environment/LevelReset.gd" id="1_mkmhx"]
+[ext_resource type="PackedScene" uid="uid://cqia1wcqdekqq" path="res://Source/Props/Module_LVL_03.tscn" id="2_bgo05"]
 [ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="2_diutk"]
 [ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="3_wq87j"]
+[ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="4_mlupf"]
+[ext_resource type="PackedScene" uid="uid://ckwksmr4pnin8" path="res://Source/Props/Button.tscn" id="5_ak03l"]
+[ext_resource type="PackedScene" uid="uid://pvldvobhpqbo" path="res://Source/Props/Saw.tscn" id="6_tbf88"]
+[ext_resource type="PackedScene" uid="uid://bq23jgc4rq08r" path="res://Source/Props/Fan.tscn" id="7_melgs"]
+[ext_resource type="PackedScene" uid="uid://barqulglrp6ve" path="res://Source/Props/power_source.tscn" id="8_w1m0b"]
+[ext_resource type="PackedScene" uid="uid://6kfe8edwhdku" path="res://Source/Props/power_sink.tscn" id="9_bc7l8"]
+[ext_resource type="PackedScene" uid="uid://dha5h2njv88ri" path="res://Source/Props/power_and.tscn" id="9_g4hnv"]
 
 [node name="Level_03" type="Node3D"]
+script = ExtResource("1_mkmhx")
 
 [node name="Module_Turn" parent="." instance=ExtResource("1_cv1v8")]
+
+[node name="Module_LVL03" parent="." instance=ExtResource("2_bgo05")]
 
 [node name="Module_Airlock" parent="." instance=ExtResource("2_diutk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.5)
 
 [node name="HeadCountScanner" parent="Module_Airlock" instance=ExtResource("3_wq87j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.55)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.6)
+head_count = 4
 
+[node name="Trap_01" type="Node3D" parent="."]
+
+[node name="Saw" parent="Trap_01" instance=ExtResource("6_tbf88")]
+transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, 8.15001, 2.23156, 6.47188)
+
+[node name="Button2" parent="Trap_01/Saw" instance=ExtResource("5_ak03l")]
+transform = Transform3D(-1, 0, 3.09086e-08, 0, -1, -1.28028e-08, 3.09086e-08, -1.28028e-08, 1, -1.95817, 3.67404, -1.46944)
+
+[node name="Trap_02" type="Node3D" parent="."]
+
+[node name="Guillotine1_1" parent="Trap_02" instance=ExtResource("4_mlupf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10687, 0, 7.34726)
+
+[node name="Guillotine1_2" parent="Trap_02" instance=ExtResource("4_mlupf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08537, 9.53674e-07, 2.62618)
+
+[node name="Button" parent="Trap_02" instance=ExtResource("5_ak03l")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.70242, 0.630368, 4.93787)
+
+[node name="Trap_03" type="Node3D" parent="."]
+
+[node name="Fan" parent="Trap_03" instance=ExtResource("7_melgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -7)
+
+[node name="PowerAND" parent="Trap_03/Fan" instance=ExtResource("9_g4hnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0563369, -1.80373, 1.23083)
+
+[node name="PowerSource" parent="Trap_03/Fan/PowerAND" instance=ExtResource("8_w1m0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19642, 1.7271, -0.00745487)
+
+[node name="PowerSink" parent="Trap_03/Fan/PowerAND" instance=ExtResource("9_bc7l8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1429, -0.0860908, -0.00729465)
+
+[node name="PowerSink2" parent="Trap_03/Fan/PowerAND" instance=ExtResource("9_bc7l8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.13929, -0.12515, 4.53844)
+
+[connection signal="purge_finished" from="Module_Airlock" to="." method="trigger_level_reset"]
 [connection signal="activate" from="Module_Airlock/HeadCountScanner" to="Module_Airlock" method="open_entry"]
+[connection signal="pull" from="Trap_01/Saw/Button2" to="Trap_01/Saw" method="deactivate"]
+[connection signal="push" from="Trap_01/Saw/Button2" to="Trap_01/Saw" method="activate"]
+[connection signal="push" from="Trap_02/Button" to="Trap_02/Guillotine1_1" method="cut"]
+[connection signal="push" from="Trap_02/Button" to="Trap_02/Guillotine1_2" method="cut"]
+[connection signal="activate" from="Trap_03/Fan/PowerAND" to="Trap_03/Fan" method="activate"]
+[connection signal="deactivate" from="Trap_03/Fan/PowerAND" to="Trap_03/Fan" method="deactivate"]
