@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b18ny50f7tguf"]
+[gd_scene load_steps=8 format=3 uid="uid://b18ny50f7tguf"]
 
 [ext_resource type="PackedScene" uid="uid://d1syrg0ik6wvv" path="res://Source/Environment/level_01.tscn" id="3_btcuo"]
 [ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="3_c3l41"]
 [ext_resource type="PackedScene" uid="uid://b1il51omfoj87" path="res://Source/Environment/level_02.tscn" id="4_wb2ti"]
+[ext_resource type="PackedScene" uid="uid://dkotd6fqtog0x" path="res://Source/Environment/level_03.tscn" id="5_g5mvs"]
 [ext_resource type="PackedScene" uid="uid://c8xhbxnwfersf" path="res://Source/UI/EscapeMenu.tscn" id="6_2hm8e"]
 
 [sub_resource type="Environment" id="Environment_jp8ti"]
@@ -42,3 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
 
 [node name="Level_02" parent="." instance=ExtResource("4_wb2ti")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 43)
+
+[node name="Level_03" parent="." instance=ExtResource("5_g5mvs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29, 0, 43)

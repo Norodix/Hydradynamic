@@ -26,10 +26,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.267
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07703e-07, 0, 4.66358)
 
 [node name="Guillotine" parent="." instance=ExtResource("4_7wvd2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -8.2362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7.50006)
 
 [node name="Button" parent="Guillotine" instance=ExtResource("5_bveo4")]
-transform = Transform3D(1.52855e-15, 3.49691e-08, 0.8, 0.8, -3.49691e-08, 0, 3.49691e-08, 0.8, -3.49691e-08, -0.0138054, 0.822888, 1.46807)
+transform = Transform3D(1.52855e-15, 3.49691e-08, 0.8, 0.8, -3.49691e-08, 0, 3.49691e-08, 0.8, -3.49691e-08, -0.0138054, 0.822888, 0.731932)
 
 [node name="Node3D" parent="Guillotine/Button" instance=ExtResource("9_iwvst")]
 transform = Transform3D(2.38836e-15, 1.25, 5.46392e-08, 5.46392e-08, -5.46392e-08, 1.25, 1.25, 1.86116e-21, -5.46392e-08, 0.0283289, -0.308994, -1.85774)
@@ -38,7 +38,7 @@ transform = Transform3D(2.38836e-15, 1.25, 5.46392e-08, 5.46392e-08, -5.46392e-0
 transform = Transform3D(-1.25, 1.09278e-07, 3.55271e-15, -1.06581e-14, -5.46392e-08, 1.25, 1.09278e-07, 1.25, 5.46392e-08, 1.1849, -0.262185, -1.29727)
 
 [node name="Node3D3" parent="Guillotine/Button" instance=ExtResource("9_iwvst")]
-transform = Transform3D(3.55271e-15, 5.46392e-08, 1.25, 0.884, -5.46392e-08, 7.10543e-15, 3.86409e-08, 1.25, -5.46392e-08, 2.32087, -1.29212, -1.29727)
+transform = Transform3D(0, 5.46392e-08, 1.25, 0.2, -5.46392e-08, 1.06581e-14, 8.74228e-09, 1.25, -5.46392e-08, 2.32087, -0.572268, -1.29727)
 
 [node name="Saw" parent="." instance=ExtResource("6_dp7d2")]
 transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 6.01787, 0.130886, -5.57323)
