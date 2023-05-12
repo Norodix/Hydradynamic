@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cccfxw6qystwr"]
+[gd_scene load_steps=7 format=3 uid="uid://cccfxw6qystwr"]
 
 [ext_resource type="Script" path="res://Source/Props/head_count_scanner.gd" id="1_dpd52"]
 [ext_resource type="Texture2D" uid="uid://psve2cux2u00" path="res://Assets/Hydra/snekhed.svg" id="2_uojm6"]
 [ext_resource type="PackedScene" uid="uid://ip13qhym4dek" path="res://Source/Props/Scanner.tscn" id="3_hravb"]
+[ext_resource type="AudioStream" uid="uid://p5pt1skt2yg2" path="res://Sound/SFX/scanner_accept.wav" id="4_oawv1"]
+[ext_resource type="AudioStream" uid="uid://ccbavsm047ea0" path="res://Sound/SFX/scanner_denied.wav" id="5_5278h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0jrx"]
 size = Vector3(4.59173, 4.45446, 2.21944)
@@ -34,5 +36,13 @@ shape = SubResource("BoxShape3D_s0jrx")
 
 [node name="Scanner" parent="." instance=ExtResource("3_hravb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.81871, 0)
+
+[node name="Accept" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_oawv1")
+bus = &"SFX"
+
+[node name="Deny" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_5278h")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

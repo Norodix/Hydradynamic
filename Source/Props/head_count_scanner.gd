@@ -33,3 +33,6 @@ func _on_area_3d_body_entered(body):
 		if body_headcount == head_count:
 			print("Scanner activate")
 			emit_signal("activate")
+			$Accept.play()
+		else:
+			$Deny.play()

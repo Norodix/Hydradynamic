@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwupcejyn826h"]
+[gd_scene load_steps=10 format=3 uid="uid://ip13qhym4dek"]
 
 [ext_resource type="PackedScene" uid="uid://cadsi054hggio" path="res://Assets/Scanner/Scanner.gltf" id="1_tdtcw"]
 [ext_resource type="Texture2D" uid="uid://ccw3mvxq5rnaw" path="res://Assets/PNG/Scan_Tex.png" id="2_pwmqu"]
+[ext_resource type="AudioStream" uid="uid://bmqappxrgkl0f" path="res://Sound/SFX/laser.wav" id="3_eu5yx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7an40"]
 cull_mode = 1
@@ -36,6 +37,33 @@ emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 3.0
 texture_filter = 5
+
+[sub_resource type="Animation" id="Animation_8dpxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Laser:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.309, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Laser:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wlb66"]
 resource_name = "Scan"
@@ -78,33 +106,25 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(0.01, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.01, 1, 1), Vector3(0.01, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.01, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_8dpxm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Laser:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.309, 0, 0)]
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_eu5yx")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_eu5yx")
+}],
+"times": PackedFloat32Array(0.4, 3)
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Laser:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0chcc"]
 _data = {
@@ -125,3 +145,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_nbehm")
 libraries = {
 "": SubResource("AnimationLibrary_0chcc")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+volume_db = -10.331
+bus = &"SFX"
