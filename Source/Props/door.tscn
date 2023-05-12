@@ -1,6 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1csq0ambeaom"]
+[gd_scene load_steps=28 format=3 uid="uid://d1csq0ambeaom"]
 
 [ext_resource type="Script" path="res://Source/Props/door.gd" id="1_se4ow"]
+[ext_resource type="AudioStream" uid="uid://b7nu5es5pnevx" path="res://Sound/SFX/door_start.wav" id="2_wffhu"]
+[ext_resource type="AudioStream" uid="uid://br0knwu5wup47" path="res://Sound/SFX/door_cont.wav" id="3_l40cg"]
+[ext_resource type="AudioStream" uid="uid://cmm5sfsxc6n4e" path="res://Sound/SFX/door_slam.wav" id="4_gv2ok"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7wxj"]
 
@@ -307,6 +310,62 @@ _data = {
 "RESET": SubResource("Animation_dxtlq")
 }
 
+[sub_resource type="Animation" id="Animation_do60n"]
+resource_name = "Open"
+length = 3.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_wffhu")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_l40cg")
+}],
+"times": PackedFloat32Array(0, 0.9)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_uowwa"]
+resource_name = "Close"
+length = 3.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_l40cg")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_wffhu")
+}, {
+"end_offset": 3.39208,
+"start_offset": 0.0,
+"stream": ExtResource("4_gv2ok")
+}],
+"times": PackedFloat32Array(0, 1.7, 2.7)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcla2"]
+_data = {
+"Close": SubResource("Animation_uowwa"),
+"Open": SubResource("Animation_do60n")
+}
+
 [node name="Door" type="Node3D"]
 script = ExtResource("1_se4ow")
 
@@ -342,4 +401,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6fieh")
 playback_process_mode = 0
 libraries = {
 "": SubResource("AnimationLibrary_qwy0e")
+}
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05111, 0)
+bus = &"SFX"
+
+[node name="SoundAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xcla2")
 }
