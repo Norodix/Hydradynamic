@@ -38,23 +38,24 @@ func purge():
 	await entry.close_finished
 	print("Close entry done")
 	
-	for burner in $Burners.get_children():
-		if burner.has_method("start"):
-			burner.start()
-	await get_tree().create_timer(0.5).timeout
-	
-	killer.enable()
-	await get_tree().create_timer(5).timeout
-	killer.disable()
-	
-	for burner in $Burners.get_children():
-		if burner.has_method("stop"):
-			burner.stop()
-	await get_tree().create_timer(0.5).timeout
+	if $PlayerExitDetector.has_overlapping_bodies():
+		for burner in $Burners.get_children():
+			if burner.has_method("start"):
+				burner.start()
+		await get_tree().create_timer(0.5).timeout
+		
+		killer.enable()
+		await get_tree().create_timer(5).timeout
+		killer.disable()
+		emit_signal("purge_finished")
+		
+		for burner in $Burners.get_children():
+			if burner.has_method("stop"):
+				burner.stop()
+		await get_tree().create_timer(0.5).timeout
 	
 	open_exit()
 	await exit.open_finished
-	emit_signal("purge_finished")
 
 
 func _on_player_detector_body_entered(body):

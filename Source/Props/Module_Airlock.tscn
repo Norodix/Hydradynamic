@@ -113,7 +113,7 @@ size = Vector3(5.00428, 8.45427, 6.48631)
 [sub_resource type="SphereShape3D" id="SphereShape3D_bgart"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fe6tr"]
-size = Vector3(4.86035, 11.4785, 9.83427)
+size = Vector3(4.95791, 4.04942, 5.64037)
 
 [node name="Module_Airlock" type="StaticBody3D"]
 script = ExtResource("1_qe8mo")
@@ -146,6 +146,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12511, 0)
 shape = SubResource("BoxShape3D_ju5sp")
 
 [node name="PlayerDetector" type="Area3D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -159,6 +160,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerExitDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02194, 0)
 shape = SubResource("BoxShape3D_fe6tr")
 
 [node name="Burners" type="Node3D" parent="."]

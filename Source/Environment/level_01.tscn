@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1syrg0ik6wvv"]
+[gd_scene load_steps=16 format=3 uid="uid://d1syrg0ik6wvv"]
 
+[ext_resource type="Script" path="res://Source/Environment/LevelReset.gd" id="1_samic"]
 [ext_resource type="PackedScene" uid="uid://dqr6tg8ksngk3" path="res://Source/Props/Module_Straight.tscn" id="1_ux8wa"]
 [ext_resource type="PackedScene" uid="uid://bni7pue2tng41" path="res://Source/Props/Module_LVL_01.tscn" id="2_dyc15"]
 [ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="3_dqaft"]
@@ -18,6 +19,7 @@
 size = Vector3(3.25812, 0.935074, 1.0404)
 
 [node name="Level_01" type="Node3D"]
+script = ExtResource("1_samic")
 
 [node name="Module_Straight" parent="." instance=ExtResource("1_ux8wa")]
 
@@ -102,3 +104,4 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [connection signal="push" from="Guillotine/Button" to="Guillotine" method="cut"]
 [connection signal="activate" from="Guillotine2/PowerSink" to="Guillotine2" method="cut"]
+[connection signal="purge_finished" from="Module_Airlock_01" to="." method="trigger_level_reset"]
