@@ -34,7 +34,6 @@ grow_amount = 0.1
 
 [sub_resource type="QuadMesh" id="QuadMesh_8iqoo"]
 material = ExtResource("4_7bju3")
-size = Vector2(2, 2)
 
 [node name="Burner_Tube" instance=ExtResource("1_vc3mj")]
 script = ExtResource("2_jfw87")
@@ -51,6 +50,7 @@ emitting = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.413206)
 emitting = false
 amount = 20
+lifetime = 0.5
 process_material = ExtResource("3_twt8v")
 draw_pass_1 = SubResource("QuadMesh_8iqoo")
 

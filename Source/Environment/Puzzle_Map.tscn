@@ -35,7 +35,7 @@ script = SubResource("GDScript_rocg6")
 [node name="EscapeMenu" parent="HUD" instance=ExtResource("6_2hm8e")]
 
 [node name="Hydra" parent="." instance=ExtResource("3_c3l41")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.70709)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 40.7633)
 
 [node name="Level_01" parent="." instance=ExtResource("3_btcuo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
