@@ -38,9 +38,20 @@ func purge():
 	await entry.close_finished
 	print("Close entry done")
 	
+	for burner in $Burners.get_children():
+		if burner.has_method("start"):
+			burner.start()
+	await get_tree().create_timer(0.5).timeout
+	
 	killer.enable()
 	await get_tree().create_timer(5).timeout
 	killer.disable()
+	
+	for burner in $Burners.get_children():
+		if burner.has_method("stop"):
+			burner.stop()
+	await get_tree().create_timer(0.5).timeout
+	
 	open_exit()
 	await exit.open_finished
 	emit_signal("purge_finished")

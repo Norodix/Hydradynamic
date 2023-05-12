@@ -161,19 +161,21 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerExitDetector"]
 shape = SubResource("BoxShape3D_fe6tr")
 
-[node name="Burner_Tube" parent="." instance=ExtResource("10_rsq1o")]
+[node name="Burners" type="Node3D" parent="."]
+
+[node name="Burner_Tube" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 0.751631, 1.9927)
 
-[node name="Burner_Tube2" parent="." instance=ExtResource("10_rsq1o")]
+[node name="Burner_Tube2" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 0.751631, 0.0288663)
 
-[node name="Burner_Tube4" parent="." instance=ExtResource("10_rsq1o")]
+[node name="Burner_Tube4" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 1.92628, 0.967786)
 
-[node name="Burner_Tube5" parent="." instance=ExtResource("10_rsq1o")]
+[node name="Burner_Tube5" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 1.92628, -0.747132)
 
-[node name="Burner_Tube3" parent="." instance=ExtResource("10_rsq1o")]
+[node name="Burner_Tube3" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 0.751631, -1.8277)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
