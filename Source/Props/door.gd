@@ -12,6 +12,9 @@ signal close_finished
 
 
 func open():
+	if is_moving:
+		return
+	is_moving = true
 	if not is_open:
 		is_closed = false
 		#is_moving = true
@@ -21,9 +24,13 @@ func open():
 		is_open = true
 	await get_tree().create_timer(0.3).timeout
 	emit_signal("open_finished")
+	is_moving = false
 
 
 func close():
+	if is_moving:
+		return
+	is_moving = true
 	if not is_closed:
 		is_open = false
 		#is_moving = true
@@ -33,3 +40,4 @@ func close():
 		is_closed = true
 	await get_tree().create_timer(0.3).timeout
 	emit_signal("close_finished")
+	is_moving = false
