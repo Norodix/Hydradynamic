@@ -50,7 +50,7 @@ emitting = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.413206)
 emitting = false
 amount = 20
-lifetime = 0.5
+lifetime = 0.7
 process_material = ExtResource("3_twt8v")
 draw_pass_1 = SubResource("QuadMesh_8iqoo")
 
