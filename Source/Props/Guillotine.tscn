@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://saif5mw6qob8"]
+[gd_scene load_steps=17 format=3 uid="uid://saif5mw6qob8"]
 
 [ext_resource type="Script" path="res://Source/Props/Guillotine.gd" id="1_c4osa"]
+[ext_resource type="AudioStream" uid="uid://dsjydvu3h6o0l" path="res://Sound/SFX/guillotine_slam.wav" id="2_mkhlr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp8le"]
 
@@ -116,7 +117,7 @@ size = Vector3(2, 1.1345, 0.1)
 
 [sub_resource type="Animation" id="Animation_tvivt"]
 resource_name = "Cut"
-length = 0.3
+length = 0.5351
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -129,6 +130,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 3.36942, 0), Vector3(0, 0.875886, 0)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_mkhlr")
+}],
+"times": PackedFloat32Array(-0.2913)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_3ptar"]
 length = 0.001
@@ -181,3 +197,6 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_oe0lv")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966712, 0)
