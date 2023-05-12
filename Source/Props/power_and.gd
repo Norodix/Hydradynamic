@@ -17,6 +17,7 @@ func _process(delta):
 		emit_signal("activate")
 	if was_active and not active:
 		emit_signal("deactivate")
+	was_active = active
 
 func is_powered() -> bool:
 	return active
