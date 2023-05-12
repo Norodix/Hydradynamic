@@ -16,22 +16,21 @@ shader = ExtResource("1_yp6a8")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6o43v"]
 material = SubResource("ShaderMaterial_2ofu6")
-size = Vector2(0.1, 0.1)
+size = Vector2(0.2, 0.2)
 orientation = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8qy48"]
 material = SubResource("ShaderMaterial_2ofu6")
-size = Vector2(0.1, 0.1)
+size = Vector2(0.2, 0.2)
 orientation = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mqc1n"]
 material = SubResource("ShaderMaterial_2ofu6")
-size = Vector2(0.1, 0.1)
+size = Vector2(0.4, 0.2)
 
 [node name="Fire_Emitter" type="GPUParticles3D"]
-amount = 2000
+amount = 200
 lifetime = 0.8
-trail_lifetime = 7.24
 process_material = SubResource("ParticleProcessMaterial_qo85e")
 draw_passes = 3
 draw_pass_1 = SubResource("PlaneMesh_6o43v")

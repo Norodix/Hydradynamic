@@ -10,7 +10,6 @@ background_energy_multiplier = 0.0
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.3
-ssil_enabled = true
 
 [sub_resource type="GDScript" id="GDScript_rocg6"]
 script/source = "extends Label

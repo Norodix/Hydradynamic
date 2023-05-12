@@ -18,6 +18,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.267
 
 [node name="HeadCountScanner" parent="Module_Airlock_02" instance=ExtResource("3_hb1hr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07703e-07, 0, 4.66358)
+head_count = 3
 
 [node name="Guillotine" parent="." instance=ExtResource("4_7wvd2")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.17206, 0, -8.0159)
