@@ -1,6 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://ckwksmr4pnin8"]
+[gd_scene load_steps=20 format=3 uid="uid://ckwksmr4pnin8"]
 
 [ext_resource type="Script" path="res://Source/Props/PhysicalButton.gd" id="1_7ca5p"]
+[ext_resource type="AudioStream" uid="uid://c1hbf36cmk6bu" path="res://Sound/SFX/button_click.wav" id="2_13h81"]
+[ext_resource type="AudioStream" uid="uid://c8c7a1laikolh" path="res://Sound/SFX/button_clack.wav" id="3_e6muc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs8d4"]
 
@@ -143,7 +145,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vgsh1"]
 resource_name = "push"
-length = 0.5
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -151,7 +153,7 @@ tracks/0/path = NodePath("Push:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -0.2, 0), Vector3(0, -0.324141, 0)]
@@ -202,3 +204,13 @@ shape = SubResource("BoxShape3D_3wgob")
 libraries = {
 "": SubResource("AnimationLibrary_2clgt")
 }
+
+[node name="Click" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_13h81")
+volume_db = -20.0
+max_polyphony = 3
+
+[node name="Clack" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_e6muc")
+volume_db = -20.0
+max_polyphony = 3
