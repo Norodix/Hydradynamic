@@ -30,6 +30,7 @@ func is_powered() -> bool:
 
 
 func button_push():
+	$Click.play()
 	$AnimationPlayer.play("push")
 	if shots != 0:
 		shots -= 1
@@ -37,13 +38,7 @@ func button_push():
 
 
 func button_release():
+	$Clack.play()
 	$AnimationPlayer.play_backwards("push")
+	
 	emit_signal("pull")
-
-
-func _on_area_3d_body_entered(body):
-	button_push()
-
-
-func _on_area_3d_body_exited(body):
-	button_release()
