@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1il51omfoj87"]
+
+[ext_resource type="PackedScene" uid="uid://dse13y1xpwiup" path="res://Source/Props/Module_Turn.tscn" id="1_b3e2e"]
+[ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="2_rcu6d"]
+[ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="3_hb1hr"]
+[ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="4_7wvd2"]
+[ext_resource type="PackedScene" uid="uid://ckwksmr4pnin8" path="res://Source/Props/Button.tscn" id="5_bveo4"]
+[ext_resource type="PackedScene" uid="uid://pvldvobhpqbo" path="res://Source/Props/Saw.tscn" id="6_dp7d2"]
+[ext_resource type="PackedScene" uid="uid://cghka68co1hm0" path="res://Source/Props/Electric_Socket.tscn" id="7_aph6w"]
+
+[node name="Level_02" type="Node3D"]
+
+[node name="LVL_02" parent="." instance=ExtResource("1_b3e2e")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Module_Airlock_02" parent="." instance=ExtResource("2_rcu6d")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.26763e-06, 0, -14.5)
+
+[node name="HeadCountScanner" parent="Module_Airlock_02" instance=ExtResource("3_hb1hr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07703e-07, 0, 4.66358)
+
+[node name="Guillotine" parent="." instance=ExtResource("4_7wvd2")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.17206, 0, -8.0159)
+
+[node name="Button" parent="." instance=ExtResource("5_bveo4")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -4.40569, 0.964771, -9.699)
+
+[node name="Saw" parent="." instance=ExtResource("6_dp7d2")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 10.5226, 1.82882, -3.0219)
+
+[node name="Electric_Socket" parent="." instance=ExtResource("7_aph6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11336, 2.27891, -10)
+
+[node name="Electric_Socket2" parent="." instance=ExtResource("7_aph6w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 2.00811, -6.3104)
+
+[connection signal="activate" from="Module_Airlock_02/HeadCountScanner" to="Module_Airlock_02" method="open_entry"]

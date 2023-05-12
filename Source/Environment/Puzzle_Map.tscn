@@ -1,24 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://b18ny50f7tguf"]
+[gd_scene load_steps=7 format=3 uid="uid://b18ny50f7tguf"]
 
+[ext_resource type="PackedScene" uid="uid://d1syrg0ik6wvv" path="res://Source/Environment/level_01.tscn" id="3_btcuo"]
 [ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="3_c3l41"]
-[ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="3_tgav5"]
-[ext_resource type="PackedScene" uid="uid://dqr6tg8ksngk3" path="res://Source/Props/Module_Straight.tscn" id="4_wpv71"]
-[ext_resource type="PackedScene" uid="uid://bni7pue2tng41" path="res://Source/Props/Module_LVL_01.tscn" id="5_5kx62"]
-[ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="5_ouigo"]
+[ext_resource type="PackedScene" uid="uid://b1il51omfoj87" path="res://Source/Environment/level_02.tscn" id="4_wb2ti"]
 [ext_resource type="PackedScene" uid="uid://c8xhbxnwfersf" path="res://Source/UI/EscapeMenu.tscn" id="6_2hm8e"]
-[ext_resource type="PackedScene" uid="uid://ckwksmr4pnin8" path="res://Source/Props/Button.tscn" id="7_u7hqg"]
-[ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="7_v8y0w"]
-[ext_resource type="PackedScene" uid="uid://dsqj208st8iy7" path="res://Source/Props/Cable_1m.tscn" id="8_4kjhi"]
-[ext_resource type="PackedScene" uid="uid://dj385xoma7k2h" path="res://Source/Props/Pipe_Line.tscn" id="8_1801s"]
-[ext_resource type="PackedScene" uid="uid://mf5m1b5dq23n" path="res://Source/Props/Pipe_Wheel.tscn" id="9_pwjlh"]
-[ext_resource type="PackedScene" uid="uid://dkg3u60fkf7x7" path="res://Source/Props/Fire_Emitter.tscn" id="10_eu0wm"]
-[ext_resource type="PackedScene" uid="uid://barqulglrp6ve" path="res://Source/Props/power_source.tscn" id="10_loues"]
-[ext_resource type="PackedScene" uid="uid://cghka68co1hm0" path="res://Source/Props/Electric_Socket.tscn" id="10_nmmy4"]
-[ext_resource type="PackedScene" uid="uid://dse13y1xpwiup" path="res://Source/Props/Module_Turn.tscn" id="12_7v8ei"]
-[ext_resource type="PackedScene" uid="uid://6kfe8edwhdku" path="res://Source/Props/power_sink.tscn" id="12_8ndoq"]
-[ext_resource type="PackedScene" uid="uid://dgo6k7v4ntg6v" path="res://Source/Props/head_remover.tscn" id="14_ec260"]
-[ext_resource type="PackedScene" uid="uid://pvldvobhpqbo" path="res://Source/Props/Saw.tscn" id="17_iu0e7"]
-[ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="18_n0e8l"]
 
 [sub_resource type="Environment" id="Environment_jp8ti"]
 background_energy_multiplier = 0.0
@@ -33,9 +18,6 @@ script/source = "extends Label
 func _process(delta):
 	self.text = str(Engine.get_frames_per_second())
 "
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_m3ye1"]
-size = Vector3(3.25812, 0.935074, 1.0404)
 
 [node name="Puzzle_Map" type="Node3D"]
 
@@ -56,112 +38,8 @@ script = SubResource("GDScript_rocg6")
 [node name="Hydra" parent="." instance=ExtResource("3_c3l41")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.70709)
 
-[node name="LVL_01" parent="." instance=ExtResource("4_wpv71")]
+[node name="Level_01" parent="." instance=ExtResource("3_btcuo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
 
-[node name="Module_LVL01" parent="LVL_01" instance=ExtResource("5_5kx62")]
-
-[node name="Wall_Light" parent="LVL_01" instance=ExtResource("7_v8y0w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96503, 3.94418, -9.98044)
-
-[node name="Wall_Light3" parent="LVL_01" instance=ExtResource("7_v8y0w")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.85351, 3.94418, -2.22138)
-
-[node name="Wall_Light2" parent="LVL_01" instance=ExtResource("7_v8y0w")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.97531, 3.94418, 9.84952)
-
-[node name="Wall_Light5" parent="LVL_01" instance=ExtResource("7_v8y0w")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.11783, 3.94418, 9.84869)
-
-[node name="Guillotine" parent="LVL_01" instance=ExtResource("5_ouigo")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.08594, 0, -8.99913)
-
-[node name="Button" parent="LVL_01/Guillotine" instance=ExtResource("7_u7hqg")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0947437, 2.26991, -1.60479)
-
-[node name="Cable_1m3" parent="LVL_01/Guillotine/Button" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70263, -0.347127, 0)
-
-[node name="Cable_1m" parent="LVL_01/Guillotine/Button" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.32898, 0.580736, 0)
-
-[node name="Guillotine2" parent="LVL_01" instance=ExtResource("5_ouigo")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.84638, 0, 8.9911)
-
-[node name="PowerSink" parent="LVL_01/Guillotine2" instance=ExtResource("12_8ndoq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112957, 1.82207, -1.91489)
-
-[node name="Cable_1m4" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.920593, 2.82661, 0.75247)
-
-[node name="Cable_1m5" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.814816, 2.82661, -0.28392)
-
-[node name="Cable_1m6" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0916271, 1.90376, -0.31833)
-
-[node name="Cable_1m7" parent="LVL_01/Guillotine2/PowerSink" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0.919603, 1.92635, 1.65694)
-
-[node name="PowerSource2" parent="LVL_01/Guillotine2" instance=ExtResource("10_loues")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.99335, 1.82207, 2.14637)
-
-[node name="Cable_1m" parent="LVL_01/Guillotine2/PowerSource2" instance=ExtResource("8_4kjhi")]
-transform = Transform3D(-4.37113e-08, -1, 0, 1, -4.37114e-08, 0, -3.55271e-15, 0, 1, 0.0639362, -0.913728, -0.227068)
-
-[node name="Pipe" parent="LVL_01" instance=ExtResource("8_1801s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75665, 2.02001, 2.03279)
-
-[node name="Pipe2" parent="LVL_01" instance=ExtResource("8_1801s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75665, 2.02001, 4.03042)
-
-[node name="Pipe3" parent="LVL_01" instance=ExtResource("8_1801s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75665, 2.02001, 6.0245)
-
-[node name="Pipe5" parent="LVL_01" instance=ExtResource("8_1801s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75665, 2.02001, 10.017)
-
-[node name="Pipe4" parent="LVL_01" instance=ExtResource("9_pwjlh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75613, 2.02011, 8.02201)
-
-[node name="Fire_Emitter" parent="LVL_01/Pipe4" instance=ExtResource("10_eu0wm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.00492573, 0.228462, -1.07581)
-
-[node name="HeadRemover" parent="LVL_01/Pipe4" instance=ExtResource("14_ec260")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.951925)
-monitoring = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LVL_01/Pipe4/HeadRemover"]
-transform = Transform3D(0.980656, 0.195741, 0, -0.195741, 0.980656, 0, 0, 0, 1, -1.87599, 0.651174, -0.10881)
-shape = SubResource("BoxShape3D_m3ye1")
-
-[node name="Module_Airlock_01" parent="LVL_01" instance=ExtResource("3_tgav5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -14.5)
-
-[node name="LVL_02" parent="." instance=ExtResource("12_7v8ei")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 43)
-
-[node name="Module_Airlock_02" parent="LVL_02" instance=ExtResource("3_tgav5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.5)
-
-[node name="HeadCountScanner" parent="LVL_02/Module_Airlock_02" instance=ExtResource("18_n0e8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07703e-07, 0, 4.66358)
-
-[node name="Guillotine" parent="." instance=ExtResource("5_ouigo")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -8.17206, 0, 34.9841)
-
-[node name="Button" parent="." instance=ExtResource("7_u7hqg")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -4.40569, 0.964771, 33.301)
-
-[node name="Saw" parent="." instance=ExtResource("17_iu0e7")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 10.5226, 1.82882, 39.9781)
-
-[node name="Electric_Socket" parent="." instance=ExtResource("10_nmmy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11336, 2.27891, 33)
-
-[node name="Electric_Socket2" parent="." instance=ExtResource("10_nmmy4")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 2.00811, 36.6896)
-
-[connection signal="push" from="LVL_01/Guillotine/Button" to="LVL_01/Guillotine" method="cut"]
-[connection signal="activate" from="LVL_01/Guillotine2/PowerSink" to="LVL_01/Guillotine2" method="cut"]
-[connection signal="activate" from="LVL_02/Module_Airlock_02/HeadCountScanner" to="LVL_02/Module_Airlock_02" method="open_entry"]
+[node name="Level_02" parent="." instance=ExtResource("4_wb2ti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 43)
