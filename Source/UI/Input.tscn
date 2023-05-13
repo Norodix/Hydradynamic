@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://blalleqw2gwf3"]
+[gd_scene load_steps=18 format=3 uid="uid://blalleqw2gwf3"]
 
 [ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="1_5ydhy"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/input_btn/input_btn.tscn" id="1_6feb4"]
 [ext_resource type="Texture2D" uid="uid://c4vunn2rkqj83" path="res://addons/ggs/assets/game_settings/input_setting.svg" id="3_pp7j4"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/input.gd" id="4_2dri1"]
+[ext_resource type="Script" path="res://Source/UI/game_settings/components/input_btn/input_btn.gd" id="4_63yqw"]
+[ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/_misc_components/reset_btn/reset_btn.tscn" id="5_kvad3"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/_misc_components/input_confirm_window/input_confirm_window.tscn" id="6_dj5r1"]
 
 [sub_resource type="Resource" id="Resource_7y6pa"]
@@ -101,9 +103,39 @@ resource_name = "ControlNext"
 script = ExtResource("4_2dri1")
 action = "control_next"
 type = 0
+current = "r"
+default = "r"
+name = "ControlNext"
+category = "Input"
+icon = ExtResource("3_pp7j4")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_ir6gf"]
+resource_name = "ControlLast"
+script = ExtResource("4_2dri1")
+action = "control_last"
+type = 0
+current = "t"
+default = "t"
+name = "ControlLast"
+category = "Input"
+icon = ExtResource("3_pp7j4")
+desc = "Rebind keyboard or gamepad input of a specific input action."
+value_type = 4
+value_hint = 0
+value_hint_string = ""
+
+[sub_resource type="Resource" id="Resource_x37me"]
+resource_name = "ControlMain"
+script = ExtResource("4_2dri1")
+action = "control_main"
+type = 0
 current = "space"
 default = "space"
-name = "ControlNext"
+name = "ControlMain"
 category = "Input"
 icon = ExtResource("3_pp7j4")
 desc = "Rebind keyboard or gamepad input of a specific input action."
@@ -116,7 +148,7 @@ resource_name = "BodyOnly"
 script = ExtResource("4_2dri1")
 action = "Sneak"
 type = 0
-current = "shift"
+current = "ctrl"
 default = "ctrl"
 name = "BodyOnly"
 category = "Input"
@@ -154,7 +186,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Forward"
 
-[node name="InputBtn" parent="CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_6feb4")]
+[node name="InputBtn" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -169,7 +201,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Backward"
 
-[node name="InputBtn2" parent="CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("1_6feb4")]
+[node name="InputBtn2" parent="CenterContainer/VBoxContainer/HBoxContainer2" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -184,7 +216,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Left"
 
-[node name="InputBtn3" parent="CenterContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("1_6feb4")]
+[node name="InputBtn3" parent="CenterContainer/VBoxContainer/HBoxContainer3" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -199,7 +231,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Right"
 
-[node name="InputBtn4" parent="CenterContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("1_6feb4")]
+[node name="InputBtn4" parent="CenterContainer/VBoxContainer/HBoxContainer4" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -214,7 +246,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Up"
 
-[node name="InputBtn5" parent="CenterContainer/VBoxContainer/HBoxContainer5" instance=ExtResource("1_6feb4")]
+[node name="InputBtn5" parent="CenterContainer/VBoxContainer/HBoxContainer5" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -229,7 +261,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Down"
 
-[node name="InputBtn6" parent="CenterContainer/VBoxContainer/HBoxContainer6" instance=ExtResource("1_6feb4")]
+[node name="InputBtn6" parent="CenterContainer/VBoxContainer/HBoxContainer6" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -244,13 +276,53 @@ layout_mode = 2
 layout_mode = 2
 text = "Control Next"
 
-[node name="InputBtn7" parent="CenterContainer/VBoxContainer/HBoxContainer7" instance=ExtResource("1_6feb4")]
+[node name="InputBtn7" parent="CenterContainer/VBoxContainer/HBoxContainer7" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_y0hug")
 apply_on_change = true
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Control Last"
+
+[node name="InputBtn" parent="CenterContainer/VBoxContainer/HBoxContainer9" groups=["settings"] instance=ExtResource("1_6feb4")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+script = ExtResource("4_63yqw")
+icw = NodePath("../../../../InputConfirmWindow")
+setting = SubResource("Resource_ir6gf")
+apply_on_change = true
+
+[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer9/InputBtn" index="0"]
+layout_mode = 2
+icon_alignment = 1
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "Control Body"
+
+[node name="InputBtn" parent="CenterContainer/VBoxContainer/HBoxContainer10" groups=["settings"] instance=ExtResource("1_6feb4")]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+script = ExtResource("4_63yqw")
+icw = NodePath("../../../../InputConfirmWindow")
+setting = SubResource("Resource_x37me")
+apply_on_change = true
+
+[node name="Btn" parent="CenterContainer/VBoxContainer/HBoxContainer10/InputBtn" index="0"]
+layout_mode = 2
+icon_alignment = 1
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -259,7 +331,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Move body only"
 
-[node name="InputBtn8" parent="CenterContainer/VBoxContainer/HBoxContainer8" instance=ExtResource("1_6feb4")]
+[node name="InputBtn8" parent="CenterContainer/VBoxContainer/HBoxContainer8" groups=["settings"] instance=ExtResource("1_6feb4")]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -267,19 +339,24 @@ icw = NodePath("../../../../InputConfirmWindow")
 setting = SubResource("Resource_gf4x3")
 apply_on_change = true
 
-[node name="ExitButton" parent="." instance=ExtResource("1_5ydhy")]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.431858
-anchor_top = 0.95216
-anchor_right = 0.568142
-anchor_bottom = 1.0
-offset_top = -30.0
-offset_right = 0.0
-offset_bottom = -30.0
+anchor_left = 0.5
+anchor_top = 0.954
+anchor_right = 0.5
+anchor_bottom = 0.954
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="ResetBtn" parent="VBoxContainer" instance=ExtResource("5_kvad3")]
+layout_mode = 2
+text = "Reset to default"
+group = "settings"
+
+[node name="ExitButton" parent="VBoxContainer" instance=ExtResource("1_5ydhy")]
+layout_mode = 2
 
 [node name="InputConfirmWindow" parent="." instance=ExtResource("6_dj5r1")]
 
@@ -290,4 +367,6 @@ metadata/_edit_use_anchors_ = true
 [editable path="CenterContainer/VBoxContainer/HBoxContainer5/InputBtn5"]
 [editable path="CenterContainer/VBoxContainer/HBoxContainer6/InputBtn6"]
 [editable path="CenterContainer/VBoxContainer/HBoxContainer7/InputBtn7"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer9/InputBtn"]
+[editable path="CenterContainer/VBoxContainer/HBoxContainer10/InputBtn"]
 [editable path="CenterContainer/VBoxContainer/HBoxContainer8/InputBtn8"]

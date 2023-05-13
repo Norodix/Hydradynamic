@@ -108,6 +108,12 @@ func purge_heads():
 func _process(delta):
 	if Input.is_action_just_pressed("control_next"):
 		control_index = (control_index + 1) % controllable_list.size()
+		if control_index == 0: control_index = 1
+	if Input.is_action_just_pressed("control_last"):
+		control_index = (control_index - 1) % controllable_list.size()
+		if control_index == 0: control_index = 1
+	if Input.is_action_just_pressed("control_main"):
+		control_index = 0
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.6, 0)
 	#cam_pivot.global_position = self.global_position
 	cam.camera_target = controllable_list[control_index]
