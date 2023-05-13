@@ -49,7 +49,7 @@ func add_head():
 		var hydra_head : HydraHead = head
 		# fibonacci
 		var ang = 1.618 * (i-1) * 2 * PI
-		var r0 = 0.4
+		var r0 = 0.6
 		var r = r0 * sqrt(i-1)
 		hydra_head.rest_position = Vector3(r * cos(ang), r * sin(ang), 0.0).rotated(Vector3(1,0,0), deg_to_rad(-30))
 
