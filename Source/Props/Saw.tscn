@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://pvldvobhpqbo"]
+[gd_scene load_steps=19 format=3 uid="uid://pvldvobhpqbo"]
 
 [ext_resource type="Script" path="res://Source/Props/Saw.gd" id="1_sfhw1"]
 [ext_resource type="AudioStream" uid="uid://dmet177wkic6m" path="res://Sound/SFX/saw_running.wav" id="2_n1a7s"]
+[ext_resource type="AudioStream" uid="uid://x40f7bl1cq3a" path="res://Sound/SFX/saw_break.wav" id="3_lycqo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hupt"]
 
@@ -246,3 +247,7 @@ libraries = {
 stream = ExtResource("2_n1a7s")
 volume_db = -20.0
 bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_Break" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_lycqo")
+volume_db = -10.0

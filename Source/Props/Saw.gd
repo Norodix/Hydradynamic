@@ -30,6 +30,7 @@ func hit():
 	cutter.disabled = true
 	print("Hit called")
 	anim.play("Break")
+	$AudioStreamPlayer3D_Break.play()
 	rampdown_sound()
 
 
