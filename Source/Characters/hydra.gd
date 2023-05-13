@@ -114,6 +114,11 @@ func _process(delta):
 	cam_pivot.global_position = lerp(cam_pivot.global_position, \
 									controllable_list[control_index].global_position, \
 									1.0 - pow(1.0 - 0.05, delta/0.016))
+	
+	# Place audiolistener at player character with camera's transform
+	var listener = $AudioListener3D
+	listener.global_transform = cam.global_transform
+	listener.global_position = cam.camera_target.global_position + Vector3(0, 1, 0)
 
 
 func _unhandled_key_input(event):

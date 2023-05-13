@@ -299,3 +299,7 @@ tree_root = SubResource("AnimationNodeStateMachine_gywwr")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_2tyqx")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+top_level = true
+current = true
