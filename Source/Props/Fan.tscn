@@ -1,7 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bq23jgc4rq08r"]
+[gd_scene load_steps=24 format=3 uid="uid://bq23jgc4rq08r"]
 
 [ext_resource type="Script" path="res://Source/Props/Fan.gd" id="1_cnu4o"]
-[ext_resource type="AnimationLibrary" uid="uid://1stahhp1hyy7" path="res://Source/Props/Fan_AnimLib.res" id="2_t4ks1"]
+[ext_resource type="AnimationLibrary" path="res://Source/Props/Fan_AnimLib.res" id="2_t4ks1"]
+[ext_resource type="AudioStream" uid="uid://crrmh3rf36j6r" path="res://Sound/SFX/fan_running.wav" id="3_kblde"]
+[ext_resource type="AudioStream" uid="uid://c25gcity8j5vl" path="res://Sound/SFX/fan_creak.wav" id="3_vuv20"]
+[ext_resource type="AudioStream" uid="uid://copf45ab5b43u" path="res://Sound/SFX/fan_crash.wav" id="4_r3iu0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqd3n"]
 
@@ -230,3 +233,19 @@ script = SubResource("GDScript_u5nmx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.478997)
 shape = SubResource("BoxShape3D_buajk")
+
+[node name="AudioStreamPlayer3D_running" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_kblde")
+attenuation_model = 1
+volume_db = -15.0
+max_distance = 12.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_crash" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_r3iu0")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3D_grid" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_vuv20")
+volume_db = -10.0
+bus = &"SFX"
