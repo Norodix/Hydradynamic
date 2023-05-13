@@ -1,7 +1,7 @@
 extends Node
 
 
-var player = null
+var player : HydraBody = null
 
 enum layers {
 	environment = 0,

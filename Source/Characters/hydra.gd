@@ -269,7 +269,7 @@ func _physics_process(delta):
 
 
 # Return input direction, where to drag body
-func control_head(head : RigidBody3D):
+func control_head(head : RigidBody3D) -> Vector3:
 	var fwbw = Input.get_axis("Forward", "Backward") # negative Z
 	var ltrt = Input.get_axis("Left", "Right")
 	var updw = Input.get_axis("Down", "Up")
@@ -279,9 +279,10 @@ func control_head(head : RigidBody3D):
 	# Drag body along
 	var d = head.global_position - neck_root.global_position
 	if d.length() > head_max_distance:
-		return d.normalized() * 0.1
+		var v = d.normalized() * 0.1
+		return Vector3(v.x, 0, v.y)
 		# TODO avoid jittering when not applying such small multiplier
-	return Vector2.ZERO
+	return Vector3.ZERO
 
 
 func push_head(head : RigidBody3D, force : Vector3):
