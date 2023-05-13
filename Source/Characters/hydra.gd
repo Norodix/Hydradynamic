@@ -38,7 +38,7 @@ func add_head():
 	self.add_child(hs)
 #	hs.global_position = neck_root.global_position + \
 #						Vector3(randf_range(-1, 1), randf_range(0.2, 1), randf_range(-1, 1))
-	hs.global_position = global_position + Vector3(0, 3, 0)
+	hs.global_position = global_position + Vector3(0, 2, 0)
 	hs.top_level = true
 	hs.linear_damp = head_damping
 	hs.neck_root_offset = neck_root.position
@@ -118,6 +118,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("control_main"):
 		control_index = 0
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.6, 0)
+	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.8, 0)
+	$Indicator.global_position += Vector3.UP * sin(Time.get_ticks_msec() / 1000.0 * 10) * 0.1
+	$Indicator.global_transform = $Indicator.global_transform.rotated_local(Vector3.UP, 0.1)
 	#cam_pivot.global_position = self.global_position
 	cam.camera_target = controllable_list[control_index]
 	cam_pivot.global_position = lerp(cam_pivot.global_position, \

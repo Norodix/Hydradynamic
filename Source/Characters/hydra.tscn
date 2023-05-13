@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://bsvo6t20dqbyi"]
+[gd_scene load_steps=24 format=3 uid="uid://bsvo6t20dqbyi"]
 
 [ext_resource type="Script" path="res://Source/Characters/hydra.gd" id="1_x4f0r"]
 [ext_resource type="Script" path="res://Source/Characters/Camera.gd" id="2_b4oo7"]
+[ext_resource type="Texture2D" uid="uid://chg2x7lbwmtq7" path="res://Assets/Indicator.png" id="2_gr003"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_law8v"]
 
@@ -193,9 +194,10 @@ script = ExtResource("1_x4f0r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2127, 0.067524)
 shape = SubResource("SphereShape3D_law8v")
 
-[node name="Indicator" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.883044, 0)
-text = "V"
+[node name="Indicator" type="Sprite3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.883044, 0)
+no_depth_test = true
+texture = ExtResource("2_gr003")
 
 [node name="CameraPivot" type="Node3D" parent="."]
 top_level = true
