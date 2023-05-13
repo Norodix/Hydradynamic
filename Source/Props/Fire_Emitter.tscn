@@ -7,8 +7,11 @@
 material = ExtResource("2_jab5x")
 
 [node name="Fire_Emitter" type="GPUParticles3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 amount = 20
 lifetime = 0.5
 process_material = ExtResource("1_hehyc")
 draw_pass_1 = SubResource("QuadMesh_vjd3a")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+light_color = Color(0.741176, 0.486275, 0.219608, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mf5m1b5dq23n"]
+[gd_scene load_steps=8 format=3 uid="uid://mf5m1b5dq23n"]
 
 [ext_resource type="PackedScene" uid="uid://c07meoasixum8" path="res://Assets/Pipe/Pipe.gltf" id="1_b2w7p"]
 
@@ -69,6 +69,9 @@ backlight_enabled = true
 backlight = Color(0.490196, 0.490196, 0.490196, 1)
 grow_amount = 0.1
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vn6p6"]
+radius = 0.3
+
 [node name="Pipe" instance=ExtResource("1_b2w7p")]
 
 [node name="Pipe_Line" parent="." index="0"]
@@ -77,3 +80,9 @@ surface_material_override/1 = SubResource("StandardMaterial3D_huu7d")
 
 [node name="Pipe_Wheeel" parent="." index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_2jsed")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1)
+shape = SubResource("CylinderShape3D_vn6p6")

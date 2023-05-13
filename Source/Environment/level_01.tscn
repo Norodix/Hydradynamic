@@ -41,63 +41,63 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.117
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.08594, 0, -8.99913)
 
 [node name="Button" parent="Guillotine" instance=ExtResource("5_ft472")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0947437, 2.26991, -1.60479)
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.0947437, 2.26991, -1.89176)
 
 [node name="Cable_1m3" parent="Guillotine/Button" instance=ExtResource("6_6sryd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70263, -0.347127, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42621, 0.0225811, 0)
 
 [node name="Cable_1m" parent="Guillotine/Button" instance=ExtResource("6_6sryd")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.32898, 0.580736, 0)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.57356e-28, 0, 1, -2.23752, 0.867705, 0)
 
 [node name="Guillotine2" parent="." instance=ExtResource("4_212pe")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.84638, 0, 8.9911)
 
 [node name="PowerSink" parent="Guillotine2" instance=ExtResource("7_b20vc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112957, 1.82207, -1.91489)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.112957, 1.82207, -2.12689)
 
-[node name="Cable_1m4" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.920593, 2.82661, 0.75247)
+[node name="Cable_1m01" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 3.55271e-15, 1, 1, 4.37114e-08, -4.37114e-08, -0.00893116, 0.0139914, -1.47021)
 
-[node name="Cable_1m5" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.814816, 2.82661, -0.28392)
+[node name="Cable_1m02" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, 0.981226, 0.0147238, -2.47414)
 
-[node name="Cable_1m6" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0916271, 1.90376, -0.31833)
+[node name="Cable_1m03" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 0.837898, 0.959044, -2.47145)
 
-[node name="Cable_1m7" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0.919603, 1.92635, 1.65694)
+[node name="Cable_1m04" parent="Guillotine2/PowerSink" instance=ExtResource("6_6sryd")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, -1, 8.74228e-08, 1.91069e-15, 0.842001, 1.9482, -1.47809)
 
 [node name="PowerSource2" parent="Guillotine2" instance=ExtResource("8_pjue7")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.99335, 1.82207, 2.14637)
+transform = Transform3D(0.707107, -0.707107, 3.09086e-08, 0, -4.37114e-08, -1, 0.707107, 0.707107, -3.09086e-08, 2.65108, 1.82207, 1.54279)
 
 [node name="Cable_1m" parent="Guillotine2/PowerSource2" instance=ExtResource("6_6sryd")]
-transform = Transform3D(-4.37113e-08, -1, 0, 1, -4.37114e-08, 0, -3.55271e-15, 0, 1, 0.0639362, -0.913728, -0.227068)
-
-[node name="Pipe" parent="." instance=ExtResource("9_cafxr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26658, 2.02001, 2.03279)
-
-[node name="Pipe2" parent="." instance=ExtResource("9_cafxr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26658, 2.02001, 4.03042)
-
-[node name="Pipe3" parent="." instance=ExtResource("9_cafxr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26658, 2.02001, 6.0245)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.0036335, 0.016891, 0.913728)
 
 [node name="Pipe5" parent="." instance=ExtResource("9_cafxr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26658, 2.02001, 10.017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3, 2, 10)
 
-[node name="Pipe4" parent="." instance=ExtResource("10_s5jcx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26606, 2.02011, 8.02201)
+[node name="Pipe4" parent="Pipe5" instance=ExtResource("10_s5jcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
-[node name="Fire_Emitter" parent="Pipe4" instance=ExtResource("11_jscan")]
+[node name="Fire_Emitter" parent="Pipe5/Pipe4" instance=ExtResource("11_jscan")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.419157, 0.446693, -1.07581)
 
-[node name="HeadRemover" parent="Pipe4" instance=ExtResource("12_6b6x0")]
+[node name="HeadRemover" parent="Pipe5/Pipe4" instance=ExtResource("12_6b6x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.951925)
 monitoring = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pipe4/HeadRemover"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pipe5/Pipe4/HeadRemover"]
 transform = Transform3D(0.980656, 0.195741, 0, -0.195741, 0.980656, 0, 0, 0, 1, -2.30197, 0.522521, -0.10881)
 shape = SubResource("BoxShape3D_ds7in")
+
+[node name="Pipe3" parent="Pipe5" instance=ExtResource("9_cafxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Pipe2" parent="Pipe5" instance=ExtResource("9_cafxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Pipe" parent="Pipe5" instance=ExtResource("9_cafxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
 [node name="Module_Airlock_01" parent="." instance=ExtResource("13_wswng")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -14.5)
