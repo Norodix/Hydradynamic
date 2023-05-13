@@ -136,7 +136,7 @@ func _unhandled_key_input(event):
 	if event.pressed:
 		var code = event.keycode
 		if code >= KEY_0 and code <= KEY_9:
-			control_index = (code - KEY_0 - 1) % controllable_list.size()
+			control_index = clamp((code - KEY_0), 0, controllable_list.size() - 1)
 
 
 func get_head_count() -> int:
