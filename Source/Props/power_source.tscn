@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://barqulglrp6ve"]
+[gd_scene load_steps=9 format=3 uid="uid://barqulglrp6ve"]
 
 [ext_resource type="Script" path="res://Source/Props/power_source.gd" id="1_idule"]
-[ext_resource type="Shader" uid="uid://mapabvsdd5a6" path="res://Source/Materials/Shock_Shader.tres" id="2_f6fus"]
+[ext_resource type="Shader" uid="uid://be7m37jfglgou" path="res://Source/Materials/Shock_Shader.tres" id="2_f6fus"]
 [ext_resource type="PackedScene" uid="uid://cghka68co1hm0" path="res://Source/Props/Electric_Socket.tscn" id="2_u8j4t"]
+[ext_resource type="AudioStream" uid="uid://b80ls0avenl0m" path="res://Sound/SFX/electric_power.wav" id="4_mycks"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rbo74"]
 resource_local_to_scene = true
@@ -55,5 +56,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_v1r5e")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("CylinderShape3D_61rhl")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315692, 0)
+stream = ExtResource("4_mycks")
+volume_db = -20.0
+unit_size = 3.0
 
 [editable path="Electric_Socket"]

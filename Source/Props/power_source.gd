@@ -17,6 +17,10 @@ func _process(delta):
 	var electricity_pass = mat.next_pass.next_pass
 	#print("Setting: ", power)
 	electricity_pass.set_shader_parameter("Shock_Bool", is_powered())
+	if not $AudioStreamPlayer3D.playing and is_powered():
+		$AudioStreamPlayer3D.play()
+	if not is_powered():
+		$AudioStreamPlayer3D.stop()
 
 
 func enable():
