@@ -22,6 +22,9 @@ const max_head_count = 16
 @onready var headscene = preload("hydra_head.tscn")
 @onready var neck_root = $NeckPoint
 
+var dance_radius = 0.7
+var dance_period = 2
+var dance_enabled = false
 
 func _ready():
 	Globals.player = self
@@ -245,6 +248,21 @@ func _physics_process(delta):
 			var conducting = h.power_sinks()
 			if conducting:
 				h.power()
+	
+	if dance_enabled:
+		for head in controllable_list:
+			if not head is HydraHead:
+				continue
+			# Head desired position
+			var pos_wanted = neck_root.global_position + direction * 1.5 + Vector3.UP * 1.5 \
+							+ global_transform.basis * head.rest_position
+			var t = Time.get_ticks_msec() / 1000.0
+			var a = t / dance_period * 2 * PI
+			var offset = global_transform.basis * Vector3(cos(a), abs(sin(a)) - 0.5, 0) * dance_radius
+			offset += Vector3(0, 0, 1)
+			pos_wanted += offset
+			var push_dir = (pos_wanted - head.global_position)
+			push_head(head, push_dir * 2)
 
 
 # Return input direction, where to drag body
