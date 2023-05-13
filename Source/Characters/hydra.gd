@@ -124,7 +124,9 @@ func _process(delta):
 	# Place audiolistener at player character with camera's transform
 	var listener = $AudioListener3D
 	listener.global_transform = cam.global_transform
-	listener.global_position = cam.camera_target.global_position + Vector3(0, 1, 0)
+	listener.global_position = lerp(listener.global_position, 
+									cam.camera_target.global_position + Vector3(0, 1, 0),
+									0.7)
 
 
 func _unhandled_key_input(event):
