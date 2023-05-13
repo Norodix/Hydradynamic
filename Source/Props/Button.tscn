@@ -65,8 +65,8 @@ grow_amount = 0.1
 size = Vector3(1, 0.22, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mss5i"]
-height = 0.2
-radius = 0.36
+height = 0.232141
+radius = 0.401146
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2i2n"]
 
@@ -177,7 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0989778, 0)
 shape = SubResource("BoxShape3D_kcsd6")
 
 [node name="ButtonShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.372681, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215927, 0)
 shape = SubResource("CylinderShape3D_mss5i")
 
 [node name="Push" type="Node3D" parent="."]
