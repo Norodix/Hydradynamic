@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfc1qyfgsb8p7"]
+[gd_scene load_steps=14 format=3 uid="uid://cfc1qyfgsb8p7"]
 
 [ext_resource type="PackedScene" uid="uid://dqr6tg8ksngk3" path="res://Source/Props/Module_Straight.tscn" id="1_n2pxt"]
 [ext_resource type="Script" path="res://Source/Environment/LevelReset.gd" id="1_xaphc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dha5h2njv88ri" path="res://Source/Props/power_and.tscn" id="7_2ntfq"]
 [ext_resource type="PackedScene" uid="uid://6kfe8edwhdku" path="res://Source/Props/power_sink.tscn" id="7_a1rbk"]
 [ext_resource type="PackedScene" uid="uid://pvldvobhpqbo" path="res://Source/Props/Saw.tscn" id="8_7xccg"]
+[ext_resource type="PackedScene" uid="uid://dsqj208st8iy7" path="res://Source/Props/Cable_1m.tscn" id="9_2i5hf"]
 [ext_resource type="PackedScene" uid="uid://bq23jgc4rq08r" path="res://Source/Props/Fan.tscn" id="9_qesqa"]
 
 [node name="Level_04" type="Node3D"]
@@ -36,10 +37,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.00992, 0, -7.49068)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0261812, 1.21008, -0.176018)
 
 [node name="Button" parent="Trap_01/Guillotine/PowerAND2" instance=ExtResource("5_py7ry")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0189867, -0.468046, 0.905344)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0189867, -0.468046, 0.689671)
+
+[node name="Node3D" parent="Trap_01/Guillotine/PowerAND2/Button" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1.25, 0, 0, 0, -5.46393e-08, 1.25, 0, -1.25, -5.46393e-08, -1.3763, 0.0270491, 0.118345)
+
+[node name="Node3D2" parent="Trap_01/Guillotine/PowerAND2/Button" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-5.46392e-08, 1.25, 0, 5.46392e-08, 2.38836e-15, 1.25, 1.25, 5.46392e-08, -5.46392e-08, -1.00618, 0.0300207, -1.14855)
+
+[node name="Node3D3" parent="Trap_01/Guillotine/PowerAND2/Button" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(5.24537e-08, 1.25, 4.77671e-15, 0.4, -1.63918e-07, -1.06581e-14, -5.32907e-15, 4.77671e-15, -1.25, -1.00533, -0.339784, -2.40541)
 
 [node name="Button2" parent="Trap_01/Guillotine/PowerAND2" instance=ExtResource("5_py7ry")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.03184, 1.22475, -1.13068)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.16724, 1.22475, -1.13068)
+
+[node name="Node3D" parent="Trap_01/Guillotine/PowerAND2/Button2" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-0.00453784, 4.33393e-08, -0.99999, 0.161034, 0.986949, -0.000730711, 0.986939, -0.161035, -0.00447862, 0, 0.139238, 0.504889)
 
 [node name="Trap_02" type="Node3D" parent="."]
 
@@ -53,13 +66,40 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.182
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74558, 0, 8.78966)
 
 [node name="PowerSource" parent="Trap_02/PowerAND" instance=ExtResource("6_edipb")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.36487, 1.80239, -0.656795)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -1.22974, 1.80239, -0.818685)
+
+[node name="Node3D" parent="Trap_02/PowerAND/PowerSource" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 1.64203e-15, 1, 0, 1, -8.35187e-23, -4.37114e-08, 0, 0, 1.43811)
 
 [node name="PowerSink" parent="Trap_02/PowerAND" instance=ExtResource("7_a1rbk")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.829789, 1.82364, 1.21034)
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0.829789, 1.82364, 1.18937)
+
+[node name="Node3D" parent="Trap_02/PowerAND/PowerSink" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 1.3085, 0, 0)
+
+[node name="Node3D4" parent="Trap_02/PowerAND/PowerSink" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659796, 0, 0)
+
+[node name="Node3D5" parent="Trap_02/PowerAND/PowerSink" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 4.23516e-22, 1, -0.902101, -0.205937, 0)
+
+[node name="Node3D2" parent="Trap_02/PowerAND/PowerSink" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(4.37114e-08, 7.10543e-15, -1, 8.74228e-08, -1, 0, -1, -8.74228e-08, -4.37114e-08, 2.07123, 0, 0.993968)
+
+[node name="Node3D3" parent="Trap_02/PowerAND/PowerSink" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(0.422618, -0.906308, -8.74228e-08, -0.906308, -0.422618, 0, -3.69465e-08, 7.92319e-08, -1, 1.83068, 0.491262, 1.79036)
 
 [node name="Button3" parent="Trap_02/PowerAND" instance=ExtResource("5_py7ry")]
-transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, 0, -3.09086e-08, 0.707107, 0.707107, 0.311599, 0.599026, -2.07319)
+transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, 0, -3.09086e-08, 0.707107, 0.707107, 0.225319, 0.599026, -2.22056)
+
+[node name="Node3D" parent="Trap_02/PowerAND/Button3" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 1, 3.55271e-15, -0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, 0.707107, 0.549593, 0.053462, -0.197348)
+
+[node name="Node3D2" parent="Trap_02/PowerAND/Button3" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 1, 3.55271e-15, -0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, 0.707107, 0.549593, 1.40105, 1.15024)
+
+[node name="Node3D3" parent="Trap_02/PowerAND/Button3" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-3.15294e-08, 1, -1.0677e-07, 0.353553, -3.09086e-08, -0.707107, -0.353553, -1.20087e-07, -0.707107, 0.549593, 1.05183, 1.49946)
 
 [node name="Trap_03" type="Node3D" parent="."]
 
@@ -69,13 +109,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66609, 0.507978, 6.03719)
 [node name="PowerAND" parent="Trap_03/Saw" instance=ExtResource("7_2ntfq")]
 
 [node name="PowerSource2" parent="Trap_03/Saw/PowerAND" instance=ExtResource("6_edipb")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.04559, 1.64231, 3.77024)
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, 0.000645713, -1, 5.645e-11, -1, -0.000645713, -2.04559, 1.64231, 3.93862)
+
+[node name="Node3D" parent="Trap_03/Saw/PowerAND/PowerSource2" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 1.73472e-18, 1, 0, -4.37114e-08, 0, -0.000939369, 1.45428)
 
 [node name="PowerSink2" parent="Trap_03/Saw/PowerAND" instance=ExtResource("7_a1rbk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.09992, 0.856162, 2.31706)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.307, 0.856, 2.3)
+
+[node name="Node3D" parent="Trap_03/Saw/PowerAND/PowerSink2" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-0.5, 0, -8.74228e-08, 0, 1, 0, 4.37114e-08, 0, -1, 0.536324, 0, 0)
+
+[node name="Node3D2" parent="Trap_03/Saw/PowerAND/PowerSink2" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(0.000418858, 4.36931e-08, -1, 4.36931e-08, 1, 4.37114e-08, 1, -4.37114e-08, 0.000418858, 1.02526, 0, -0.995927)
+
+[node name="Node3D3" parent="Trap_03/Saw/PowerAND/PowerSink2" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.99527)
+
+[node name="Node3D4" parent="Trap_03/Saw/PowerAND/PowerSink2" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.319568, 0.013, -1.99467)
 
 [node name="Button4" parent="Trap_03/Saw/PowerAND" instance=ExtResource("5_py7ry")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.04626, 2.71915, 0.899487)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.294, 3.216, 2.3)
+
+[node name="Node3D" parent="Trap_03/Saw/PowerAND/Button4" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -0.424214, 0, 0)
+
+[node name="Node3D2" parent="Trap_03/Saw/PowerAND/Button4" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-5.24537e-08, 0, -1, 0, 1, 0, 1.2, 0, -4.37114e-08, -0.915702, 0, -1.19223)
+
+[node name="Node3D3" parent="Trap_03/Saw/PowerAND/Button4" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91207, 0, -2.40116)
+
+[node name="Node3D4" parent="Trap_03/Saw/PowerAND/Button4" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.67957, 0, -2.40116)
 
 [node name="Trap_04" type="Node3D" parent="."]
 
@@ -85,19 +152,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 1)
 [node name="PowerAND" parent="Trap_04/Fan" instance=ExtResource("7_2ntfq")]
 
 [node name="Button5" parent="Trap_04/Fan/PowerAND" instance=ExtResource("5_py7ry")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.94092, 0.21787, 1.27722)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.94092, 0.21787, 1.02734)
+
+[node name="Node3D" parent="Trap_04/Fan/PowerAND/Button5" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-2.18557e-08, 0, 1, 0, 1, 0, -0.5, 0, -4.37114e-08, -0.0525155, 0, 0.232119)
+
+[node name="Node3D2" parent="Trap_04/Fan/PowerAND/Button5" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-0.5, 0, -8.74228e-08, 0, 1, 0, 4.37114e-08, 0, -1, 0.429023, 1.43051e-06, 0.729144)
 
 [node name="PowerSource3" parent="Trap_04/Fan/PowerAND" instance=ExtResource("6_edipb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92695, -1.98067, 1.22403)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.9218, -1.39648, 1.03907)
+
+[node name="Node3D" parent="Trap_04/Fan/PowerAND/PowerSource3" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 1.18165)
 
 [node name="PowerSink3" parent="Trap_04/Fan/PowerAND" instance=ExtResource("7_a1rbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89657, -1.96507, 1.21696)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.94556, -1.38435, 1.03518)
+
+[node name="Node3D3" parent="Trap_04/Fan/PowerAND/PowerSink3" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(5.96244e-09, 0, -1, -5.32907e-15, 1, -1.58819e-22, 0.5, 1.06581e-14, 1.19249e-08, -0.0478714, -0.0078485, -0.18427)
+
+[node name="Node3D4" parent="Trap_04/Fan/PowerAND/PowerSink3" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-0.5, 0, -8.74228e-08, -4.23516e-22, 1, 1.06581e-14, 4.37114e-08, 1.06581e-14, -1, 0.433667, -0.00784707, -0.681188)
 
 [node name="PowerSink4" parent="Trap_04/Fan/PowerAND" instance=ExtResource("7_a1rbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28609, 0.309353, 1.19861)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.92366, 0.309353, 1.0253)
+
+[node name="Node3D3" parent="Trap_04/Fan/PowerAND/PowerSink4" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-2.18557e-08, 0, 1, 5.32907e-15, 1, 4.23516e-22, -0.5, 1.06581e-14, -4.37114e-08, 0.0477552, 0.00203156, 0.323602)
+
+[node name="Node3D4" parent="Trap_04/Fan/PowerAND/PowerSink4" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-0.5, 0, -8.74228e-08, -4.23516e-22, 1, 1.06581e-14, 4.37114e-08, 1.06581e-14, -1, -0.432894, 0.00203419, 0.820626)
 
 [node name="Button6" parent="Trap_04/Fan/PowerAND" instance=ExtResource("5_py7ry")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0194811, -1.99892, 1.28994)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0194811, -2.45634, 1.02807)
+
+[node name="Node3D2" parent="Trap_04/Fan/PowerAND/Button6" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1.19249e-08, 0, -1, 1.06581e-14, 1, 1.58819e-22, 1, -1.06581e-14, 1.19249e-08, -0.0367686, 0.0109935, -0.457508)
 
 [node name="Trap_05" type="Node3D" parent="."]
 
@@ -108,22 +199,85 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.0856
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.09628, 4.76837e-07, -5.98521)
 
 [node name="PowerSource4" parent="Trap_05/PowerAND" instance=ExtResource("6_edipb")]
-transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -0.999999, -0.841452, 1.5143, 1.67491)
+transform = Transform3D(0.999999, 0, 0, 0, 1.19249e-08, 0.999999, 0, -1, 1.19249e-08, -1.10567, 1.5143, 1.8786)
+
+[node name="Node3D" parent="Trap_05/PowerAND/PowerSource4" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 7.10543e-15, 1, 1.02251e-15, 1, 0, -1, -2.27847e-23, -4.37114e-08, 0, 0, -1.00873)
 
 [node name="PowerSink5" parent="Trap_05/PowerAND" instance=ExtResource("7_a1rbk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.21561, 2.17878, 3.35919)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.0115, 2.17878, 3.35919)
+
+[node name="Node3D" parent="Trap_05/PowerAND/PowerSink5" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-3.49691e-08, 0, -1, 0, 1, 0, 0.8, 0, -4.37114e-08, 0, 0, -0.58159)
 
 [node name="PowerSink6" parent="Trap_05/PowerAND" instance=ExtResource("7_a1rbk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.787551, 1.64276, -0.37809)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.989998, 1.57189, 0.100969)
+
+[node name="Node3D" parent="Trap_05/PowerAND/PowerSink6" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.62168, 0, 0)
+
+[node name="Node3D3" parent="Trap_05/PowerAND/PowerSink6" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.62266, 0, 0.988735)
+
+[node name="Node3D4" parent="Trap_05/PowerAND/PowerSink6" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, -2.96462e-21, 1, 1.62266, 0.976402, 1.7976)
+
+[node name="Node3D5" parent="Trap_05/PowerAND/PowerSink6" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-2.18557e-08, 1, 2.5411e-21, -0.5, -4.37114e-08, 0, 0, -2.5411e-21, 1, 1.62266, 2.50974, 1.7976)
 
 [node name="Button7" parent="Trap_05/PowerAND" instance=ExtResource("5_py7ry")]
-transform = Transform3D(-1, 8.74227e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74227e-08, 1, 4.37114e-08, -3.8056, 3.19693, -1.79199)
+transform = Transform3D(-1, 8.74227e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74227e-08, 1, 4.37114e-08, -3.8056, 3.19693, -2.06599)
+
+[node name="Node3D2" parent="Trap_05/PowerAND/Button7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(2.18557e-08, 8.74227e-08, -0.999999, -4.64238e-15, 1, 8.74226e-08, 0.499999, 1.06581e-14, 4.37113e-08, 0.0117633, -0.00287652, -0.366603)
+
+[node name="Node3D4" parent="Trap_05/PowerAND/Button7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-0.999999, 8.74227e-08, -3.82136e-15, 8.74226e-08, 1, 2.13163e-14, 3.82136e-15, 3.19744e-14, -0.999999, 0.998191, -0.0028758, -0.849151)
+
+[node name="Node3D5" parent="Trap_05/PowerAND/Button7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(4.37113e-08, 8.74227e-08, -0.999998, -2.34956e-14, 1, 8.74226e-08, 0.999998, 3.19744e-14, 4.37113e-08, 1.99458, -0.00287604, -1.84372)
+
+[node name="Node3D6" parent="Trap_05/PowerAND/Button7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(4.37113e-08, 8.74227e-08, -0.999998, -2.70483e-14, 1, 8.74226e-08, 0.999998, 3.90799e-14, 4.37113e-08, 1.99458, -0.00287604, -3.86443)
+
+[node name="Node3D9" parent="Trap_05/PowerAND/Button7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-8.74226e-08, 4.37113e-08, -0.999997, -0.999999, -4.37114e-08, 8.74225e-08, -4.37113e-08, 0.999998, 4.37113e-08, 1.99836, 1.01456, -3.15987)
+
+[node name="Node3D11" parent="Trap_05/PowerAND/Button7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-8.74226e-08, 4.37113e-08, -0.999997, -0.999999, -4.37114e-08, 8.74224e-08, -4.37113e-08, 0.999998, 4.37113e-08, 1.99836, 3.05125, -3.15987)
+
+[node name="Node3D13" parent="Trap_05/PowerAND/Button7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(0.999997, 8.74227e-08, 8.74225e-08, -8.74224e-08, 0.999999, -3.63331e-14, -8.74226e-08, 5.32907e-14, 0.999996, 1.00692, 4.10096, -3.15987)
 
 [node name="Button8" parent="Trap_05/PowerAND" instance=ExtResource("5_py7ry")]
-transform = Transform3D(1.91068e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -1.07481, 3.30609, 1.59843)
+transform = Transform3D(1.91068e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -1.07481, 4.42726, 1.87468)
+
+[node name="Node3D6" parent="Trap_05/PowerAND/Button8" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-1.40371e-10, 1, -4.37105e-08, -0.00321136, -4.37114e-08, -0.999979, -0.49999, 3.55271e-15, 0.00642272, -1.01608, -0.023881, 0.444934)
+
+[node name="Node3D7" parent="Trap_05/PowerAND/Button8" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(0.5, -4.37114e-08, -4.37114e-08, -2.18557e-08, -4.37114e-08, -1, 2.18557e-08, 1, -4.37114e-08, -0.526408, -0.0238781, -0.0408363)
 
 [node name="PowerSink7" parent="Trap_05/PowerAND" instance=ExtResource("7_a1rbk")]
-transform = Transform3D(0.999999, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 0.999999, -4.05113, 1.27092, -1.85927)
+transform = Transform3D(0.999999, 0, 0, 0, -4.37114e-08, -0.999999, 0, 1, -4.37113e-08, -3.81736, 1.27092, -2.06887)
+
+[node name="Node3D" parent="Trap_05/PowerAND/PowerSink7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(5.96244e-09, -1.77636e-14, -1, 5.5897e-15, 1, -1.06581e-14, 0.5, -1.77636e-14, 1.19249e-08, 0, 0, -0.225237)
+
+[node name="Node3D3" parent="Trap_05/PowerAND/PowerSink7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(0.8, -1.42109e-14, -2.11758e-22, 7.10543e-15, 1, 2.13163e-14, 1.16467e-21, -2.13163e-14, 1, -0.783018, 0, -0.712118)
+
+[node name="Node3D7" parent="Trap_05/PowerAND/PowerSink7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-4.37114e-08, -5.68434e-14, 0.999999, -3.03324e-14, 1, 3.19744e-14, -0.999999, -5.68434e-14, -4.37114e-08, -1.57533, 0, 0.280776)
+
+[node name="Node3D8" parent="Trap_05/PowerAND/PowerSink7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(1.06581e-14, -4.37114e-08, 0.999998, -0.999999, -4.37114e-08, 3.55271e-15, 4.37113e-08, -1, -4.37113e-08, -1.57533, 1.01744, 1.23386)
+
+[node name="Node3D10" parent="Trap_05/PowerAND/PowerSink7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(2.84217e-14, -4.37114e-08, 1, -0.9, -4.37114e-08, 2.13163e-14, 3.93403e-08, -1, -4.37114e-08, -1.57533, 2.94724, 1.23386)
+
+[node name="Node3D12" parent="Trap_05/PowerAND/PowerSink7" instance=ExtResource("9_2i5hf")]
+transform = Transform3D(-0.999998, -2.84217e-14, -8.74226e-08, -1.42109e-14, 0.999999, -1.44795e-14, 8.74226e-08, -2.84217e-14, -0.999998, -0.581902, 3.89619, 1.23386)
 
 [connection signal="purge_finished" from="Module_Airlock" to="." method="trigger_level_reset"]
 [connection signal="activate" from="Module_Airlock/HeadCountScanner" to="Module_Airlock" method="open_entry"]
