@@ -23,3 +23,4 @@ shape = SubResource("CylinderShape3D_d6u3s")
 stream = ExtResource("3_2x51o")
 volume_db = -20.0
 unit_size = 3.0
+bus = &"SFX"
