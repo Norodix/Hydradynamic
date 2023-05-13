@@ -1,19 +1,20 @@
 [gd_scene load_steps=9 format=3 uid="uid://barqulglrp6ve"]
 
 [ext_resource type="Script" path="res://Source/Props/power_source.gd" id="1_idule"]
-[ext_resource type="Shader" uid="uid://be7m37jfglgou" path="res://Source/Materials/Shock_Shader.tres" id="2_f6fus"]
+[ext_resource type="Shader" uid="uid://mapabvsdd5a6" path="res://Source/Materials/Shock_Shader.tres" id="2_f6fus"]
 [ext_resource type="PackedScene" uid="uid://cghka68co1hm0" path="res://Source/Props/Electric_Socket.tscn" id="2_u8j4t"]
 [ext_resource type="AudioStream" uid="uid://b80ls0avenl0m" path="res://Sound/SFX/electric_power.wav" id="4_mycks"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbo74"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3356"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_f6fus")
+shader_parameter/Shock_Amplitude = 0.08
 shader_parameter/Shock_Bool = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dk3y0"]
 resource_local_to_scene = true
-next_pass = SubResource("ShaderMaterial_rbo74")
+next_pass = SubResource("ShaderMaterial_m3356")
 cull_mode = 1
 diffuse_mode = 3
 specular_mode = 2

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cufh55raujuyn"]
+
+[ext_resource type="Shader" uid="uid://mapabvsdd5a6" path="res://Source/Materials/Shock_Shader.tres" id="1_62rf2"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_62rf2")
+shader_parameter/Shock_Amplitude = 0.08
+shader_parameter/Shock_Bool = false
