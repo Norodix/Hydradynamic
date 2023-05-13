@@ -24,6 +24,8 @@ func deactivate():
 func reset_level():
 	cutter.disabled = true
 	broken = false
+	anim.play("RESET")
+	anim.advance(1)
 
 
 func hit():

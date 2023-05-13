@@ -33,7 +33,12 @@ func deactivate():
 func reset_level():
 	cutter.disabled = true
 	broken = false
-	_ready()
+	anim.play("RESET")
+	anim.advance(1)
+	anim_grid.play("RESET")
+	anim_grid.advance(1)
+	anim.play("Spin")
+	rampup_sound()
 
 
 func hit():
