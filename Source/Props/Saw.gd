@@ -17,7 +17,8 @@ func activate():
 func deactivate():
 	cutter.disabled = true
 	rampdown_sound()
-	anim.pause()
+	if anim.current_animation == "Spin":
+		anim.pause()
 
 
 func reset_level():
