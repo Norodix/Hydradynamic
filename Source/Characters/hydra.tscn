@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bsvo6t20dqbyi"]
+[gd_scene load_steps=30 format=3 uid="uid://bsvo6t20dqbyi"]
 
 [ext_resource type="Script" path="res://Source/Characters/hydra.gd" id="1_x4f0r"]
 [ext_resource type="Script" path="res://Source/Characters/Camera.gd" id="2_b4oo7"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://ce64bqle5loap" path="res://Sound/Music/Hydradynamic-level-music-pattern-A-v1.ogg" id="5_2a1ke"]
 [ext_resource type="AudioStream" uid="uid://bj8bm1hklnbrp" path="res://Sound/Music/Hydradynamic-level-music-pattern-B-v1.ogg" id="6_vtdcs"]
 [ext_resource type="AudioStream" uid="uid://b1cxohuov4cxm" path="res://Sound/Music/Hydradynamic-level-music-pattern-C-v1.ogg" id="7_8m1x2"]
+[ext_resource type="AudioStream" uid="uid://ddv7v7cbnmreo" path="res://Sound/Music/Hydradynamic-victory-music-head-v1.ogg" id="8_0cfhr"]
+[ext_resource type="AudioStream" uid="uid://b2wlbcekrjkb4" path="res://Sound/Music/Hydradynamic-victory-music-tail-v1.ogg" id="9_g03a8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_law8v"]
 
@@ -236,28 +238,28 @@ bones/1/parent = -1
 bones/1/rest = Transform3D(1, -5.68434e-14, -7.15256e-07, 6.66331e-07, -0.363487, 0.931599, -2.59986e-07, -0.931599, -0.363487, 5.0413e-16, 0.937103, 0.993565)
 bones/1/enabled = true
 bones/1/position = Vector3(5.0413e-16, 0.937103, 0.993565)
-bones/1/rotation = Quaternion(-0.831018, -1.99929e-07, 2.9657e-07, 0.556246)
+bones/1/rotation = Quaternion(-0.829639, -2.08421e-07, 2.9072e-07, 0.5583)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 2.16344e-07, -3.35038e-08, -2.16344e-07, 0.953158, -0.302471, -3.35035e-08, 0.302471, 0.953158, -1.54159e-14, 2.49763, -6.51926e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(-1.54159e-14, 2.49763, -6.51926e-08)
-bones/2/rotation = Quaternion(0.193476, 3.52793e-09, -1.57385e-07, 0.981105)
+bones/2/rotation = Quaternion(0.201109, -1.63931e-09, -1.33259e-07, 0.979569)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Bone.003"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 5.94696e-08, -2.47661e-09, -5.94696e-08, 0.996537, -0.0831446, -2.47655e-09, 0.0831446, 0.996537, 8.32827e-15, 2.04584, -7.45058e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(8.32827e-15, 2.04584, -7.45058e-09)
-bones/3/rotation = Quaternion(0.0416055, -0.000467324, -0.0116539, 0.999066)
+bones/3/rotation = Quaternion(0.0415932, -0.00107883, -0.0269032, 0.998772)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Bone.004"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, -1.22399e-09, -1.07568e-12, 1.22399e-09, 0.999998, 0.00171126, -1.01889e-12, -0.00171126, 0.999998, -4.29235e-15, 2.55239, -3.72529e-09)
 bones/4/enabled = true
 bones/4/position = Vector3(-4.29235e-15, 2.55239, -3.72529e-09)
-bones/4/rotation = Quaternion(-0.102785, -2.76416e-09, 9.96165e-08, 0.994704)
+bones/4/rotation = Quaternion(-0.12723, -0.0014083, 0.0483687, 0.990692)
 bones/4/scale = Vector3(1, 1, 1)
 
 [node name="Body" type="MeshInstance3D" parent="Body_Armature/Skeleton3D"]
@@ -299,3 +301,11 @@ stream = ExtResource("7_8m1x2")
 volume_db = -60.0
 autoplay = true
 bus = &"Music"
+
+[node name="MusicVHead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_0cfhr")
+volume_db = -10.0
+
+[node name="MusicVTail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g03a8")
+volume_db = -10.0

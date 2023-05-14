@@ -122,8 +122,8 @@ func _process(delta):
 		if control_index == 0: control_index = 1
 	if Input.is_action_just_pressed("control_main"):
 		control_index = 0
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		add_head()
+#	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+#		add_head()
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.8, 0)
 	$Indicator.global_position += Vector3.UP * sin(Time.get_ticks_msec() / 1000.0 * 10) * 0.1
 	$Indicator.global_transform = $Indicator.global_transform.rotated_local(Vector3.UP, 0.1)
@@ -343,3 +343,7 @@ func victory():
 	tweenC.tween_property(musicC, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
 	# Play victory music here
 	dance_enabled = true
+	$MusicVHead.play()
+	await $MusicVHead.finished
+	$MusicVTail.play()
+	
