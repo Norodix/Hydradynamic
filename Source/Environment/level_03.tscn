@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dse13y1xpwiup" path="res://Source/Props/Module_Turn.tscn" id="1_cv1v8"]
 [ext_resource type="Script" path="res://Source/Environment/LevelReset.gd" id="1_mkmhx"]
-[ext_resource type="PackedScene" path="res://Source/Props/Module_LVL_03.tscn" id="2_bgo05"]
+[ext_resource type="PackedScene" uid="uid://cqia1wcqdekqq" path="res://Source/Props/Module_LVL_03.tscn" id="2_bgo05"]
 [ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="2_diutk"]
 [ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="3_wq87j"]
 [ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="4_mlupf"]
