@@ -1,6 +1,9 @@
 extends Node3D
 
 
+func _ready():
+	$AnimationPlayer.play_backwards("Open")
+
 func victory():
 	$AnimationPlayer.play("Open")
 	Globals.player.dance_enabled = true

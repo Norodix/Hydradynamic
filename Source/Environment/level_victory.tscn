@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cewhws167mvuv"]
+[gd_scene load_steps=26 format=3 uid="uid://cewhws167mvuv"]
 
 [ext_resource type="PackedScene" uid="uid://dqr6tg8ksngk3" path="res://Source/Props/Module_Straight.tscn" id="1_jutjx"]
 [ext_resource type="Texture2D" uid="uid://bd4w6phlwictn" path="res://Assets/PNG/Wall_Plates_Tex.png" id="2_l2jyv"]
@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://pm3dnr4m74ly" path="res://Assets/PNG/Edge_Tex.png" id="6_6xwi5"]
 [ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="7_4wogk"]
 [ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="8_4ijl4"]
+[ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="9_mpe0l"]
+[ext_resource type="PackedScene" uid="uid://dha5h2njv88ri" path="res://Source/Props/power_and.tscn" id="11_7hqxs"]
 [ext_resource type="PackedScene" uid="uid://byyiiwy8njru1" path="res://Source/Props/Module_Dead_End.tscn" id="13_vcjq6"]
+[ext_resource type="PackedScene" uid="uid://ce78f48kawo6h" path="res://Source/Props/Module_Victory.tscn" id="15_c3688"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkfyo"]
 
@@ -139,32 +142,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.65)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 head_count = 7
 
+[node name="Wall_Light" parent="StaticBody3D/Module_Airlock2" instance=ExtResource("9_mpe0l")]
+transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 3.82137e-15, 4.37114e-08, -1, -1, 1.31134e-07, 1.91069e-15, 0, 4.871, -4.47618)
+
 [node name="Module_Airlock_Collision" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 shape = SubResource("ConcavePolygonShape3D_ofkl3")
 
-[node name="PowerSource" parent="." instance=ExtResource("3_u5cv2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.91079, 0, 1.37758)
-
-[node name="PowerSink" parent="." instance=ExtResource("4_dtwci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86294, 9.53674e-07, 1.17016)
-
-[node name="PowerSink2" parent="." instance=ExtResource("4_dtwci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.94352, 9.53674e-07, -0.219059)
-
-[node name="PowerSink3" parent="." instance=ExtResource("4_dtwci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06668, 0, -0.22895)
-
-[node name="Button" parent="." instance=ExtResource("5_8txac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01633, -9.53674e-07, -1.97729)
-
-[node name="Button2" parent="." instance=ExtResource("5_8txac")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9002, 9.53674e-07, -2.11369)
-
 [node name="Chest" parent="." instance=ExtResource("2_tromx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="PowerAND" parent="Chest" instance=ExtResource("11_7hqxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Button" parent="Chest/PowerAND" instance=ExtResource("5_8txac")]
+transform = Transform3D(1, 0, 0, 0, 0.241312, -0.970448, 0, 0.970448, 0.241312, 0, 0.5, -4.37415)
+
+[node name="Button2" parent="Chest/PowerAND" instance=ExtResource("5_8txac")]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, -2.6739, 1.4372, -2.00407)
+
+[node name="Button3" parent="Chest/PowerAND" instance=ExtResource("5_8txac")]
+transform = Transform3D(-0.707107, -0.707107, -8.74228e-08, -0.707107, 0.707107, 0, 6.18172e-08, 6.18172e-08, -1, 2.66639, 1.4372, -0.504069)
+
+[node name="Button4" parent="Chest/PowerAND" instance=ExtResource("5_8txac")]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, -2.6739, 1.4372, 0.995931)
+
+[node name="PowerSource" parent="Chest/PowerAND" instance=ExtResource("3_u5cv2")]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, -2.6739, 1.4372, -0.504069)
+
+[node name="PowerSink" parent="Chest/PowerAND" instance=ExtResource("4_dtwci")]
+transform = Transform3D(-0.707107, -0.707107, -8.74228e-08, -0.707107, 0.707107, 0, 6.18172e-08, 6.18172e-08, -1, 2.66639, 1.4372, -2.00407)
+
+[node name="PowerSink2" parent="Chest/PowerAND" instance=ExtResource("4_dtwci")]
+transform = Transform3D(-0.707107, -0.707107, -8.74228e-08, -0.707107, 0.707107, 0, 6.18172e-08, 6.18172e-08, -1, 2.66639, 1.4372, 0.995931)
 
 [node name="Module_DeadEnd" parent="." instance=ExtResource("13_vcjq6")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
+[node name="Module_Victory" parent="." instance=ExtResource("15_c3688")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
 [connection signal="open_finished" from="StaticBody3D/Module_Airlock2/Door" to="StaticBody3D/Module_Airlock2/Door2" method="open"]
 [connection signal="activate" from="StaticBody3D/Module_Airlock2/HeadCountScanner" to="StaticBody3D/Module_Airlock2/Door" method="open"]
+[connection signal="activate" from="Chest/PowerAND" to="StaticBody3D/Module_Airlock2/Door" method="close"]
+[connection signal="activate" from="Chest/PowerAND" to="StaticBody3D/Module_Airlock2/Door2" method="close"]
+[connection signal="activate" from="Chest/PowerAND" to="Chest" method="victory"]

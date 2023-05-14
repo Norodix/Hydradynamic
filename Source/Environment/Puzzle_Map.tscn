@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b1il51omfoj87" path="res://Source/Environment/level_02.tscn" id="4_wb2ti"]
 [ext_resource type="PackedScene" uid="uid://bxc2ovr64sc0q" path="res://Source/Environment/level_03.tscn" id="5_g5mvs"]
 [ext_resource type="PackedScene" uid="uid://c8xhbxnwfersf" path="res://Source/UI/EscapeMenu.tscn" id="6_2hm8e"]
-[ext_resource type="PackedScene" uid="uid://dulqknhh4yadr" path="res://Source/Environment/level_04.tscn" id="6_lhn6u"]
+[ext_resource type="PackedScene" uid="uid://cfc1qyfgsb8p7" path="res://Source/Environment/level_04.tscn" id="6_lhn6u"]
 [ext_resource type="PackedScene" uid="uid://cewhws167mvuv" path="res://Source/Environment/level_victory.tscn" id="7_bi01e"]
 
 [sub_resource type="Environment" id="Environment_jp8ti"]
