@@ -32,3 +32,5 @@ func _process(delta):
 		is_powered = conn.is_powered()
 	
 	$OmniLight3D.visible = is_powered
+	$Wall_Light2.get_active_material(2).emission_enabled = is_powered
+	
