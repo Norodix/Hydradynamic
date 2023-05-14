@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b4rbw3ai6dt3w" path="res://Assets/PNG/Wall_Plates_Nrm.png" id="2_pyn5g"]
 
 [resource]
-albedo_color = Color(0.682353, 0.658824, 0.635294, 1)
+albedo_color = Color(0.760784, 0.760784, 0.760784, 1)
 albedo_texture = ExtResource("1_2nb87")
-metallic_specular = 0.0
-roughness = 0.5
+metallic = 0.1
+roughness = 0.6
 normal_enabled = true
-normal_scale = 8.0
+normal_scale = 4.0
 normal_texture = ExtResource("2_pyn5g")
 rim_enabled = true
 rim = 0.5
