@@ -118,6 +118,14 @@ transform = Transform3D(-0.707107, 0.707107, 0, -0.707107, -0.707107, -7.10543e-
 [node name="Node3D3" parent="Button" instance=ExtResource("6_6sryd")]
 transform = Transform3D(-0.468105, -0.707107, 0, 0.468105, -0.707107, -7.10543e-15, 7.10543e-15, -3.55271e-15, 1, 1.78739, -0.0547495, -5.24521e-06)
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.4, 2.128, -14.5)
+shaded = true
+text = "Reset level
+HERE"
+font_size = 128
+outline_size = 48
+
 [connection signal="push" from="Guillotine/Button" to="Guillotine" method="cut"]
 [connection signal="activate" from="Guillotine2/PowerSink" to="Guillotine2" method="cut"]
 [connection signal="purge_finished" from="Module_Airlock_01" to="." method="trigger_level_reset"]
