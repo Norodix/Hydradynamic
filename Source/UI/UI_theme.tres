@@ -1,0 +1,70 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c1kelwiw2kf5h"]
+
+[ext_resource type="Texture2D" uid="uid://cpq3mkkmxjen3" path="res://Source/UI/checkbox_snekhed.png" id="1_ayt6o"]
+[ext_resource type="FontFile" uid="uid://din5dka5pxkgc" path="res://Source/UI/tecnico/tecnico_bold.ttf" id="1_t0r83"]
+[ext_resource type="Texture2D" uid="uid://b5ex6timlfeps" path="res://Source/UI/checkbox_snekhed_disabled.png" id="2_q5k5h"]
+[ext_resource type="Texture2D" uid="uid://cb21tqhtonn4b" path="res://Source/UI/Tongue.png" id="3_venh2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m535t"]
+bg_color = Color(0.258824, 0.258824, 0.258824, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmblo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swaje"]
+bg_color = Color(0, 0.5, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gje0x"]
+bg_color = Color(0, 0.501961, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4j8e"]
+bg_color = Color(0.258824, 0.258824, 0.258824, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_left = 40.0
+expand_margin_top = 50.0
+expand_margin_right = 40.0
+expand_margin_bottom = 20.0
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
+
+[resource]
+default_font = ExtResource("1_t0r83")
+default_font_size = 24
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_m535t")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0, 0.505882, 0.388235, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0.279687, 0.210011, 1)
+Button/constants/outline_size = 12
+Button/font_sizes/font_size = 32
+Button/styles/disabled = SubResource("StyleBoxEmpty_vmblo")
+Button/styles/focus = SubResource("StyleBoxEmpty_vmblo")
+Button/styles/hover = SubResource("StyleBoxEmpty_vmblo")
+Button/styles/normal = SubResource("StyleBoxEmpty_vmblo")
+Button/styles/pressed = SubResource("StyleBoxEmpty_vmblo")
+CheckBox/icons/checked = ExtResource("1_ayt6o")
+CheckBox/icons/unchecked = ExtResource("2_q5k5h")
+HSlider/icons/grabber = ExtResource("3_venh2")
+HSlider/icons/grabber_highlight = ExtResource("3_venh2")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_swaje")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gje0x")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 12
+VBoxContainer/constants/separation = 16
+Window/styles/embedded_border = SubResource("StyleBoxFlat_h4j8e")

@@ -26,6 +26,10 @@ GGS="*res://addons/ggs/classes/ggs_globals.gd"
 
 enabled=PackedStringArray("res://addons/ggs/plugin.cfg")
 
+[gui]
+
+theme/custom="res://Source/UI/UI_theme.tres"
+
 [input]
 
 ui_left={
