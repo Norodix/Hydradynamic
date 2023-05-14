@@ -50,7 +50,13 @@ draw_pass_1 = SubResource("QuadMesh_8iqoo")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
 stream = ExtResource("6_230xa")
-volume_db = -13.0
-max_db = -8.0
+volume_db = -15.0
+max_db = -10.0
 pitch_scale = 2.0
 bus = &"SFX"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+visible = false
+light_color = Color(0.741176, 0.486275, 0.219608, 1)
+light_energy = 2.0
