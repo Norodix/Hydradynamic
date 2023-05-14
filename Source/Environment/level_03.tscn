@@ -1,8 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dkotd6fqtog0x"]
+[gd_scene load_steps=20 format=3 uid="uid://bxc2ovr64sc0q"]
 
 [ext_resource type="PackedScene" uid="uid://dse13y1xpwiup" path="res://Source/Props/Module_Turn.tscn" id="1_cv1v8"]
 [ext_resource type="Script" path="res://Source/Environment/LevelReset.gd" id="1_mkmhx"]
-[ext_resource type="PackedScene" uid="uid://cqia1wcqdekqq" path="res://Source/Props/Module_LVL_03.tscn" id="2_bgo05"]
+[ext_resource type="PackedScene" path="res://Source/Props/Module_LVL_03.tscn" id="2_bgo05"]
 [ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="2_diutk"]
 [ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="3_wq87j"]
 [ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="4_mlupf"]
@@ -39,48 +39,31 @@ head_count = 4
 [node name="Trap_01" type="Node3D" parent="."]
 
 [node name="Saw" parent="Trap_01" instance=ExtResource("6_tbf88")]
-transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, 8.15001, 2.23156, 6.47188)
+transform = Transform3D(1.77743e-15, 1, 4.37114e-08, -1, 0, 2.98023e-08, 2.98023e-08, -4.37114e-08, 1, 4.36981, 2.23156, 2.72757)
 
-[node name="Button2" parent="Trap_01/Saw" instance=ExtResource("5_ak03l")]
-transform = Transform3D(-1, 0, 3.09086e-08, 0, -1, -1.28028e-08, 3.09086e-08, -1.28028e-08, 1, -1.9672, 3.95246, -1.46944)
+[node name="Button2" parent="Trap_01" instance=ExtResource("5_ak03l")]
+transform = Transform3D(6.25995e-08, 0.707107, -0.707106, -1, 1.06581e-14, -8.85291e-08, -6.25995e-08, 0.707107, 0.707107, 3.88254, 0.592516, 5.09323)
 
-[node name="Node3D" parent="Trap_01/Saw/Button2" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -2.13163e-14, 0, 1, -0.507671, 0.00769138, -0.0649593)
+[node name="Node3D" parent="Trap_01/Button2" instance=ExtResource("8_ivbwc")]
+transform = Transform3D(1, -3.55271e-14, 0, 3.55271e-15, 1, 0, 1.03029e-13, 0, 1, -0.6, 0.03, 0.448)
 
-[node name="Node3D2" parent="Trap_01/Saw/Button2" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(-4.37114e-08, 0.707107, -0.707107, 1.06581e-14, 0.707107, 0.707107, 1, 3.09086e-08, -3.09086e-08, -1.49118, -0.0198407, -1.10971)
+[node name="Node3D2" parent="Trap_01/Button2" instance=ExtResource("8_ivbwc")]
+transform = Transform3D(-4.37115e-08, -3.55271e-14, -1, 0, 1, -2.13163e-14, 1, 0, -4.37114e-08, -1.6, 0.03, -0.548)
 
-[node name="Node3D3" parent="Trap_01/Saw/Button2" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, -2.17745, 0.683218, -0.774908)
-
-[node name="Node3D5" parent="Trap_01/Saw/Button2" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(0, 1, 0, 3.09086e-08, 0, -1, -1, -1.42109e-14, -3.09086e-08, -2.89231, 3.49343, 0.0848383)
-
-[node name="Node3D4" parent="Trap_01/Saw/Button2" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(-5.96046e-08, 1, 1.06581e-14, -1.2, -8.9407e-08, 3.55271e-15, 1.42109e-14, -2.13163e-14, 1, -2.88511, 2.62424, -0.774907)
+[node name="Node3D3" parent="Trap_01/Button2" instance=ExtResource("8_ivbwc")]
+transform = Transform3D(-3.03645e-08, 3.14433e-08, -1, 0.719339, 0.694658, 0, 0.694658, -0.719339, -4.37114e-08, -1.60001, -0.700255, -2.24565)
 
 [node name="Trap_02" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03968, -9.53674e-07, 5.00465)
 
 [node name="Guillotine1_1" parent="Trap_02" instance=ExtResource("4_mlupf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10687, 0, 7.34726)
-
-[node name="Guillotine1_2" parent="Trap_02" instance=ExtResource("4_mlupf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08537, 9.53674e-07, 2.62618)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.19341, 0, -2.30305)
 
 [node name="Button" parent="Trap_02" instance=ExtResource("5_ak03l")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.96957, 0.545804, 4.93787)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.04825, 0.684114, 0)
 
 [node name="Node3D" parent="Trap_02/Button" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.52276, 0, 1.3639)
-
-[node name="Node3D2" parent="Trap_02/Button" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.52276, 0, -1.34497)
-
-[node name="Node3D3" parent="Trap_02/Button" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(3.55271e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.52276, 0.554348, -2.35061)
-
-[node name="Node3D4" parent="Trap_02/Button" instance=ExtResource("8_ivbwc")]
-transform = Transform3D(3.55271e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.52276, 0.554348, 2.39214)
+transform = Transform3D(4.37114e-08, -3.55271e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, -5.96046e-08, 0.10468, -1.07324)
 
 [node name="Trap_03" type="Node3D" parent="."]
 
@@ -153,16 +136,15 @@ shape = SubResource("BoxShape3D_yv5qr")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.684, 3.7, 9.892)
 
 [node name="Wall_Light2" parent="." instance=ExtResource("18_ichsn")]
-transform = Transform3D(-3.0598e-08, 0, -1, 0, 1, 0, 0.7, 0, -4.37114e-08, -0.418, 3.7, 2.493)
+transform = Transform3D(-3.0598e-08, 0, -1, 0, 1, 0, 0.7, 0, -4.37114e-08, -0.081244, 3.7, 2.493)
 
 [node name="Wall_Light3" parent="." instance=ExtResource("18_ichsn")]
 transform = Transform3D(-3.0598e-08, 0, -1, 0, 1, 0, 0.7, 0, -4.37114e-08, 9.83202, 2.86179, -4.26249)
 
 [connection signal="purge_finished" from="Module_Airlock" to="." method="trigger_level_reset"]
 [connection signal="activate" from="Module_Airlock/HeadCountScanner" to="Module_Airlock" method="open_entry"]
-[connection signal="pull" from="Trap_01/Saw/Button2" to="Trap_01/Saw" method="deactivate"]
-[connection signal="push" from="Trap_01/Saw/Button2" to="Trap_01/Saw" method="activate"]
+[connection signal="pull" from="Trap_01/Button2" to="Trap_01/Saw" method="deactivate"]
+[connection signal="push" from="Trap_01/Button2" to="Trap_01/Saw" method="activate"]
 [connection signal="push" from="Trap_02/Button" to="Trap_02/Guillotine1_1" method="cut"]
-[connection signal="push" from="Trap_02/Button" to="Trap_02/Guillotine1_2" method="cut"]
 [connection signal="activate" from="Trap_03/Fan/PowerAND" to="Trap_03/Fan" method="activate"]
 [connection signal="deactivate" from="Trap_03/Fan/PowerAND" to="Trap_03/Fan" method="deactivate"]
