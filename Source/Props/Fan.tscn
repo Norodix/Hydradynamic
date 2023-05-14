@@ -254,15 +254,20 @@ shape = SubResource("BoxShape3D_buajk")
 [node name="AudioStreamPlayer3D_running" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_kblde")
 attenuation_model = 1
-volume_db = -15.0
-max_distance = 12.0
+volume_db = -35.0
+max_db = -20.0
+max_distance = 30.0
 bus = &"SFX"
 
 [node name="AudioStreamPlayer3D_crash" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_r3iu0")
+volume_db = -10.0
+max_db = -5.0
+pitch_scale = 1.5
 bus = &"SFX"
 
 [node name="AudioStreamPlayer3D_grid" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_vuv20")
-volume_db = -10.0
+volume_db = -35.0
+max_db = -10.0
 bus = &"SFX"

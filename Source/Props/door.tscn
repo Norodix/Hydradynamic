@@ -310,29 +310,6 @@ _data = {
 "RESET": SubResource("Animation_dxtlq")
 }
 
-[sub_resource type="Animation" id="Animation_do60n"]
-resource_name = "Open"
-length = 3.0
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sound")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("2_wffhu")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_l40cg")
-}],
-"times": PackedFloat32Array(0, 0.9)
-}
-tracks/0/use_blend = true
-
 [sub_resource type="Animation" id="Animation_uowwa"]
 resource_name = "Close"
 length = 3.5
@@ -357,6 +334,29 @@ tracks/0/keys = {
 "stream": ExtResource("4_gv2ok")
 }],
 "times": PackedFloat32Array(0, 1.7, 2.7)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_do60n"]
+resource_name = "Open"
+length = 3.0
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sound")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_wffhu")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_l40cg")
+}],
+"times": PackedFloat32Array(0, 0.9)
 }
 tracks/0/use_blend = true
 
@@ -405,6 +405,8 @@ libraries = {
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05111, 0)
+volume_db = -7.0
+max_db = -3.0
 bus = &"SFX"
 
 [node name="SoundAnimationPlayer" type="AnimationPlayer" parent="."]

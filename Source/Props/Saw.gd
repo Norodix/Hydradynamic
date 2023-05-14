@@ -43,10 +43,10 @@ func rampup_sound():
 	sound.play()
 	var sound_tween = get_tree().create_tween()
 	sound_tween.tween_property(sound, "pitch_scale", 1, 1)
-	sound_tween.parallel().tween_property(sound, "volume_db", -20, 1)
+	sound_tween.parallel().tween_property(sound, "volume_db", -25, 1)
 
 
 func rampdown_sound():
 	var sound_tween = get_tree().create_tween()
 	sound_tween.tween_property(sound, "pitch_scale", 0.1, 1)
-	sound_tween.parallel().tween_property(sound, "volume_db", -60, 1)
+	sound_tween.parallel().tween_property(sound, "volume_db", -70, 1)

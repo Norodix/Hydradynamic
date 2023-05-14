@@ -63,5 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.315692, 0)
 stream = ExtResource("4_mycks")
 volume_db = -20.0
 unit_size = 3.0
+max_distance = 10.0
 
 [editable path="Electric_Socket"]
