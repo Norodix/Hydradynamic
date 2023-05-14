@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bet3ci57ywk3k"]
+[gd_scene load_steps=19 format=3 uid="uid://bet3ci57ywk3k"]
 
 [ext_resource type="Script" path="res://Source/Props/Module_Airlock.gd" id="1_qe8mo"]
 [ext_resource type="Material" uid="uid://u2hkg0m5eha2" path="res://Source/Materials/Walls_Mat.tres" id="2_y8eg3"]
@@ -88,6 +88,9 @@ size = Vector3(5.00428, 8.45427, 6.48631)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bgart"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2os5k"]
+size = Vector3(4.45843, 1, 0.631383)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_fe6tr"]
 size = Vector3(4.95791, 4.04942, 5.64037)
 
@@ -123,13 +126,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12511, 0)
 shape = SubResource("BoxShape3D_ju5sp")
 
 [node name="PlayerDetector" type="Area3D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector"]
 shape = SubResource("SphereShape3D_bgart")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PlayerDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.538544, 0)
+shape = SubResource("BoxShape3D_2os5k")
 
 [node name="PlayerExitDetector" type="Area3D" parent="."]
 collision_layer = 0
