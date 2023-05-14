@@ -167,7 +167,7 @@ _data = {
 "RESET": SubResource("Animation_3ptar")
 }
 
-[node name="Guillotine" type="StaticBody3D"]
+[node name="Guillotine" type="StaticBody3D" groups=["cam_no_clip"]]
 script = ExtResource("1_c4osa")
 
 [node name="Frame" type="MeshInstance3D" parent="."]

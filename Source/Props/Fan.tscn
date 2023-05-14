@@ -197,7 +197,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_p4kc4")
 [node name="Hole_Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("ConcavePolygonShape3D_qk450")
 
-[node name="Grid_Parent" type="CharacterBody3D" parent="."]
+[node name="Grid_Parent" type="CharacterBody3D" parent="." groups=["cam_no_clip"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
 
 [node name="Grid" type="MeshInstance3D" parent="Grid_Parent"]

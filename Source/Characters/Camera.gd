@@ -13,6 +13,7 @@ extends Camera3D
 @onready var whisker_query : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.new()
 var whisker_num = 12
 var cast_shape : Shape3D
+var excludeRID : Array[RID]
 const cam_near_clip = 0.1
 
 
@@ -22,6 +23,13 @@ func _ready():
 	cast_query.collision_mask = 1 << Globals.layers.environment 
 	cast_query.margin = 0.1
 	cast_query.shape_rid = cast_shape
+	
+	var excludenodes = get_tree().get_nodes_in_group("cam_no_clip")
+	for node in excludenodes:
+		excludeRID.append(node.get_rid())
+		pass
+	
+	cast_query.exclude = excludeRID
 
 
 func _process(delta):

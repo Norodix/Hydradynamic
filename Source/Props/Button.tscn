@@ -165,7 +165,7 @@ _data = {
 "push": SubResource("Animation_vgsh1")
 }
 
-[node name="Button" type="StaticBody3D"]
+[node name="Button" type="StaticBody3D" groups=["cam_no_clip"]]
 script = ExtResource("1_7ca5p")
 
 [node name="Base" type="MeshInstance3D" parent="."]
