@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://blalleqw2gwf3"]
+[gd_scene load_steps=19 format=3 uid="uid://blalleqw2gwf3"]
 
 [ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="1_5ydhy"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/input_btn/input_btn.tscn" id="1_6feb4"]
+[ext_resource type="Texture2D" uid="uid://cm5xn4hrrx1yl" path="res://Source/UI/Menu_BG.jpg" id="1_v6jhp"]
+[ext_resource type="Texture2D" uid="uid://becx3bt70wovx" path="res://Source/UI/Buttons_BG.png" id="2_amyo0"]
 [ext_resource type="Texture2D" uid="uid://c4vunn2rkqj83" path="res://addons/ggs/assets/game_settings/input_setting.svg" id="3_pp7j4"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/input.gd" id="4_2dri1"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/_misc_components/reset_btn/reset_btn.tscn" id="5_kvad3"]
@@ -165,6 +167,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v6jhp")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -263.0
+offset_right = 257.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_amyo0")
+region_rect = Rect2(33, 33, 234, 234)
+patch_margin_left = 55
+patch_margin_top = 53
+patch_margin_right = 57
+patch_margin_bottom = 56
+
 [node name="InputConfirmWindow" parent="." instance=ExtResource("6_dj5r1")]
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
@@ -190,6 +223,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 theme_override_constants/separation = 8
+alignment = 1
 
 [node name="Control" type="Control" parent="VBoxContainer2/ScrollContainer/VBoxContainer"]
 layout_mode = 2
