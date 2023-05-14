@@ -1,6 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b18ny50f7tguf"]
 
 [ext_resource type="Script" path="res://Source/Environment/world_settings.gd" id="1_2jfp7"]
+[ext_resource type="Environment" uid="uid://culihwg008m3k" path="res://Source/Environment/Default_WE.tres" id="2_dudej"]
 [ext_resource type="PackedScene" uid="uid://d1syrg0ik6wvv" path="res://Source/Environment/level_01.tscn" id="3_btcuo"]
 [ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="3_c3l41"]
 [ext_resource type="PackedScene" uid="uid://dffasuvjb0c22" path="res://Source/Environment/level_tutorial.tscn" id="4_r2dwk"]
@@ -9,13 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c8xhbxnwfersf" path="res://Source/UI/EscapeMenu.tscn" id="6_2hm8e"]
 [ext_resource type="PackedScene" uid="uid://cfc1qyfgsb8p7" path="res://Source/Environment/level_04.tscn" id="6_lhn6u"]
 [ext_resource type="PackedScene" uid="uid://cewhws167mvuv" path="res://Source/Environment/level_victory.tscn" id="7_bi01e"]
-
-[sub_resource type="Environment" id="Environment_jp8ti"]
-background_energy_multiplier = 0.0
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.3
-glow_enabled = true
 
 [sub_resource type="GDScript" id="GDScript_rocg6"]
 script/source = "extends Label
@@ -30,7 +24,7 @@ func _process(delta):
 script = ExtResource("1_2jfp7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jp8ti")
+environment = ExtResource("2_dudej")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

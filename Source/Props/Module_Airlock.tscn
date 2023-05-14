@@ -1,13 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://bet3ci57ywk3k"]
+[gd_scene load_steps=18 format=3 uid="uid://bet3ci57ywk3k"]
 
-[ext_resource type="Texture2D" uid="uid://bd4w6phlwictn" path="res://Assets/PNG/Wall_Plates_Tex.png" id="1_o3p8j"]
 [ext_resource type="Script" path="res://Source/Props/Module_Airlock.gd" id="1_qe8mo"]
-[ext_resource type="Texture2D" uid="uid://b4rbw3ai6dt3w" path="res://Assets/PNG/Wall_Plates_Nrm.png" id="2_wudx6"]
-[ext_resource type="Texture2D" uid="uid://dg7aqugjfrico" path="res://Assets/PNG/Floor_Tex.png" id="3_rfd4p"]
-[ext_resource type="Texture2D" uid="uid://jfx6w5weyo4m" path="res://Assets/PNG/Floor_Nrm.png" id="4_c13lk"]
+[ext_resource type="Material" uid="uid://u2hkg0m5eha2" path="res://Source/Materials/Walls_Mat.tres" id="2_y8eg3"]
+[ext_resource type="Material" uid="uid://c8yoxii1ejpip" path="res://Source/Materials/Floor_Mat.tres" id="3_h6krd"]
+[ext_resource type="Material" uid="uid://b7akn1jwuq5s8" path="res://Source/Materials/Edge_Mat.tres" id="4_spcpt"]
 [ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="5_hr1tm"]
 [ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="6_4yu5s"]
-[ext_resource type="Texture2D" uid="uid://pm3dnr4m74ly" path="res://Assets/PNG/Edge_Tex.png" id="6_wlydr"]
 [ext_resource type="PackedScene" uid="uid://dgo6k7v4ntg6v" path="res://Source/Props/head_remover.tscn" id="8_ld3tp"]
 [ext_resource type="PackedScene" uid="uid://drmeignw80igo" path="res://Source/Props/burner_tube.tscn" id="10_rsq1o"]
 
@@ -81,33 +79,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dxl7l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27h73"]
-albedo_texture = ExtResource("1_o3p8j")
-metallic = 0.5
-metallic_specular = 1.0
-roughness = 0.5
-normal_enabled = true
-normal_scale = 8.0
-normal_texture = ExtResource("2_wudx6")
-rim_enabled = true
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed7o8"]
-albedo_texture = ExtResource("3_rfd4p")
-metallic = 0.5
-metallic_specular = 1.0
-roughness = 0.5
-normal_enabled = true
-normal_scale = 2.0
-normal_texture = ExtResource("4_c13lk")
-rim_enabled = true
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnowf"]
-albedo_color = Color(0.8, 0.8, 0.8, 1)
-albedo_texture = ExtResource("6_wlydr")
-uv1_scale = Vector3(100, 1, 1)
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8gfd7"]
 data = PackedVector3Array(-2.5, 0.2, -1.7, -4.5, 0, -1.7, -4.5, 0.2, -1.7, -2.5, 0.2, -1.7, -2.3, 0, -1.7, -4.5, 0, -1.7, 2.5, 4, -1.7, -2.5, 5, -1.7, -2.5, 4, -1.7, 2.5, 4, -1.7, 2.5, 5, -1.7, -2.5, 5, -1.7, 2.5, 0.2, -7.3, 4.5, 0, -7.3, 4.5, 0.2, -7.3, 2.5, 0.2, -7.3, 2.3, 0, -7.3, 4.5, 0, -7.3, -2.5, 4, -8, 2.5, 4, -7.3, 2.5, 4, -8, -2.5, 4, -8, -2.5, 4, -7.3, 2.5, 4, -7.3, 4.5, 0.2, -1.7, 4.5, 4, -1, 4.5, 0.2, -1, 4.5, 0.2, -1.7, 4.5, 4, -1.7, 4.5, 4, -1, 4.5, 0.2, -8, 4.5, 4, -7.3, 4.5, 0.2, -7.3, 4.5, 0.2, -8, 4.5, 4, -8, 4.5, 4, -7.3, 2.5, 0.2, -1.7, 4.5, 4, -1.7, 4.5, 0.2, -1.7, 2.5, 0.2, -1.7, 2.5, 4, -1.7, 4.5, 4, -1.7, 2.5, 0.2, -1, 4.5, 0, -1, 4.5, 0.2, -1, 2.5, 0.2, -1, 2.3, 0, -1, 4.5, 0, -1, 2.5, 0.2, -8, 4.5, 4, -8, 4.5, 0.2, -8, 2.5, 0.2, -8, 2.5, 4, -8, 4.5, 4, -8, -4.5, 0.2, -1, -4.5, 4, -1.7, -4.5, 0.2, -1.7, -4.5, 0.2, -1, -4.5, 4, -1, -4.5, 4, -1.7, -4.5, 0.2, -7.3, -4.5, 4, -8, -4.5, 0.2, -8, -4.5, 0.2, -7.3, -4.5, 4, -7.3, -4.5, 4, -8, -2.5, 0.2, -1, -4.5, 4, -1, -4.5, 0.2, -1, -2.5, 0.2, -1, -2.5, 4, -1, -4.5, 4, -1, -2.5, 0.2, -8, -4.5, 0, -8, -4.5, 0.2, -8, -2.5, 0.2, -8, -2.3, 0, -8, -4.5, 0, -8, -2.5, 0.2, -7.3, -4.5, 4, -7.3, -4.5, 0.2, -7.3, -2.5, 0.2, -7.3, -2.5, 4, -7.3, -4.5, 4, -7.3, 2.5, 0.2, -1.7, 2.5, 4, -7.3, 2.5, 4, -1.7, 2.5, 0.2, -1.7, 2.5, 0.2, -7.3, 2.5, 4, -7.3, -2.5, 0.2, -8, -2.5, 4, -9, -2.5, 0.2, -9, -2.5, 0.2, -8, -2.5, 4, -8, -2.5, 4, -9, -2.5, 4, -8, 2.5, 4, -9, -2.5, 4, -9, -2.5, 4, -8, 2.5, 4, -8, 2.5, 4, -9, 2.5, 0.2, -1, 2.5, 4, 0, 2.5, 0.2, 0, 2.5, 0.2, -1, 2.5, 4, -1, 2.5, 4, 0, 2.5, 4, -1, -2.5, 4, 0, 2.5, 4, 0, 2.5, 4, -1, -2.5, 4, -1, -2.5, 4, 0, -4.5, 4, -7.3, -2.5, 4, -8, -4.5, 4, -8, -4.5, 4, -7.3, -2.5, 4, -7.3, -2.5, 4, -8, -2.5, 4, -7.3, -2.5, 5, -1.7, -2.5, 5, -7.3, -2.5, 4, -7.3, -2.5, 4, -1.7, -2.5, 5, -1.7, 4.5, 4, -8, 2.5, 4, -7.3, 4.5, 4, -7.3, 4.5, 4, -8, 2.5, 4, -8, 2.5, 4, -7.3, 2.5, 4, -1.7, 2.5, 5, -7.3, 2.5, 5, -1.7, 2.5, 4, -1.7, 2.5, 4, -7.3, 2.5, 5, -7.3, -2.5, 4, -7.3, 2.5, 5, -7.3, 2.5, 4, -7.3, -2.5, 4, -7.3, -2.5, 5, -7.3, 2.5, 5, -7.3, -2.5, 4, -1.7, 2.5, 4, -1, 2.5, 4, -1.7, -2.5, 4, -1.7, -2.5, 4, -1, 2.5, 4, -1, -2.5, 4, -1, -4.5, 4, -1.7, -4.5, 4, -1, -2.5, 4, -1, -2.5, 4, -1.7, -4.5, 4, -1.7, 2.5, 4, -1.7, 4.5, 4, -1, 4.5, 4, -1.7, 2.5, 4, -1.7, 2.5, 4, -1, 4.5, 4, -1, -2.5, 5, -1.7, 2.5, 5, -7.3, -2.5, 5, -7.3, -2.5, 5, -1.7, 2.5, 5, -1.7, 2.5, 5, -7.3, -2.5, 4, -1, -2.5, 0.2, 0, -2.5, 4, 0, -2.5, 4, -1, -2.5, 0.2, -1, -2.5, 0.2, 0, -2.5, 4, -1.7, -2.5, 0.2, -7.3, -2.5, 0.2, -1.7, -2.5, 4, -1.7, -2.5, 4, -7.3, -2.5, 0.2, -7.3, -2.3, 0, -7.3, -4.5, 0.2, -7.3, -4.5, 0, -7.3, -2.3, 0, -7.3, -2.5, 0.2, -7.3, -4.5, 0.2, -7.3, -2.5, 4, -8, -4.5, 0.2, -8, -4.5, 4, -8, -2.5, 4, -8, -2.5, 0.2, -8, -4.5, 0.2, -8, -2.3, 0, -1, -4.5, 0.2, -1, -4.5, 0, -1, -2.3, 0, -1, -2.5, 0.2, -1, -4.5, 0.2, -1, -4.5, 0, -7.3, -4.5, 0.2, -8, -4.5, 0, -8, -4.5, 0, -7.3, -4.5, 0.2, -7.3, -4.5, 0.2, -8, -4.5, 0, -1, -4.5, 0.2, -1.7, -4.5, 0, -1.7, -4.5, 0, -1, -4.5, 0.2, -1, -4.5, 0.2, -1.7, -2.5, 4, -1.7, -4.5, 0.2, -1.7, -4.5, 4, -1.7, -2.5, 4, -1.7, -2.5, 0.2, -1.7, -4.5, 0.2, -1.7, 2.5, 4, -8, 2.5, 0.2, -9, 2.5, 4, -9, 2.5, 4, -8, 2.5, 0.2, -8, 2.5, 0.2, -9, 2.3, 0, -8, 4.5, 0.2, -8, 4.5, 0, -8, 2.3, 0, -8, 2.5, 0.2, -8, 4.5, 0.2, -8, 2.5, 4, -1, 4.5, 0.2, -1, 4.5, 4, -1, 2.5, 4, -1, 2.5, 0.2, -1, 4.5, 0.2, -1, 2.3, 0, -1.7, 4.5, 0.2, -1.7, 4.5, 0, -1.7, 2.3, 0, -1.7, 2.5, 0.2, -1.7, 4.5, 0.2, -1.7, 4.5, 0, -8, 4.5, 0.2, -7.3, 4.5, 0, -7.3, 4.5, 0, -8, 4.5, 0.2, -8, 4.5, 0.2, -7.3, 4.5, 0, -1.7, 4.5, 0.2, -1, 4.5, 0, -1, 4.5, 0, -1.7, 4.5, 0.2, -1.7, 4.5, 0.2, -1, 2.5, 4, -7.3, 4.5, 0.2, -7.3, 4.5, 4, -7.3, 2.5, 4, -7.3, 2.5, 0.2, -7.3, 4.5, 0.2, -7.3, 2.3, 0, -7.3, 4.5, 0, -8, 4.5, 0, -7.3, 2.3, 0, -7.3, 2.3, 0, -8, 4.5, 0, -8, -2.3, 0, -1.7, 2.3, 0, -1, -2.3, 0, -1, -2.3, 0, -1.7, 2.3, 0, -1.7, 2.3, 0, -1, 2.3, 0, -1.7, -2.3, 0, -7.3, 2.3, 0, -7.3, 2.3, 0, -1.7, -2.3, 0, -1.7, -2.3, 0, -7.3, -2.3, 0, -8, 2.3, 0, -7.3, -2.3, 0, -7.3, -2.3, 0, -8, 2.3, 0, -8, 2.3, 0, -7.3, 2.3, 0, -1, 4.5, 0, -1.7, 4.5, 0, -1, 2.3, 0, -1, 2.3, 0, -1.7, 4.5, 0, -1.7, -2.3, 0, -8, -4.5, 0, -7.3, -4.5, 0, -8, -2.3, 0, -8, -2.3, 0, -7.3, -4.5, 0, -7.3, -2.3, 0, -1.7, -4.5, 0, -1, -4.5, 0, -1.7, -2.3, 0, -1.7, -2.3, 0, -1, -4.5, 0, -1, -2.3, 0, -1, 2.3, 0, 0, -2.3, 0, 0, -2.3, 0, -1, 2.3, 0, -1, 2.3, 0, 0, 2.3, 0, -8, -2.3, 0, -9, 2.3, 0, -9, 2.3, 0, -8, -2.3, 0, -8, -2.3, 0, -9, -2.5, 0.2, -1.7, -2.3, 0, -7.3, -2.3, 0, -1.7, -2.5, 0.2, -1.7, -2.5, 0.2, -7.3, -2.3, 0, -7.3, -2.5, 0.2, -1, -2.3, 0, 0, -2.5, 0.2, 0, -2.5, 0.2, -1, -2.3, 0, -1, -2.3, 0, 0, 2.5, 0.2, -8, 2.3, 0, -9, 2.5, 0.2, -9, 2.5, 0.2, -8, 2.3, 0, -8, 2.3, 0, -9, -2.3, 0, -8, -2.5, 0.2, -9, -2.3, 0, -9, -2.3, 0, -8, -2.5, 0.2, -8, -2.5, 0.2, -9, 2.3, 0, -1, 2.5, 0.2, 0, 2.3, 0, 0, 2.3, 0, -1, 2.5, 0.2, -1, 2.5, 0.2, 0, 2.3, 0, -1.7, 2.5, 0.2, -7.3, 2.5, 0.2, -1.7, 2.3, 0, -1.7, 2.3, 0, -7.3, 2.5, 0.2, -7.3)
 
@@ -127,9 +98,9 @@ script = ExtResource("1_qe8mo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 mesh = SubResource("ArrayMesh_t5j2p")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_27h73")
-surface_material_override/1 = SubResource("StandardMaterial3D_ed7o8")
-surface_material_override/2 = SubResource("StandardMaterial3D_fnowf")
+surface_material_override/0 = ExtResource("2_y8eg3")
+surface_material_override/1 = ExtResource("3_h6krd")
+surface_material_override/2 = ExtResource("4_spcpt")
 
 [node name="Module_Airlock_Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
@@ -143,6 +114,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.15)
 
 [node name="Wall_Light" parent="." instance=ExtResource("6_4yu5s")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.8, 0)
+is_powered = false
 
 [node name="HeadRemover" parent="." instance=ExtResource("8_ld3tp")]
 
@@ -185,5 +157,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.524
 [node name="Burner_Tube3" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 0.751631, -1.8277)
 
+[connection signal="open_finished" from="Door_Entry" to="Wall_Light" method="turn_on"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="PlayerExitDetector" to="." method="_on_player_exit_detector_body_exited"]

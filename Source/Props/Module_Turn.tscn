@@ -1,10 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dse13y1xpwiup"]
+[gd_scene load_steps=14 format=3 uid="uid://dse13y1xpwiup"]
 
-[ext_resource type="Texture2D" uid="uid://bd4w6phlwictn" path="res://Assets/PNG/Wall_Plates_Tex.png" id="1_8nw0u"]
-[ext_resource type="Texture2D" uid="uid://b4rbw3ai6dt3w" path="res://Assets/PNG/Wall_Plates_Nrm.png" id="2_uaonm"]
-[ext_resource type="Texture2D" uid="uid://dg7aqugjfrico" path="res://Assets/PNG/Floor_Tex.png" id="3_t056e"]
-[ext_resource type="Texture2D" uid="uid://pm3dnr4m74ly" path="res://Assets/PNG/Edge_Tex.png" id="3_tbqtj"]
-[ext_resource type="Texture2D" uid="uid://jfx6w5weyo4m" path="res://Assets/PNG/Floor_Nrm.png" id="4_svk55"]
+[ext_resource type="Material" uid="uid://c8yoxii1ejpip" path="res://Source/Materials/Floor_Mat.tres" id="1_t8t17"]
+[ext_resource type="Material" uid="uid://u2hkg0m5eha2" path="res://Source/Materials/Walls_Mat.tres" id="2_n6sbq"]
+[ext_resource type="Material" uid="uid://b7akn1jwuq5s8" path="res://Source/Materials/Edge_Mat.tres" id="3_ty37a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky15x"]
 
@@ -35,17 +33,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lo3do")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b82ny"]
-albedo_texture = ExtResource("1_8nw0u")
-metallic = 0.5
-metallic_specular = 1.0
-roughness = 0.5
-normal_enabled = true
-normal_scale = 8.0
-normal_texture = ExtResource("2_uaonm")
-rim_enabled = true
-uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5fps"]
 
@@ -97,33 +84,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7usn6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avj1e"]
-albedo_texture = ExtResource("1_8nw0u")
-metallic = 0.5
-metallic_specular = 1.0
-roughness = 0.5
-normal_enabled = true
-normal_scale = 8.0
-normal_texture = ExtResource("2_uaonm")
-rim_enabled = true
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kivqq"]
-albedo_color = Color(0.8, 0.8, 0.8, 1)
-albedo_texture = ExtResource("3_tbqtj")
-uv1_scale = Vector3(100, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2j2b7"]
-albedo_texture = ExtResource("3_t056e")
-metallic = 0.5
-metallic_specular = 1.0
-roughness = 0.5
-normal_enabled = true
-normal_scale = 2.0
-normal_texture = ExtResource("4_svk55")
-rim_enabled = true
-uv1_scale = Vector3(10, 10, 10)
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qfqfp"]
 data = PackedVector3Array(-10, 0, 10, 10, 0, -10, 10, 0, 10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
@@ -139,18 +99,18 @@ data = PackedVector3Array(-10, 0, 10, 10, 0, -10, 10, 0, 10, -10, 0, 10, -10, 0,
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("ArrayMesh_qccc7")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_b82ny")
+surface_material_override/0 = ExtResource("2_n6sbq")
 
 [node name="Module_Turn2" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_hq7or")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_avj1e")
-surface_material_override/1 = SubResource("StandardMaterial3D_kivqq")
+surface_material_override/0 = ExtResource("2_n6sbq")
+surface_material_override/1 = ExtResource("3_ty37a")
 
 [node name="Module_Floor2" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_qccc7")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_2j2b7")
+surface_material_override/0 = ExtResource("1_t8t17")
 
 [node name="Coll_Ceiling" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 5, 0)

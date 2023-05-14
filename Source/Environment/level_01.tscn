@@ -27,15 +27,19 @@ script = ExtResource("1_samic")
 
 [node name="Wall_Light" parent="." instance=ExtResource("3_dqaft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96503, 3.94418, -9.98044)
+is_powered = false
 
 [node name="Wall_Light3" parent="." instance=ExtResource("3_dqaft")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.85351, 3.94418, -2.22138)
+is_powered = false
 
 [node name="Wall_Light2" parent="." instance=ExtResource("3_dqaft")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.97531, 3.94418, 9.84952)
+is_powered = false
 
 [node name="Wall_Light5" parent="." instance=ExtResource("3_dqaft")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.11783, 3.94418, 9.84869)
+is_powered = false
 
 [node name="Guillotine" parent="." instance=ExtResource("4_212pe")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.08594, 0, -8.99913)
@@ -117,4 +121,8 @@ transform = Transform3D(-0.468105, -0.707107, 0, 0.468105, -0.707107, -7.10543e-
 [connection signal="push" from="Guillotine/Button" to="Guillotine" method="cut"]
 [connection signal="activate" from="Guillotine2/PowerSink" to="Guillotine2" method="cut"]
 [connection signal="purge_finished" from="Module_Airlock_01" to="." method="trigger_level_reset"]
+[connection signal="purge_finished" from="Module_Airlock_01" to="Wall_Light" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock_01" to="Wall_Light3" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock_01" to="Wall_Light2" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock_01" to="Wall_Light5" method="turn_on"]
 [connection signal="push" from="Button" to="Module_Airlock_01" method="open_entry"]

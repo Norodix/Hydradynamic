@@ -308,6 +308,8 @@ transform = Transform3D(0.980656, 0.195741, 0, -0.195741, 0.980656, 0, 0, 0, 1, 
 shape = SubResource("BoxShape3D_tunb8")
 
 [connection signal="purge_finished" from="Module_Airlock" to="." method="trigger_level_reset"]
+[connection signal="purge_finished" from="Module_Airlock" to="Wall_Light" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock" to="Wall_Light2" method="turn_on"]
 [connection signal="activate" from="Module_Airlock/HeadCountScanner" to="Module_Airlock" method="open_entry"]
 [connection signal="activate" from="Trap_01/Guillotine/PowerAND2" to="Trap_01/Guillotine" method="cut"]
 [connection signal="activate" from="Trap_02/PowerAND" to="Trap_02/Guillotine2" method="cut"]

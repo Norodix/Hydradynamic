@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dse13y1xpwiup" path="res://Source/Props/Module_Turn.tscn" id="1_cv1v8"]
 [ext_resource type="Script" path="res://Source/Environment/LevelReset.gd" id="1_mkmhx"]
-[ext_resource type="PackedScene" path="res://Source/Props/Module_LVL_03.tscn" id="2_bgo05"]
+[ext_resource type="PackedScene" uid="uid://cqia1wcqdekqq" path="res://Source/Props/Module_LVL_03.tscn" id="2_bgo05"]
 [ext_resource type="PackedScene" uid="uid://bet3ci57ywk3k" path="res://Source/Props/Module_Airlock.tscn" id="2_diutk"]
 [ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="3_wq87j"]
 [ext_resource type="PackedScene" uid="uid://saif5mw6qob8" path="res://Source/Props/Guillotine.tscn" id="4_mlupf"]
@@ -134,14 +134,20 @@ shape = SubResource("BoxShape3D_yv5qr")
 
 [node name="Wall_Light" parent="." instance=ExtResource("18_ichsn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.684, 3.7, 9.892)
+is_powered = false
 
 [node name="Wall_Light2" parent="." instance=ExtResource("18_ichsn")]
 transform = Transform3D(-3.0598e-08, 0, -1, 0, 1, 0, 0.7, 0, -4.37114e-08, -0.081244, 3.7, 2.493)
+is_powered = false
 
 [node name="Wall_Light3" parent="." instance=ExtResource("18_ichsn")]
 transform = Transform3D(-3.0598e-08, 0, -1, 0, 1, 0, 0.7, 0, -4.37114e-08, 9.83202, 2.86179, -4.26249)
+is_powered = false
 
 [connection signal="purge_finished" from="Module_Airlock" to="." method="trigger_level_reset"]
+[connection signal="purge_finished" from="Module_Airlock" to="Wall_Light" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock" to="Wall_Light2" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock" to="Wall_Light3" method="turn_on"]
 [connection signal="activate" from="Module_Airlock/HeadCountScanner" to="Module_Airlock" method="open_entry"]
 [connection signal="pull" from="Trap_01/Button2" to="Trap_01/Saw" method="deactivate"]
 [connection signal="push" from="Trap_01/Button2" to="Trap_01/Saw" method="activate"]

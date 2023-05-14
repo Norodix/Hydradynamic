@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ce78f48kawo6h"]
+[gd_scene load_steps=8 format=3 uid="uid://ce78f48kawo6h"]
 
-[ext_resource type="Texture2D" uid="uid://bd4w6phlwictn" path="res://Assets/PNG/Wall_Plates_Tex.png" id="2_hyaen"]
-[ext_resource type="Texture2D" uid="uid://b4rbw3ai6dt3w" path="res://Assets/PNG/Wall_Plates_Nrm.png" id="3_tby2f"]
-[ext_resource type="Texture2D" uid="uid://pm3dnr4m74ly" path="res://Assets/PNG/Edge_Tex.png" id="4_jdobr"]
+[ext_resource type="Material" uid="uid://u2hkg0m5eha2" path="res://Source/Materials/Walls_Mat.tres" id="1_cqtbw"]
+[ext_resource type="Material" uid="uid://b7akn1jwuq5s8" path="res://Source/Materials/Edge_Mat.tres" id="2_88mal"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egbie"]
 
@@ -56,22 +55,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hdxrf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g88jx"]
-albedo_texture = ExtResource("2_hyaen")
-metallic = 0.5
-metallic_specular = 1.0
-roughness = 0.5
-normal_enabled = true
-normal_scale = 8.0
-normal_texture = ExtResource("3_tby2f")
-rim_enabled = true
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jquk5"]
-albedo_color = Color(0.8, 0.8, 0.8, 1)
-albedo_texture = ExtResource("4_jdobr")
-uv1_scale = Vector3(100, 1, 1)
-
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7ych1"]
 data = PackedVector3Array(5, 2, -7, 3.2697, 2, 0, 3.2697, 2, -7, 5, 2, -7, 5, 2, 0, 3.2697, 2, 0, -5, 2, 0, -3.2697, 2, -7, -3.2697, 2, 0, -5, 2, 0, -5, 2, -7, -3.2697, 2, -7, 2, 0.2, -1, 2, 0.7303, -6, 2, 0.7303, -1, 2, 0.2, -1, 2, 0.2, -6, 2, 0.7303, -6, 2, 0.2, -6, 3.2697, 0.7303, -7, 2, 0.7303, -6, 2, 0.2, -6, 3.2697, 0.2, -7, 3.2697, 0.7303, -7, 3.2697, 2, 0, 2, 0.7303, -6, 3.2697, 2, -7, 3.2697, 2, 0, 2, 0.7303, -1, 2, 0.7303, -6, 5, 0.2, 0, 3.2697, 0.7303, 0, 5, 0.7303, 0, 5, 0.2, 0, 3.2697, 0.2, 0, 3.2697, 0.7303, 0, 3.2697, 0.2, 0, 2, 0.7303, -1, 3.2697, 0.7303, 0, 3.2697, 0.2, 0, 2, 0.2, -1, 2, 0.7303, -1, 3.2697, 0.2, -7, 5, 0.7303, -7, 3.2697, 0.7303, -7, 3.2697, 0.2, -7, 5, 0.2, -7, 5, 0.7303, -7, 3.2697, 0.7303, 0, 5, 2, 0, 5, 0.7303, 0, 3.2697, 0.7303, 0, 3.2697, 2, 0, 5, 2, 0, 2, 0.7303, -1, 3.2697, 2, 0, 3.2697, 0.7303, 0, 3.2697, 0.7303, -7, 3.2697, 2, -7, 2, 0.7303, -6, 5, 0.7303, -7, 3.2697, 2, -7, 3.2697, 0.7303, -7, 5, 0.7303, -7, 5, 2, -7, 3.2697, 2, -7, -2, 0.2, -6, -2, 0.7303, -1, -2, 0.7303, -6, -2, 0.2, -6, -2, 0.2, -1, -2, 0.7303, -1, -2, 0.2, -1, -3.2697, 0.7303, 0, -2, 0.7303, -1, -2, 0.2, -1, -3.2697, 0.2, 0, -3.2697, 0.7303, 0, -3.2697, 2, -7, -2, 0.7303, -1, -3.2697, 2, 0, -3.2697, 2, -7, -2, 0.7303, -6, -2, 0.7303, -1, -5, 0.2, -7, -3.2697, 0.7303, -7, -5, 0.7303, -7, -5, 0.2, -7, -3.2697, 0.2, -7, -3.2697, 0.7303, -7, -3.2697, 0.2, -7, -2, 0.7303, -6, -3.2697, 0.7303, -7, -3.2697, 0.2, -7, -2, 0.2, -6, -2, 0.7303, -6, -3.2697, 0.2, 0, -5, 0.7303, 0, -3.2697, 0.7303, 0, -3.2697, 0.2, 0, -5, 0.2, 0, -5, 0.7303, 0, -3.2697, 0.7303, -7, -5, 2, -7, -5, 0.7303, -7, -3.2697, 0.7303, -7, -3.2697, 2, -7, -5, 2, -7, -2, 0.7303, -6, -3.2697, 2, -7, -3.2697, 0.7303, -7, -3.2697, 0.7303, 0, -3.2697, 2, 0, -2, 0.7303, -1, -5, 0.7303, 0, -3.2697, 2, 0, -3.2697, 0.7303, 0, -5, 0.7303, 0, -5, 2, 0, -3.2697, 2, 0, 5, 0, 0.2, 3.2697, 0.2, 0, 5, 0.2, 0, 5, 0, 0.2, 3.163, 0, 0.2, 3.2697, 0.2, 0, 3.163, 0, 0.2, 2, 0.2, -1, 3.2697, 0.2, 0, 3.163, 0, 0.2, 1.8, 0, -0.869, 2, 0.2, -1, 3.163, 0, -7.2, 5, 0.2, -7, 3.2697, 0.2, -7, 3.163, 0, -7.2, 5, 0, -7.2, 5, 0.2, -7, -1.8, 0, -6.131, -2, 0.2, -1, -2, 0.2, -6, -1.8, 0, -6.131, -1.8, 0, -0.869, -2, 0.2, -1, -1.8, 0, -0.869, -3.2697, 0.2, 0, -2, 0.2, -1, -1.8, 0, -0.869, -3.163, 0, 0.2, -3.2697, 0.2, 0, -5, 0, -7.2, -3.2697, 0.2, -7, -5, 0.2, -7, -5, 0, -7.2, -3.163, 0, -7.2, -3.2697, 0.2, -7, -3.163, 0, -7.2, -2, 0.2, -6, -3.2697, 0.2, -7, -3.163, 0, -7.2, -1.8, 0, -6.131, -2, 0.2, -6, -3.163, 0, 0.2, -5, 0.2, 0, -3.2697, 0.2, 0, -3.163, 0, 0.2, -5, 0, 0.2, -5, 0.2, 0, 1.8, 0, -6.131, 3.2697, 0.2, -7, 2, 0.2, -6, 1.8, 0, -6.131, 3.163, 0, -7.2, 3.2697, 0.2, -7, 1.8, 0, -0.869, 2, 0.2, -6, 2, 0.2, -1, 1.8, 0, -0.869, 1.8, 0, -6.131, 2, 0.2, -6)
 
@@ -80,8 +63,8 @@ data = PackedVector3Array(5, 2, -7, 3.2697, 2, 0, 3.2697, 2, -7, 5, 2, -7, 5, 2,
 [node name="Module_Victory2" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_2d2sd")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_g88jx")
-surface_material_override/1 = SubResource("StandardMaterial3D_jquk5")
+surface_material_override/0 = ExtResource("1_cqtbw")
+surface_material_override/1 = ExtResource("2_88mal")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConcavePolygonShape3D_7ych1")

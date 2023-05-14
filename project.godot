@@ -126,3 +126,7 @@ Restart={
 3d_physics/layer_6="Remove"
 3d_physics/layer_7="Power_source"
 3d_physics/layer_8="Power_sink"
+
+[rendering]
+
+environment/defaults/default_environment="res://Source/Environment/Default_WE.tres"

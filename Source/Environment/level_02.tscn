@@ -107,12 +107,15 @@ transform = Transform3D(9.55343e-16, 1, -4.37114e-08, 2.18557e-08, -4.37114e-08,
 
 [node name="Wall_Light" parent="." instance=ExtResource("12_b1g67")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.79007, 3.03233, 3.94755)
+is_powered = false
 
 [node name="Wall_Light2" parent="." instance=ExtResource("12_b1g67")]
 transform = Transform3D(-0.424264, 0, -0.707107, 0, 1, 0, 0.424264, 0, -0.707107, 5.97853, 3.03233, -1.10215)
+is_powered = false
 
 [node name="Wall_Light3" parent="." instance=ExtResource("12_b1g67")]
 transform = Transform3D(0.424264, 0, 0.707107, 0, 1, 0, -0.424264, 0, 0.707107, -3.86683, 3.03233, -5.89723)
+is_powered = false
 
 [node name="Pipe" parent="." instance=ExtResource("13_5oasj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5, 9.3)
@@ -135,6 +138,9 @@ transform = Transform3D(0.980656, 0.195741, 0, -0.195741, 0.980656, 0, 0, 0, 1, 
 shape = SubResource("BoxShape3D_an5xj")
 
 [connection signal="purge_finished" from="Module_Airlock_02" to="." method="trigger_level_reset"]
+[connection signal="purge_finished" from="Module_Airlock_02" to="Wall_Light" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock_02" to="Wall_Light2" method="turn_on"]
+[connection signal="purge_finished" from="Module_Airlock_02" to="Wall_Light3" method="turn_on"]
 [connection signal="activate" from="Module_Airlock_02/HeadCountScanner" to="Module_Airlock_02" method="open_entry"]
 [connection signal="push" from="Guillotine/Button" to="Guillotine" method="cut"]
 [connection signal="pull" from="Saw/Button" to="Saw" method="deactivate"]
