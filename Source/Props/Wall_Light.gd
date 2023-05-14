@@ -3,6 +3,15 @@ extends Node3D
 @export_node_path("Area3D") var connection
 @export var is_powered = true
 
+
+func turn_on():
+	is_powered = true
+
+
+func turn_off():
+	is_powered = false
+
+
 func _process(delta):
 	var conn = null
 	if connection:
