@@ -40,6 +40,7 @@ emission_energy_multiplier = 10.0
 [node name="Wall_Light" instance=ExtResource("1_s38hr")]
 
 [node name="Wall_Light2" parent="." index="0"]
+cast_shadow = 0
 surface_material_override/0 = SubResource("StandardMaterial3D_x3unf")
 surface_material_override/1 = SubResource("StandardMaterial3D_7wmpf")
 surface_material_override/2 = SubResource("StandardMaterial3D_1d6ww")
