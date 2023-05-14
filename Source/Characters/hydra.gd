@@ -81,7 +81,7 @@ func check_head(head : RigidBody3D):
 		if ray.collider.has_method("hit"):
 			ray.collider.hit()
 		remove_head(head)
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(0.8).timeout
 		add_head()
 		add_head()
 	pass
@@ -153,7 +153,7 @@ func _physics_process(delta):
 		zero_head_time += delta
 	else:
 		zero_head_time = 0
-	if zero_head_time > 8.0:
+	if zero_head_time > 6.0:
 		add_head()
 		zero_head_time = 0
 	# Pull back heads when too far
@@ -279,8 +279,10 @@ func control_head(head : RigidBody3D) -> Vector3:
 	# Drag body along
 	var d = head.global_position - neck_root.global_position
 	if d.length() > head_max_distance:
-		var v = d.normalized() * 0.1
-		return Vector3(v.x, 0, v.y)
+		var v : Vector3 = d
+		v.y = 0
+		v = v.normalized() * 0.1
+		return v
 		# TODO avoid jittering when not applying such small multiplier
 	return Vector3.ZERO
 
