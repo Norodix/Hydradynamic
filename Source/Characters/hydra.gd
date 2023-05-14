@@ -262,7 +262,7 @@ func _physics_process(delta):
 			var t = Time.get_ticks_msec() / 1000.0
 			var a = t / dance_period * 2 * PI
 			var offset = global_transform.basis * Vector3(cos(a), abs(sin(a)) - 0.5, 0) * dance_radius
-			offset += Vector3(0, 0, 1)
+			offset += global_transform.basis * Vector3(0, 0, 1)
 			pos_wanted += offset
 			var push_dir = (pos_wanted - head.global_position)
 			push_head(head, push_dir * 2)
