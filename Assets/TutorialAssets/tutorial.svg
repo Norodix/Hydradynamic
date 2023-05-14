@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="19.691227mm"
+   height="18.722795mm"
+   viewBox="0 0 19.691227 18.722795"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.8284271"
-     inkscape:cx="506.99557"
-     inkscape:cy="418.96077"
+     inkscape:cx="57.629203"
+     inkscape:cy="-50.911689"
      inkscape:window-width="1920"
      inkscape:window-height="1019"
      inkscape:window-x="1920"
@@ -44,77 +44,82 @@
      inkscape:snap-nodes="true"
      inkscape:snap-bbox="true"
      inkscape:snap-bbox-edge-midpoints="false"
-     inkscape:snap-bbox-midpoints="true" />
+     inkscape:snap-bbox-midpoints="true"
+     fit-margin-top="3"
+     fit-margin-left="3"
+     fit-margin-right="3"
+     fit-margin-bottom="3"
+     lock-margins="true" />
   <defs
      id="defs2">
     <marker
        style="overflow:visible"
        id="Arrow2Sstart"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow2Sstart"
        inkscape:isstock="true">
       <path
-         transform="scale(0.3) translate(-2.3,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round"
+         transform="matrix(0.3,0,0,0.3,-0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
          id="path21394" />
     </marker>
     <marker
        style="overflow:visible"
        id="marker45733"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Sstart"
        inkscape:isstock="true">
       <path
-         transform="scale(0.2) translate(6,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path45731" />
     </marker>
     <marker
        style="overflow:visible"
        id="marker45723"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Sstart"
        inkscape:isstock="true">
       <path
-         transform="scale(0.2) translate(6,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path45721" />
     </marker>
     <marker
        style="overflow:visible"
        id="marker45713"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Sstart"
        inkscape:isstock="true">
       <path
-         transform="scale(0.2) translate(6,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path45711" />
     </marker>
     <marker
        style="overflow:visible"
        id="Arrow1Sstart"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Sstart"
        inkscape:isstock="true">
       <path
-         transform="scale(0.2) translate(6,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path21376" />
     </marker>
     <inkscape:path-effect
@@ -178,87 +183,87 @@
        perimetral="true"
        live_update="true" />
     <marker
-       style="overflow:visible;"
+       style="overflow:visible"
        id="marker22455"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow2Send"
        inkscape:isstock="true">
       <path
-         transform="scale(0.3) rotate(180) translate(-2.3,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
          id="path22453" />
     </marker>
     <marker
        style="overflow:visible"
        id="EmptyTriangleOutS"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="EmptyTriangleOutS"
        inkscape:isstock="true">
       <path
-         transform="scale(0.2) translate(-3.0,0)"
-         style="fill-rule:evenodd;fill:context-fill;stroke:context-stroke;stroke-width:1.0pt"
-         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         transform="matrix(0.2,0,0,0.2,-0.6,0)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
          id="path21530" />
     </marker>
     <marker
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow2Send"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow2Send"
        inkscape:isstock="true">
       <path
-         transform="scale(0.3) rotate(180) translate(-2.3,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
          id="path21397" />
     </marker>
     <marker
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow2Lend"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow2Lend"
        inkscape:isstock="true">
       <path
-         transform="scale(1.1) rotate(180) translate(1,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:0.625;stroke-linejoin:round"
          id="path21385" />
     </marker>
     <marker
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow1Lend"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Lend"
        inkscape:isstock="true">
       <path
-         transform="scale(0.8) rotate(180) translate(12.5,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path21367" />
     </marker>
     <marker
        style="overflow:visible"
        id="Arrow1Lstart"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Lstart"
        inkscape:isstock="true">
       <path
-         transform="scale(0.8) translate(12.5,0)"
-         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path21364" />
     </marker>
     <marker
@@ -280,11 +285,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     style="opacity:1">
+     style="opacity:1"
+     transform="translate(-117.80002,-124.77597)">
     <path
        id="path50689"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 113.77065,96.639911 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 113.31686,106.03057 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82776 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82776 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -292,7 +298,7 @@
     <path
        id="path50691"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 113.77065,103.21144 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
+       d="m 113.31686,112.6021 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -300,7 +306,7 @@
     <path
        id="path50693"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 120.2147,103.21144 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
+       d="m 119.76091,112.6021 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -308,7 +314,7 @@
     <path
        id="path50695"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 107.3266,103.21144 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
+       d="m 106.87281,112.6021 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -316,15 +322,7 @@
     <path
        id="path50697"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 107.3266,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
-       sodipodi:nodetypes="sssssssss"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
-       inkscape:export-xdpi="600"
-       inkscape:export-ydpi="600" />
-    <path
-       id="path50699"
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 120.2147,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 130.47764,83.106705 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
@@ -347,13 +345,13 @@
            sodipodi:nodetypes="sssssssss" />
         <text
            xml:space="preserve"
-           style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;fill:#ffffff;stroke:none"
+           style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke:none;stroke-width:0.264583"
            x="156.04642"
            y="97.903748"
            id="text50514"><tspan
              sodipodi:role="line"
              id="tspan50512"
-             style="stroke-width:0.264583;fill:#ffffff;stroke:none"
+             style="fill:#ffffff;stroke:none;stroke-width:0.264583"
              x="156.04642"
              y="97.903748">R</tspan></text>
       </g>
@@ -368,13 +366,13 @@
            sodipodi:nodetypes="sssssssss" />
         <text
            xml:space="preserve"
-           style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;fill:#ffffff;stroke:none"
+           style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke:none;stroke-width:0.264583"
            x="156.37096"
            y="108.91154"
            id="text50522"><tspan
              sodipodi:role="line"
              id="tspan50520"
-             style="stroke-width:0.264583;fill:#ffffff;stroke:none"
+             style="fill:#ffffff;stroke:none;stroke-width:0.264583"
              x="156.37096"
              y="108.91154">T</tspan></text>
       </g>
@@ -382,16 +380,16 @@
     <path
        id="rect2893"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 113.77065,96.639911 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 113.31686,106.03057 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82776 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82776 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;opacity:1"
-       x="113.52735"
-       y="100.93957"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
+       x="113.07356"
+       y="110.33023"
        id="text7179"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -399,13 +397,13 @@
          sodipodi:role="line"
          id="tspan7177"
          style="stroke-width:0.264583"
-         x="113.52735"
-         y="100.93957">W</tspan></text>
+         x="113.07356"
+         y="110.33023">W</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
-       x="107.73029"
-       y="107.5111"
+       x="107.2765"
+       y="116.90176"
        id="text13189"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -413,13 +411,13 @@
          sodipodi:role="line"
          id="tspan13187"
          style="stroke-width:0.264583"
-         x="107.73029"
-         y="107.5111">A</tspan></text>
+         x="107.2765"
+         y="116.90176">A</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
-       x="114.25598"
-       y="107.50903"
+       x="113.80219"
+       y="116.8997"
        id="text14447"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -427,13 +425,13 @@
          sodipodi:role="line"
          id="tspan14445"
          style="stroke-width:0.264583"
-         x="114.25598"
-         y="107.50903">S</tspan></text>
+         x="113.80219"
+         y="116.8997">S</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;opacity:1"
-       x="120.35278"
-       y="107.51111"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
+       x="119.89899"
+       y="116.90177"
        id="text17135"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -441,12 +439,12 @@
          sodipodi:role="line"
          id="tspan17133"
          style="stroke-width:0.264583"
-         x="120.35278"
-         y="107.51111">D</tspan></text>
+         x="119.89899"
+         y="116.90177">D</tspan></text>
     <path
        id="path21309"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 113.77065,103.21144 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
+       d="m 113.31686,112.6021 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -454,7 +452,7 @@
     <path
        id="path21311"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 120.2147,103.21144 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
+       d="m 119.76091,112.6021 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
@@ -462,14 +460,14 @@
     <path
        id="path21313"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 107.3266,103.21144 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
+       d="m 106.87281,112.6021 c -0.46649,0 -0.84223,0.3758 -0.84223,0.84272 v 3.82777 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.82777 c 0,-0.46692 -0.37546,-0.84272 -0.84195,-0.84272 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 125.81652,105.96804 h 3.77031"
+       d="m 125.36273,115.3587 h 3.77031"
        id="path21362"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
@@ -477,7 +475,7 @@
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 105.42603,105.96804 h -3.77031"
+       d="m 104.97224,115.3587 h -3.77031"
        id="path22027"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
@@ -485,7 +483,7 @@
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 122.06546,76.811548 v 3.77031"
+       d="m 132.3284,77.076131 v 3.77031"
        id="path22029"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
@@ -493,7 +491,7 @@
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 109.17736,81.783788 v -3.77031"
+       d="m 138.77245,82.048371 v -3.77031"
        id="path22031"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
@@ -597,7 +595,7 @@
         <g
            id="g50338"
            transform="translate(2.8859868,3.2625136)"
-           style="stroke:none;fill:#ffffff">
+           style="fill:#ffffff;stroke:none">
           <path
              id="path50332"
              style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
@@ -605,13 +603,13 @@
              sodipodi:nodetypes="sssssssss" />
           <text
              xml:space="preserve"
-             style="font-size:2.87963px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;stroke:none;fill:#ffffff"
+             style="font-size:2.87963px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke:none;stroke-width:0.264583"
              x="149.87425"
              y="108.4167"
              id="text50336"><tspan
                sodipodi:role="line"
                id="tspan50334"
-               style="stroke-width:0.264583;stroke:none;fill:#ffffff"
+               style="fill:#ffffff;stroke:none;stroke-width:0.264583"
                x="149.87425"
                y="108.4167">SPACE</tspan></text>
         </g>
@@ -694,15 +692,7 @@
     <path
        id="path36165"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 107.3266,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
-       sodipodi:nodetypes="sssssssss"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
-       inkscape:export-xdpi="600"
-       inkscape:export-ydpi="600" />
-    <path
-       id="path36167"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 120.2147,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 130.47764,83.106705 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
        sodipodi:nodetypes="sssssssss"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
@@ -710,8 +700,8 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
-       x="107.51118"
-       y="86.896828"
+       x="130.66222"
+       y="87.161407"
        id="text39349"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
@@ -719,22 +709,45 @@
          sodipodi:role="line"
          id="tspan39347"
          style="stroke-width:0.264583"
-         x="107.51118"
-         y="86.896828">Q</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
-       x="120.65559"
-       y="87.141769"
-       id="text41153"
+         x="130.66222"
+         y="87.161407">Q</tspan></text>
+    <g
+       id="g1039"
+       transform="translate(16.706985,0.26458334)"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
-       inkscape:export-ydpi="600"><tspan
-         sodipodi:role="line"
-         id="tspan41151"
-         style="stroke-width:0.264583"
+       inkscape:export-ydpi="600">
+      <path
+         id="path50699"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
+         d="m 120.2147,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+         sodipodi:nodetypes="sssssssss"
+         inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
+         inkscape:export-xdpi="600"
+         inkscape:export-ydpi="600" />
+      <path
+         id="path36167"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
+         d="m 120.2147,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+         sodipodi:nodetypes="sssssssss"
+         inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
+         inkscape:export-xdpi="600"
+         inkscape:export-ydpi="600" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
          x="120.65559"
-         y="87.141769">E</tspan></text>
+         y="87.141769"
+         id="text41153"
+         inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
+         inkscape:export-xdpi="600"
+         inkscape:export-ydpi="600"><tspan
+           sodipodi:role="line"
+           id="tspan41151"
+           style="stroke-width:0.264583"
+           x="120.65559"
+           y="87.141769">E</tspan></text>
+    </g>
     <g
        id="g47868"
        transform="translate(11.973675,4.5836724)"
@@ -809,7 +822,7 @@
     </g>
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 115.62127,95.581577 v -3.77031"
+       d="m 115.16748,104.97224 v -3.77031"
        id="path1207"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
@@ -817,7 +830,7 @@
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 115.62127,109.78298 v 3.77031"
+       d="m 115.16748,119.17364 v 3.77031"
        id="path1209"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"

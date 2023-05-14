@@ -102,6 +102,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 [node name="Module_Airlock_01" parent="." instance=ExtResource("13_wswng")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -14.5)
 
+[node name="Button" parent="." instance=ExtResource("5_ft472")]
+transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 0, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, -3.70505, 3.53745, -19.6446)
+
+[node name="Node3D" parent="Button" instance=ExtResource("6_6sryd")]
+transform = Transform3D(-1, 8.9407e-08, 0, -8.9407e-08, -1, -7.10543e-15, 0, 0, 1, 0.543026, 0.0547628, 0)
+
+[node name="Node3D2" parent="Button" instance=ExtResource("6_6sryd")]
+transform = Transform3D(-0.707107, 0.707107, 0, -0.707107, -0.707107, -7.10543e-15, -8.94772e-15, 3.55271e-15, 1, 0.60436, -0.275802, -2.14577e-06)
+
+[node name="Node3D3" parent="Button" instance=ExtResource("6_6sryd")]
+transform = Transform3D(-0.468105, -0.707107, 0, 0.468105, -0.707107, -7.10543e-15, 7.10543e-15, -3.55271e-15, 1, 1.78739, -0.0547495, -5.24521e-06)
+
 [connection signal="push" from="Guillotine/Button" to="Guillotine" method="cut"]
 [connection signal="activate" from="Guillotine2/PowerSink" to="Guillotine2" method="cut"]
 [connection signal="purge_finished" from="Module_Airlock_01" to="." method="trigger_level_reset"]
+[connection signal="push" from="Button" to="Module_Airlock_01" method="open_entry"]
