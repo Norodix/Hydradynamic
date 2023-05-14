@@ -345,7 +345,7 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0.596078, 0.741176, 0.768627)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.537255)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "WASD - move
 Q, E - Move head down, up
 (Hold) Ctrl - Move body only
@@ -365,5 +365,5 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0.596078, 0.741176, 0.768627)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.537255)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "To reset level return to Airlock"
