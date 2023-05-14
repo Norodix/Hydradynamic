@@ -14,15 +14,18 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 script = ExtResource("1_dpd52")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.610749, 4.475, -5.33934e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.582417, 4.33704, -5.09166e-08)
 shaded = true
+modulate = Color(0.141176, 0.811765, 1, 0.427451)
+outline_modulate = Color(0, 0.486275, 0.85098, 0.909804)
 text = "3x
 "
-font_size = 200
-outline_size = 40
+font_size = 160
+outline_size = 20
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.378, 0, 9.01222e-08, 0, 0.378, 0, -9.01222e-08, 0, 0.378, 0.721122, 4.475, -5.23556e-08)
+transform = Transform3D(0.3, 0, 7.15256e-08, 0, 0.3, 0, -7.15256e-08, 0, 0.3, 0.619775, 4.42886, -6.12156e-08)
+modulate = Color(1, 1, 1, 0.862745)
 shaded = true
 texture = ExtResource("2_uojm6")
 

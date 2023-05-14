@@ -139,7 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.35)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.65)
 
 [node name="HeadCountScanner" parent="StaticBody3D/Module_Airlock2" instance=ExtResource("8_4ijl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 head_count = 7
 
 [node name="Wall_Light" parent="StaticBody3D/Module_Airlock2" instance=ExtResource("9_mpe0l")]
