@@ -119,8 +119,11 @@ func _process(delta):
 		if control_index == 0: control_index = 1
 	if Input.is_action_just_pressed("control_last"):
 		control_index = (control_index - 1) % controllable_list.size()
-		if control_index == 0: control_index = 1
+		if control_index == 0: control_index = controllable_list.size() - 1
 	if Input.is_action_just_pressed("control_main"):
+		control_index = 0
+	if control_index >= controllable_list.size():
+		# mitigate % 1 error
 		control_index = 0
 #	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 #		add_head()
