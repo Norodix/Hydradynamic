@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://b18ny50f7tguf"]
+[gd_scene load_steps=11 format=3 uid="uid://b18ny50f7tguf"]
 
+[ext_resource type="Script" path="res://Source/Environment/world_settings.gd" id="1_2jfp7"]
 [ext_resource type="PackedScene" uid="uid://d1syrg0ik6wvv" path="res://Source/Environment/level_01.tscn" id="3_btcuo"]
 [ext_resource type="PackedScene" uid="uid://bsvo6t20dqbyi" path="res://Source/Characters/hydra.tscn" id="3_c3l41"]
 [ext_resource type="PackedScene" uid="uid://b1il51omfoj87" path="res://Source/Environment/level_02.tscn" id="4_wb2ti"]
-[ext_resource type="PackedScene" uid="uid://dkotd6fqtog0x" path="res://Source/Environment/level_03.tscn" id="5_g5mvs"]
+[ext_resource type="PackedScene" uid="uid://bxc2ovr64sc0q" path="res://Source/Environment/level_03.tscn" id="5_g5mvs"]
 [ext_resource type="PackedScene" uid="uid://c8xhbxnwfersf" path="res://Source/UI/EscapeMenu.tscn" id="6_2hm8e"]
-[ext_resource type="PackedScene" uid="uid://cfc1qyfgsb8p7" path="res://Source/Environment/level_04.tscn" id="6_lhn6u"]
+[ext_resource type="PackedScene" uid="uid://dulqknhh4yadr" path="res://Source/Environment/level_04.tscn" id="6_lhn6u"]
 [ext_resource type="PackedScene" uid="uid://cewhws167mvuv" path="res://Source/Environment/level_victory.tscn" id="7_bi01e"]
 
 [sub_resource type="Environment" id="Environment_jp8ti"]
@@ -22,6 +23,9 @@ func _process(delta):
 "
 
 [node name="Puzzle_Map" type="Node3D"]
+
+[node name="WorldSettings" type="Node3D" parent="."]
+script = ExtResource("1_2jfp7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jp8ti")

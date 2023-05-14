@@ -24,24 +24,27 @@
      inkscape:pagecheckerboard="true"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="436.10811"
-     inkscape:cy="390.32295"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="506.99557"
+     inkscape:cy="418.96077"
      inkscape:window-width="1920"
      inkscape:window-height="1019"
      inkscape:window-x="1920"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     inkscape:snap-smooth-nodes="false"
-     inkscape:snap-midpoints="false"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-center="true"
-     inkscape:snap-intersection-paths="false"
-     inkscape:object-nodes="false"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-nodes="true"
      inkscape:snap-global="true"
      inkscape:object-paths="false"
-     inkscape:snap-nodes="false" />
+     inkscape:snap-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-edge-midpoints="false"
+     inkscape:snap-bbox-midpoints="true" />
   <defs
      id="defs2">
     <marker
@@ -313,17 +316,17 @@
     <path
        id="path50697"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 107.3266,96.639911 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 107.3266,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
        sodipodi:nodetypes="sssssssss"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <path
        id="path50699"
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 120.2147,96.639911 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 120.2147,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
        sodipodi:nodetypes="sssssssss"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <g
@@ -466,7 +469,7 @@
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 125.81652,105.96805 h 3.77031"
+       d="m 125.81652,105.96804 h 3.77031"
        id="path21362"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
@@ -474,7 +477,7 @@
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 105.42603,105.96805 h -3.77031"
+       d="m 105.42603,105.96804 h -3.77031"
        id="path22027"
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
@@ -482,18 +485,18 @@
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 109.17722,91.210302 v 3.77031"
+       d="m 122.06546,76.811548 v 3.77031"
        id="path22029"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <path
        style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
-       d="m 122.06546,95.581577 v -3.77031"
+       d="m 109.17736,81.783788 v -3.77031"
        id="path22031"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <image
@@ -691,117 +694,47 @@
     <path
        id="path36165"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 107.3266,96.639911 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 107.3266,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
        sodipodi:nodetypes="sssssssss"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <path
        id="path36167"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill;stop-color:#000000"
-       d="m 120.2147,96.639911 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
+       d="m 120.2147,82.842122 c -0.46649,0 -0.84223,0.375797 -0.84223,0.842717 v 3.827762 c 0,0.46692 0.37574,0.84271 0.84223,0.84271 h 3.70153 c 0.46649,0 0.84195,-0.37579 0.84195,-0.84271 v -3.827762 c 0,-0.46692 -0.37546,-0.842717 -0.84195,-0.842717 z"
        sodipodi:nodetypes="sssssssss"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600" />
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;opacity:1"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
        x="107.51118"
-       y="100.69462"
+       y="86.896828"
        id="text39349"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan39347"
          style="stroke-width:0.264583"
          x="107.51118"
-         y="100.69462">Q</tspan></text>
+         y="86.896828">Q</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583;opacity:1"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;opacity:1;stroke-width:0.264583"
        x="120.65559"
-       y="100.93956"
+       y="87.141769"
        id="text41153"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions_wall.png"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan41151"
          style="stroke-width:0.264583"
          x="120.65559"
-         y="100.93956">E</tspan></text>
-    <g
-       id="path43412"
-       inkscape:path-effect="#path-effect44096"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
-       inkscape:export-xdpi="600"
-       inkscape:export-ydpi="600">
-      <path
-         style="color:#000000;fill:#000000;stroke-width:1.465;-inkscape-stroke:none"
-         d="m 115.62097,95.579714 8.3e-4,-4.678034"
-         id="path43892"
-         inkscape:original-d="m 115.62141,95.581577 v -3.77031" />
-      <path
-         style="color:#000000;fill:#000000;-inkscape-stroke:none"
-         d="m 115.32427,90.901463 -0.92726,4.680568 h 2.44687 l -0.92481,-4.680568 z"
-         id="path43894"
-         inkscape:original-d="m 114.88867,91.810547 v 3.771484 h 1.46485 v -3.771484 z" />
-      <g
-         id="g43882">
-        <g
-           id="path43884">
-          <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.293pt;-inkscape-stroke:none"
-             d="m 115.62184,90.691074 0.90926,1.005326 h -1.81888 z"
-             id="path43888"
-             inkscape:original-d="m 115.62141,90.999657 1.465,2.53445 h -2.93 z" />
-          <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;-inkscape-stroke:none"
-             d="m 115.62175,90.609482 -0.0577,0.06024 -1.13272,1.172461 h 2.38148 z m -5e-5,0.175146 0.65966,0.781272 h -1.31858 z"
-             id="path43890"
-             inkscape:original-d="m 115.62109,90.609375 -0.16796,0.292969 -1.63477,2.826172 h 3.60742 z m 0,0.78125 1.12696,1.947266 h -2.25196 z" />
-        </g>
-      </g>
-    </g>
-    <g
-       id="g44346"
-       inkscape:path-effect="#path-effect44350"
-       transform="rotate(180,115.62044,102.6825)"
-       style="stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
-       inkscape:export-xdpi="600"
-       inkscape:export-ydpi="600">
-      <path
-         style="color:#000000;fill:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-         d="m 115.62145,95.581836 -4.7e-4,-2.854797"
-         id="path44334"
-         inkscape:original-d="m 115.62141,95.581577 v -3.77031" />
-      <path
-         style="color:#000000;fill:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-         d="m 114.41216,92.726079 0.5233,2.855952 h 1.3714 l 0.52191,-2.855952 z"
-         id="path44336"
-         inkscape:original-d="m 114.88867,91.810547 v 3.771484 h 1.46485 v -3.771484 z" />
-      <g
-         id="g44344"
-         style="stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">
-        <g
-           id="g44342"
-           style="stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none">
-          <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-             d="m 115.62077,91.431981 1.79301,2.999869 h -3.58504 z"
-             id="path44338"
-             inkscape:original-d="m 115.62141,90.999657 1.465,2.53445 h -2.93 z" />
-          <path
-             style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none"
-             d="m 115.61994,90.609482 -0.33922,0.632288 -1.80312,3.32874 h 4.28894 z m 3.6e-4,1.504301 1.42122,2.169677 h -2.8389 z"
-             id="path44340"
-             inkscape:original-d="m 115.62109,90.609375 -0.16796,0.292969 -1.63477,2.826172 h 3.60742 z m 0,0.78125 1.12696,1.947266 h -2.25196 z" />
-        </g>
-      </g>
-    </g>
+         y="87.141769">E</tspan></text>
     <g
        id="g47868"
        transform="translate(11.973675,4.5836724)"
@@ -874,5 +807,21 @@
         </g>
       </g>
     </g>
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
+       d="m 115.62127,95.581577 v -3.77031"
+       id="path1207"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#EmptyTriangleOutS)"
+       d="m 115.62127,109.78298 v 3.77031"
+       id="path1209"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/bence/Documents/Misc/GoGodot4/Assets/TutorialAssets/directions.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
   </g>
 </svg>
