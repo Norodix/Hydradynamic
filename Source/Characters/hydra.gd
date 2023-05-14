@@ -327,8 +327,19 @@ func update_music():
 	var volC = db_play if (hc > 4) else db_silent
 	
 	var tweenA = get_tree().create_tween()
-	tweenA.tween_property(musicA, "volume_db", volA, 0.2).set_trans(Tween.TRANS_CIRC)
+	tweenA.tween_property(musicA, "volume_db", volA, 1).set_trans(Tween.TRANS_CIRC)
 	var tweenB = get_tree().create_tween()
-	tweenB.tween_property(musicB, "volume_db", volB, 0.2).set_trans(Tween.TRANS_CIRC)
+	tweenB.tween_property(musicB, "volume_db", volB, 1).set_trans(Tween.TRANS_CIRC)
 	var tweenC = get_tree().create_tween()
-	tweenC.tween_property(musicC, "volume_db", volC, 0.2).set_trans(Tween.TRANS_CIRC)
+	tweenC.tween_property(musicC, "volume_db", volC, 1).set_trans(Tween.TRANS_CIRC)
+
+
+func victory():
+	var tweenA = get_tree().create_tween()
+	tweenA.tween_property(musicA, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
+	var tweenB = get_tree().create_tween()
+	tweenB.tween_property(musicB, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
+	var tweenC = get_tree().create_tween()
+	tweenC.tween_property(musicC, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
+	# Play victory music here
+	dance_enabled = true
