@@ -56,6 +56,7 @@ func get_bone_children_recursive(skeleton : Skeleton3D, root_index : int):
 
 
 func remove():
+	# Update audio here, this head will not be readded
 	emit_signal("remove_head", self)
 
 

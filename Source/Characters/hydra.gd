@@ -43,6 +43,7 @@ func add_head():
 	hs.linear_damp = head_damping
 	hs.neck_root_offset = neck_root.position
 	hs.connect("remove_head", remove_head)
+	hs.connect("remove_head", update_music)
 	#hs.randomize_rest_position(0.7)
 	controllable_list.append(hs)
 	for i in controllable_list.size():
@@ -55,6 +56,8 @@ func add_head():
 		var r0 = 0.6
 		var r = r0 * sqrt(i-1)
 		hydra_head.rest_position = Vector3(r * cos(ang), r * sin(ang), 0.0).rotated(Vector3(1,0,0), deg_to_rad(-30))
+	# Update music here
+	update_music()
 
 
 func check_head_trigger():
@@ -106,6 +109,8 @@ func purge_heads():
 		var head = controllable_list[i]
 		if head is HydraHead:
 			remove_head(head)
+	# Update music here
+	update_music()
 
 
 func _process(delta):
@@ -117,7 +122,8 @@ func _process(delta):
 		if control_index == 0: control_index = 1
 	if Input.is_action_just_pressed("control_main"):
 		control_index = 0
-	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.6, 0)
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		add_head()
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.8, 0)
 	$Indicator.global_position += Vector3.UP * sin(Time.get_ticks_msec() / 1000.0 * 10) * 0.1
 	$Indicator.global_transform = $Indicator.global_transform.rotated_local(Vector3.UP, 0.1)
@@ -304,3 +310,25 @@ func get_cam_basis() -> Basis:
 		return Basis(x, y, z)
 	else:
 		return cam.global_transform.basis
+
+
+const db_silent : float = -60
+const db_play : float = -10
+@onready var musicA : AudioStreamPlayer = $MusicA
+@onready var musicB : AudioStreamPlayer = $MusicB
+@onready var musicC : AudioStreamPlayer = $MusicC
+func update_music():
+	musicB.seek(musicA.get_playback_position())
+	musicC.seek(musicA.get_playback_position())
+	
+	var hc = get_head_count()
+	var volA = db_play if (hc <= 2) else db_silent
+	var volB = db_play if (hc > 2 and hc <=4) else db_silent
+	var volC = db_play if (hc > 4) else db_silent
+	
+	var tweenA = get_tree().create_tween()
+	tweenA.tween_property(musicA, "volume_db", volA, 0.2).set_trans(Tween.TRANS_CIRC)
+	var tweenB = get_tree().create_tween()
+	tweenB.tween_property(musicB, "volume_db", volB, 0.2).set_trans(Tween.TRANS_CIRC)
+	var tweenC = get_tree().create_tween()
+	tweenC.tween_property(musicC, "volume_db", volC, 0.2).set_trans(Tween.TRANS_CIRC)
