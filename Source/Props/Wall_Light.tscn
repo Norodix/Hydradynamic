@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://xmwgx23fh3lb"]
+[gd_scene load_steps=7 format=3 uid="uid://xmwgx23fh3lb"]
 
 [ext_resource type="PackedScene" uid="uid://cg8ghmvveeo6k" path="res://Assets/Wall_Light/Wall_Light.gltf" id="1_s38hr"]
+[ext_resource type="Script" path="res://Source/Props/Wall_Light.gd" id="2_vfhtp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7an40"]
 cull_mode = 1
@@ -38,6 +39,7 @@ emission = Color(0.823529, 0.635294, 0.207843, 1)
 emission_energy_multiplier = 10.0
 
 [node name="Wall_Light" instance=ExtResource("1_s38hr")]
+script = ExtResource("2_vfhtp")
 
 [node name="Wall_Light2" parent="." index="0"]
 cast_shadow = 0
