@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c4vunn2rkqj83" path="res://addons/ggs/assets/game_settings/input_setting.svg" id="3_pp7j4"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/input.gd" id="4_2dri1"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/_misc_components/reset_btn/reset_btn.tscn" id="5_kvad3"]
-[ext_resource type="PackedScene" uid="uid://dhb110yxqrkfl" path="res://Source/UI/game_settings/components/_misc_components/input_confirm_window/input_confirm_window.tscn" id="6_dj5r1"]
+[ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/_misc_components/input_confirm_window/input_confirm_window.tscn" id="6_dj5r1"]
 
 [sub_resource type="Resource" id="Resource_7y6pa"]
 resource_name = "Forward"
@@ -166,7 +166,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InputConfirmWindow" parent="." instance=ExtResource("6_dj5r1")]
-visible = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1

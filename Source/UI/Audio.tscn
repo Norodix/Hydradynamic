@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dkbf0mc6bl2e1"]
+[gd_scene load_steps=13 format=3 uid="uid://dkbf0mc6bl2e1"]
 
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/checkbox/checkbox.tscn" id="1_f6lit"]
 [ext_resource type="Texture2D" uid="uid://dbtn4d6130bdj" path="res://addons/ggs/assets/game_settings/audio_mute.svg" id="3_0jr3t"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/audio_mute.gd" id="4_t7k3i"]
 [ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/slider/slider.tscn" id="5_fnldc"]
+[ext_resource type="PackedScene" path="res://Source/UI/game_settings/components/_misc_components/reset_btn/reset_btn.tscn" id="7_0ksur"]
 [ext_resource type="Texture2D" uid="uid://buotak2dk5n0x" path="res://addons/ggs/assets/game_settings/audio_volume.svg" id="7_bcmw2"]
 [ext_resource type="Script" path="res://Source/UI/game_settings/settings/audio_volume.gd" id="8_fy1lv"]
 [ext_resource type="PackedScene" uid="uid://bqjuv33yg7wb5" path="res://Source/UI/exit_button.tscn" id="9_xxxa4"]
@@ -93,7 +94,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Mute"
 
-[node name="Checkbox" parent="CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_f6lit")]
+[node name="Checkbox" parent="CenterContainer/VBoxContainer/HBoxContainer" groups=["settings"] instance=ExtResource("1_f6lit")]
 layout_mode = 2
 setting = SubResource("Resource_bnkic")
 apply_on_change = true
@@ -106,7 +107,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Master"
 
-[node name="Slider" parent="CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("5_fnldc")]
+[node name="Slider" parent="CenterContainer/VBoxContainer/HBoxContainer2" groups=["settings"] instance=ExtResource("5_fnldc")]
 layout_mode = 2
 setting = SubResource("Resource_ql48i")
 apply_on_change = true
@@ -123,7 +124,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Music"
 
-[node name="Slider2" parent="CenterContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("5_fnldc")]
+[node name="Slider2" parent="CenterContainer/VBoxContainer/HBoxContainer3" groups=["settings"] instance=ExtResource("5_fnldc")]
 layout_mode = 2
 setting = SubResource("Resource_lr7dg")
 apply_on_change = true
@@ -140,7 +141,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Sound effects"
 
-[node name="Slider3" parent="CenterContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("5_fnldc")]
+[node name="Slider3" parent="CenterContainer/VBoxContainer/HBoxContainer4" groups=["settings"] instance=ExtResource("5_fnldc")]
 layout_mode = 2
 setting = SubResource("Resource_gieag")
 apply_on_change = true
@@ -149,18 +150,24 @@ apply_on_change = true
 custom_minimum_size = Vector2(200, 0)
 size_flags_horizontal = 1
 
-[node name="ExitButton" parent="." instance=ExtResource("9_xxxa4")]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.431858
-anchor_top = 0.95216
-anchor_right = 0.568142
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -30.0
-offset_right = 0.0
-offset_bottom = -30.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="ResetBtn" parent="VBoxContainer" instance=ExtResource("7_0ksur")]
+layout_mode = 2
+text = "Reset to default"
+group = "settings"
+
+[node name="ExitButton" parent="VBoxContainer" instance=ExtResource("9_xxxa4")]
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [editable path="CenterContainer/VBoxContainer/HBoxContainer/Checkbox"]
