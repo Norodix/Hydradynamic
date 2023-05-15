@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://voscmc7l0cqb"]
+
+[ext_resource type="PackedScene" uid="uid://dly1ws6d2ua2p" path="res://Assets/Map_Modules/Module_Collumn_5m.gltf" id="1_7gq8q"]
+[ext_resource type="Material" uid="uid://b7akn1jwuq5s8" path="res://Source/Materials/Edge_Mat.tres" id="2_iavhi"]
+
+[node name="Module_Collumn_5m" instance=ExtResource("1_7gq8q")]
+
+[node name="Module_Collumn_5m2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_iavhi")

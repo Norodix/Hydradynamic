@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bet3ci57ywk3k"]
+[gd_scene load_steps=20 format=3 uid="uid://bet3ci57ywk3k"]
 
 [ext_resource type="Script" path="res://Source/Props/Module_Airlock.gd" id="1_qe8mo"]
 [ext_resource type="Material" uid="uid://u2hkg0m5eha2" path="res://Source/Materials/Walls_Mat.tres" id="2_y8eg3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="5_hr1tm"]
 [ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="6_4yu5s"]
 [ext_resource type="PackedScene" uid="uid://dgo6k7v4ntg6v" path="res://Source/Props/head_remover.tscn" id="8_ld3tp"]
+[ext_resource type="PackedScene" uid="uid://voscmc7l0cqb" path="res://Source/Props/Module_Collumn_5m.tscn" id="9_3mum5"]
 [ext_resource type="PackedScene" uid="uid://drmeignw80igo" path="res://Source/Props/burner_tube.tscn" id="10_rsq1o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkfyo"]
@@ -162,6 +163,24 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.524
 
 [node name="Burner_Tube3" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 0.751631, -1.8277)
+
+[node name="Module_Collumn_5m" parent="." instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4.5)
+
+[node name="Module_Collumn_5m5" parent="." instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, -4.49)
+
+[node name="Module_Collumn_5m6" parent="." instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, 4.49)
+
+[node name="Module_Collumn_5m2" parent="." instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -4.5)
+
+[node name="Module_Collumn_5m3" parent="." instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+
+[node name="Module_Collumn_5m4" parent="." instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
 
 [connection signal="purge_finished" from="." to="Wall_Light" method="turn_on"]
 [connection signal="close_finished" from="Door_Entry" to="Wall_Light" method="turn_off"]
