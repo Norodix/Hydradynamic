@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckwksmr4pnin8"]
+[gd_scene load_steps=19 format=3 uid="uid://ckwksmr4pnin8"]
 
 [ext_resource type="Script" path="res://Source/Props/PhysicalButton.gd" id="1_7ca5p"]
 [ext_resource type="AudioStream" uid="uid://c1hbf36cmk6bu" path="res://Sound/SFX/button_click.wav" id="2_13h81"]
+[ext_resource type="Material" uid="uid://dnqgitvq7pl8p" path="res://Source/Materials/Button_Mat.tres" id="2_tjjvk"]
 [ext_resource type="AudioStream" uid="uid://c8c7a1laikolh" path="res://Sound/SFX/button_clack.wav" id="3_e6muc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wi07"]
@@ -100,31 +101,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a734o")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7an40"]
-cull_mode = 1
-diffuse_mode = 3
-specular_mode = 2
-albedo_color = Color(0, 0, 0, 1)
-grow = true
-grow_amount = 0.02
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3buv"]
-next_pass = SubResource("StandardMaterial3D_7an40")
-diffuse_mode = 3
-specular_mode = 1
-albedo_color = Color(0.454902, 0, 0, 1)
-metallic = 0.1
-metallic_specular = 1.0
-roughness = 0.1
-rim_enabled = true
-rim = 0.3
-anisotropy = 0.02
-ao_light_affect = 0.11
-heightmap_scale = -6.956
-backlight_enabled = true
-backlight = Color(0.490196, 0.490196, 0.490196, 1)
-grow_amount = 0.1
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wgob"]
 size = Vector3(0.75, 0.26, 0.75)
 
@@ -185,7 +161,7 @@ shape = SubResource("CylinderShape3D_mss5i")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Push"]
 mesh = SubResource("ArrayMesh_k031v")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_n3buv")
+surface_material_override/0 = ExtResource("2_tjjvk")
 
 [node name="Detector" type="Node3D" parent="."]
 
