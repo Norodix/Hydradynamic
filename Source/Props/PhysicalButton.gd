@@ -35,6 +35,7 @@ func button_push():
 	if shots != 0:
 		shots -= 1
 		emit_signal("push")
+	$Push/MeshInstance3D.get_surface_override_material(0).emission_enabled = true
 
 
 func button_release():
@@ -42,3 +43,4 @@ func button_release():
 	$AnimationPlayer.play_backwards("push")
 	
 	emit_signal("pull")
+	$Push/MeshInstance3D.get_surface_override_material(0).emission_enabled = false
