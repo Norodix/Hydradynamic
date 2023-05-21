@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://byyiiwy8njru1"]
+[gd_scene load_steps=9 format=3 uid="uid://byyiiwy8njru1"]
 
 [ext_resource type="Material" uid="uid://u2hkg0m5eha2" path="res://Source/Materials/Walls_Mat.tres" id="1_e8afl"]
 [ext_resource type="Material" uid="uid://b7akn1jwuq5s8" path="res://Source/Materials/Edge_Mat.tres" id="2_eu5ro"]
+[ext_resource type="PackedScene" uid="uid://voscmc7l0cqb" path="res://Source/Props/Module_Collumn_5m.tscn" id="3_5iaak"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8q8cv"]
 
@@ -66,3 +67,27 @@ surface_material_override/1 = ExtResource("2_eu5ro")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConcavePolygonShape3D_q8wxg")
+
+[node name="Module_Collumn_5m" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 3, 0, 3)
+
+[node name="Module_Collumn_5m2" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, -3, 0, 3)
+
+[node name="Module_Collumn_5m7" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, 3, 0, -10)
+
+[node name="Module_Collumn_5m8" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, -3, 0, -10)
+
+[node name="Module_Collumn_5m3" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 5, 0, 1)
+
+[node name="Module_Collumn_5m4" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, -5, 0, 1)
+
+[node name="Module_Collumn_5m5" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, 5, 0, -8)
+
+[node name="Module_Collumn_5m6" parent="." instance=ExtResource("3_5iaak")]
+transform = Transform3D(0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, -5, 0, -8)
