@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cewhws167mvuv"]
+[gd_scene load_steps=23 format=3 uid="uid://cewhws167mvuv"]
 
 [ext_resource type="PackedScene" uid="uid://dqr6tg8ksngk3" path="res://Source/Props/Module_Straight.tscn" id="1_jutjx"]
 [ext_resource type="Material" uid="uid://u2hkg0m5eha2" path="res://Source/Materials/Walls_Mat.tres" id="2_sy2c2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ckwksmr4pnin8" path="res://Source/Props/Button.tscn" id="5_8txac"]
 [ext_resource type="PackedScene" uid="uid://d1csq0ambeaom" path="res://Source/Props/door.tscn" id="7_4wogk"]
 [ext_resource type="PackedScene" uid="uid://cccfxw6qystwr" path="res://Source/Props/head_count_scanner.tscn" id="8_4ijl4"]
+[ext_resource type="PackedScene" uid="uid://voscmc7l0cqb" path="res://Source/Props/Module_Collumn_5m.tscn" id="8_prafm"]
 [ext_resource type="PackedScene" uid="uid://xmwgx23fh3lb" path="res://Source/Props/Wall_Light.tscn" id="9_mpe0l"]
 [ext_resource type="PackedScene" uid="uid://dha5h2njv88ri" path="res://Source/Props/power_and.tscn" id="11_7hqxs"]
 [ext_resource type="PackedScene" uid="uid://byyiiwy8njru1" path="res://Source/Props/Module_Dead_End.tscn" id="13_vcjq6"]
@@ -117,6 +118,75 @@ head_count = 7
 [node name="Wall_Light" parent="StaticBody3D/Module_Airlock2" instance=ExtResource("9_mpe0l")]
 transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 3.82137e-15, 4.37114e-08, -1, -1, 1.31134e-07, 1.91069e-15, 0, 4.871, -4.47618)
 is_powered = false
+
+[node name="Collumns" type="Node3D" parent="StaticBody3D/Module_Airlock2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.5)
+
+[node name="Module_Collumn_5m" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4.5)
+
+[node name="Module_Collumn_5m5" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, -4.49)
+
+[node name="Module_Collumn_5m6" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, 4.49)
+
+[node name="Module_Collumn_5m2" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -4.5)
+
+[node name="Module_Collumn_5m7" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.69776)
+
+[node name="Module_Collumn_5m8" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, -2.70457)
+
+[node name="Module_Collumn_5m9" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.69776)
+
+[node name="Module_Collumn_5m10" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -3.59492)
+
+[node name="Module_Collumn_5m11" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, -3.58492)
+
+[node name="Module_Collumn_5m12" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3.59492)
+
+[node name="Module_Collumn_5m13" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5858)
+
+[node name="Module_Collumn_5m14" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, 3.55987)
+
+[node name="Module_Collumn_5m15" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5858)
+
+[node name="Module_Collumn_5m16" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.68864)
+
+[node name="Module_Collumn_5m17" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, 2.69864)
+
+[node name="Module_Collumn_5m19" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 5, -2.70457)
+
+[node name="Module_Collumn_5m20" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 5, 2.69864)
+
+[node name="Module_Collumn_5m21" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1.9662e-15, 4.80825e-08, 1, 1, -4.80825e-08, -5.55112e-17, 4.37114e-08, 1.1, -4.37114e-08, 2.5, 5, -2.72336)
+
+[node name="Module_Collumn_5m22" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1.9662e-15, 4.80825e-08, 1, 1, -4.80825e-08, -5.55112e-17, 4.37114e-08, 1.1, -4.37114e-08, -2.5, 5, -2.79708)
+
+[node name="Module_Collumn_5m18" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.68864)
+
+[node name="Module_Collumn_5m3" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+
+[node name="Module_Collumn_5m4" parent="StaticBody3D/Module_Airlock2/Collumns" instance=ExtResource("8_prafm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
 
 [node name="Module_Airlock_Collision" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)

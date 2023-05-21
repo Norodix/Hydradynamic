@@ -164,22 +164,72 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.524
 [node name="Burner_Tube3" parent="Burners" instance=ExtResource("10_rsq1o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52401, 0.751631, -1.8277)
 
-[node name="Module_Collumn_5m" parent="." instance=ExtResource("9_3mum5")]
+[node name="Collumns" type="Node3D" parent="."]
+
+[node name="Module_Collumn_5m" parent="Collumns" instance=ExtResource("9_3mum5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4.5)
 
-[node name="Module_Collumn_5m5" parent="." instance=ExtResource("9_3mum5")]
+[node name="Module_Collumn_5m5" parent="Collumns" instance=ExtResource("9_3mum5")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, -4.49)
 
-[node name="Module_Collumn_5m6" parent="." instance=ExtResource("9_3mum5")]
+[node name="Module_Collumn_5m6" parent="Collumns" instance=ExtResource("9_3mum5")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, 4.49)
 
-[node name="Module_Collumn_5m2" parent="." instance=ExtResource("9_3mum5")]
+[node name="Module_Collumn_5m2" parent="Collumns" instance=ExtResource("9_3mum5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -4.5)
 
-[node name="Module_Collumn_5m3" parent="." instance=ExtResource("9_3mum5")]
+[node name="Module_Collumn_5m7" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.69776)
+
+[node name="Module_Collumn_5m8" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, -2.70457)
+
+[node name="Module_Collumn_5m9" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.69776)
+
+[node name="Module_Collumn_5m10" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -3.59492)
+
+[node name="Module_Collumn_5m11" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, -3.58492)
+
+[node name="Module_Collumn_5m12" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3.59492)
+
+[node name="Module_Collumn_5m13" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5858)
+
+[node name="Module_Collumn_5m14" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, 3.55987)
+
+[node name="Module_Collumn_5m15" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 3.5858)
+
+[node name="Module_Collumn_5m16" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.68864)
+
+[node name="Module_Collumn_5m17" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 4, 2.69864)
+
+[node name="Module_Collumn_5m19" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 5, -2.70457)
+
+[node name="Module_Collumn_5m20" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.5, 5, 2.69864)
+
+[node name="Module_Collumn_5m21" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1.9662e-15, 4.80825e-08, 1, 1, -4.80825e-08, -5.55112e-17, 4.37114e-08, 1.1, -4.37114e-08, 2.5, 5, -2.72336)
+
+[node name="Module_Collumn_5m22" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1.9662e-15, 4.80825e-08, 1, 1, -4.80825e-08, -5.55112e-17, 4.37114e-08, 1.1, -4.37114e-08, -2.5, 5, -2.79708)
+
+[node name="Module_Collumn_5m18" parent="Collumns" instance=ExtResource("9_3mum5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.68864)
+
+[node name="Module_Collumn_5m3" parent="Collumns" instance=ExtResource("9_3mum5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
 
-[node name="Module_Collumn_5m4" parent="." instance=ExtResource("9_3mum5")]
+[node name="Module_Collumn_5m4" parent="Collumns" instance=ExtResource("9_3mum5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
 
 [connection signal="purge_finished" from="." to="Wall_Light" method="turn_on"]
