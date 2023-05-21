@@ -84,7 +84,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8ewy4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_621gj"]
 resource_name = "Electric_Socket_Mesh2"
 _surfaces = [{
 "aabb": AABB(-0.341635, 0.270902, -0.341635, 0.68327, 0.186646, 0.68327),
@@ -159,7 +159,7 @@ shape = SubResource("CylinderShape3D_mss5i")
 [node name="Push" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Push"]
-mesh = SubResource("ArrayMesh_8ewy4")
+mesh = SubResource("ArrayMesh_621gj")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_tjjvk")
 

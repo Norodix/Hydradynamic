@@ -11,6 +11,7 @@ var is_pushed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Push/MeshInstance3D.get_surface_override_material(0).emission_enabled = false
 	pass # Replace with function body.
 
 
