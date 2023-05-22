@@ -320,33 +320,44 @@ const db_play : float = -10
 @onready var musicA : AudioStreamPlayer = $MusicA
 @onready var musicB : AudioStreamPlayer = $MusicB
 @onready var musicC : AudioStreamPlayer = $MusicC
+@onready var crossfade = $MusicCrossfadeTree["parameters/playback"]
 func update_music():
+	print("halo")
 	musicB.seek(musicA.get_playback_position())
 	musicC.seek(musicA.get_playback_position())
 	
 	var hc = get_head_count()
-	var volA = db_play if (hc <= 2) else db_silent
-	var volB = db_play if (hc > 2 and hc <=4) else db_silent
-	var volC = db_play if (hc > 4) else db_silent
 	
-	var tweenA = get_tree().create_tween()
-	tweenA.tween_property(musicA, "volume_db", volA, 1).set_trans(Tween.TRANS_CIRC)
-	var tweenB = get_tree().create_tween()
-	tweenB.tween_property(musicB, "volume_db", volB, 1).set_trans(Tween.TRANS_CIRC)
-	var tweenC = get_tree().create_tween()
-	tweenC.tween_property(musicC, "volume_db", volC, 1).set_trans(Tween.TRANS_CIRC)
+	if (hc <= 2):
+		crossfade.travel("OnlyA")
+	if (hc > 2 and hc <= 4):
+		crossfade.travel("OnlyB")
+	if (hc > 4):
+		crossfade.travel("OnlyC")
+	#var volA = db_play if (hc <= 2) else db_silent
+	#var volB = db_play if (hc > 2 and hc <=4) else db_silent
+	#var volC = db_play if (hc > 4) else db_silent
+	
+	#var tweenA = get_tree().create_tween()
+	#tweenA.tween_property(musicA, "volume_db", volA, 1).set_trans(Tween.TRANS_CIRC)
+	#var tweenB = get_tree().create_tween()
+	#tweenB.tween_property(musicB, "volume_db", volB, 1).set_trans(Tween.TRANS_CIRC)
+	#var tweenC = get_tree().create_tween()
+	#tweenC.tween_property(musicC, "volume_db", volC, 1).set_trans(Tween.TRANS_CIRC)
 
 
 func victory():
-	var tweenA = get_tree().create_tween()
-	tweenA.tween_property(musicA, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
-	var tweenB = get_tree().create_tween()
-	tweenB.tween_property(musicB, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
-	var tweenC = get_tree().create_tween()
-	tweenC.tween_property(musicC, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
+	#var tweenA = get_tree().create_tween()
+	#tweenA.tween_property(musicA, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
+	#var tweenB = get_tree().create_tween()
+	#tweenB.tween_property(musicB, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
+	#var tweenC = get_tree().create_tween()
+	#tweenC.tween_property(musicC, "volume_db", db_silent, 1).set_trans(Tween.TRANS_CIRC)
 	# Play victory music here
 	dance_enabled = true
+	crossfade.travel("RESET")
 	$MusicVHead.play()
 	await $MusicVHead.finished
+	$MusicVHead.playing(false)
 	$MusicVTail.play()
 	
