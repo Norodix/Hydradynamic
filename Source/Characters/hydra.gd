@@ -27,9 +27,10 @@ var dance_period = 2
 var dance_enabled = false
 
 func _ready():
+	crossfade.travel("OnlyA")
 	Globals.player = self
 	add_head()
-
+	
 
 func add_head():
 	if controllable_list.size() >= max_head_count:
@@ -315,14 +316,13 @@ func get_cam_basis() -> Basis:
 		return cam.global_transform.basis
 
 
-const db_silent : float = -60
-const db_play : float = -10
+#const db_silent : float = -60
+#const db_play : float = -10
 @onready var musicA : AudioStreamPlayer = $MusicA
 @onready var musicB : AudioStreamPlayer = $MusicB
 @onready var musicC : AudioStreamPlayer = $MusicC
 @onready var crossfade = $MusicCrossfadeTree["parameters/playback"]
 func update_music():
-	print("halo")
 	musicB.seek(musicA.get_playback_position())
 	musicC.seek(musicA.get_playback_position())
 	
@@ -358,6 +358,5 @@ func victory():
 	crossfade.travel("RESET")
 	$MusicVHead.play()
 	await $MusicVHead.finished
-	$MusicVHead.playing(false)
 	$MusicVTail.play()
 	
