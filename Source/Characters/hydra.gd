@@ -130,7 +130,7 @@ func _process(delta):
 #		add_head()
 	$Indicator.global_position = controllable_list[control_index].global_position + Vector3(0, 0.8, 0)
 	$Indicator.global_position += Vector3.UP * sin(Time.get_ticks_msec() / 1000.0 * 10) * 0.1
-	$Indicator.global_transform = $Indicator.global_transform.rotated_local(Vector3.UP, 0.1)
+	$Indicator.global_transform = $Indicator.global_transform.rotated_local(Vector3.UP, 0.1 * 60.0 * delta)
 	#cam_pivot.global_position = self.global_position
 	cam.camera_target = controllable_list[control_index]
 	cam_pivot.global_position = lerp(cam_pivot.global_position, \
