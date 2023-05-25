@@ -1,0 +1,49 @@
+[gd_resource type="StandardMaterial3D" load_steps=9 format=3 uid="uid://wfsedokfbkn1"]
+
+[ext_resource type="Texture2D" uid="uid://swib77707gw8" path="res://Assets/Hydra/Eyes_Tex.png" id="1_rh11j"]
+[ext_resource type="Texture2D" uid="uid://c4j7x7qjeagf2" path="res://Assets/Hydra/Hydra_Head_Tex.png" id="2_mo8jg"]
+[ext_resource type="Texture2D" uid="uid://ts4os1namyso" path="res://Assets/Hydra/Hydra_Head_Mask.png" id="3_k23t0"]
+[ext_resource type="Texture2D" uid="uid://cmkl11qb41e5q" path="res://Assets/Hydra/Hydra_Neck_Tex.png" id="4_44ukw"]
+[ext_resource type="Texture2D" uid="uid://b2u635u1m8yyl" path="res://Assets/PNG/Light/texture_01.png" id="5_8wsvy"]
+[ext_resource type="Texture2D" uid="uid://bijvnx412vshe" path="res://Assets/Hydra/Hydra_Neck_Outline_Mask.png" id="6_1lug1"]
+[ext_resource type="Material" uid="uid://b8bx6jvmpxmcj" path="res://Source/Materials/Head_Shock_Mat.tres" id="7_2act4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2olw7"]
+resource_local_to_scene = true
+next_pass = ExtResource("7_2act4")
+cull_mode = 1
+shading_mode = 0
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+detail_enabled = true
+detail_mask = ExtResource("6_1lug1")
+detail_blend_mode = 1
+detail_uv_layer = 1
+detail_albedo = ExtResource("5_8wsvy")
+grow = true
+grow_amount = 0.005
+
+[resource]
+resource_local_to_scene = true
+render_priority = 1
+next_pass = SubResource("StandardMaterial3D_2olw7")
+transparency = 4
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_rh11j")
+metallic_specular = 1.0
+roughness = 0.03
+emission = Color(0.32549, 0.690196, 0.219608, 1)
+emission_energy_multiplier = 0.21
+emission_operator = 1
+emission_texture = ExtResource("4_44ukw")
+rim_enabled = true
+rim = 0.3
+anisotropy = 0.02
+ao_light_affect = 0.11
+heightmap_scale = -6.956
+backlight_enabled = true
+backlight = Color(0.792157, 0.792157, 0.792157, 1)
+detail_mask = ExtResource("3_k23t0")
+detail_albedo = ExtResource("2_mo8jg")
+grow_amount = 0.1

@@ -76,7 +76,7 @@ func has_power_source() -> bool:
 
 
 func power(power : bool = true):
-	var mat : Material = $Head_Armature/Skeleton3D/Head.get_surface_override_material(0)
+	var mat : Material = $Head_Armature/Skeleton3D/Head.get_surface_override_material(2)
 	var electricity_pass = mat.next_pass.next_pass
 	#print("Setting: ", power)
 	electricity_pass.set_shader_parameter("Shock_Bool", power)
@@ -96,5 +96,5 @@ func power_sinks() -> bool:
 func _exit_tree(): # When someone calls queue_free() here
 	# Material error workaround....
 	# Related to https://github.com/godotengine/godot/issues/67144
-	$Head_Armature/Skeleton3D/Head.set("surface_material_override/0", null)
-	$Head_Armature/Skeleton3D/Eyes.set("surface_material_override/0", null)
+	$Head_Armature/Skeleton3D/Head.set("surface_material_override/2", null)
+#	$Head_Armature/Skeleton3D/Eyes.set("surface_material_override/0", null)
